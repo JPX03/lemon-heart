@@ -1,32 +1,187 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <div class="container" :style="{'background':containerBgc}">
+      <el-row :gutter="10">
+        <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
+          <div class="grid-content bg-purple">
+            <div class="logo">
+              <router-link to='/Home'>
+                <img src="./assets/pictures/Group_15.png">
+              </router-link>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="4" :sm="9" :md="9" :lg="9" :xl="9">
+          <div class="grid-content bg-purple article title">
+            <router-link to="/Home">柠檬心理</router-link>
+          </div>
+        </el-col>
+        <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
+          <div class="grid-content bg-purple article">
+            <router-link to="/Article">文章</router-link>
+          </div>
+        </el-col>
+        <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
+          <div class="grid-content bg-purple qa">
+            <router-link to='/Qa'>问答</router-link>
+          </div>
+        </el-col>
+        <el-col :xs="4" :sm="2" :md="2" :lg="2" :xl="2">
+          <div class="grid-content bg-purple test">
+            <router-link to='/Test'>心理测试</router-link>
+          </div>
+        </el-col>
+        <el-col :xs="4" :sm="2" :md="2" :lg="2" :xl="2">
+          <div class="grid-content bg-purple book">
+            <router-link to='/Book'>心理图书</router-link>
+          </div>
+        </el-col>
+        <el-col :xs="2" :sm="1" :md="1" :lg="1" :xl="1" id="log">
+          <div class="grid-content bg-purple login" @click="showLog">
+            <div>登录</div>
+          </div>
+        </el-col>
+        <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
+          <div class="grid-content bg-purple" @click="showReg">
+            <el-button round size='mini' class="register" :style="{'background':regBgc,'color':regColor}">注册</el-button>
+          </div>
+        </el-col>
+      </el-row>
     </div>
-    <router-view/>
+    <router-view></router-view>
+    <component :is='comName' class="regPage" v-show="isVisible" :isVisible="isVisible" @dialogVisibleEvent="showDialog" @dialogNameEvent='showName'></component>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import Article from '@/components/Article.vue'
+  import Book from '@/components/Book.vue'
+  import Login from '@/components/Login.vue'
+  import Qa from '@/components/Qa.vue'
+  import Register from '@/components/Register.vue'
+  import Test from '@/components/Test.vue'
+  import Home from '@/components/Home.vue'
 
-#nav {
-  padding: 30px;
+  export default {
+    data() {
+      return {
+        containerBgc: 'rgba(177, 243, 243, 1)',
+        regBgc: 'rgba(255, 255, 255, 1)',
+        regColor: 'rgba(71, 71, 71, 1);',
+        path: this.$route.fullPath,
+        isVisible: false,
+        comName:'',
+      }
+    },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    methods: {
+      changeColor() {
+        console.log(this.path);
+        if (this.path == '/Home') {
+          this.containerBgc = 'rgba(177, 243, 243, 1)';
+          this.regBgc = 'rgba(255, 255, 255, 1)';
+          this.regColor = 'rgba(71, 71, 71, 1)';
+        } else {
+          this.containerBgc = 'rgba(253, 255, 255, 1)';
+          this.regBgc = 'rgba(51, 51, 51, 1)';
+          this.regColor = 'rgba(255, 255, 255, 1)';
+        }
+      },
+      showReg() {
+        this.isVisible = true;
+        this.comName='Register';
+      },
+      showLog(){
+        this.isVisible = true;
+        this.comName='Login';
+      },
+      showDialog(visible) {
+        this.isVisible = visible;
+      },
+      showName(name){
+        this.comName=name;
+      }
+    },
 
-    &.router-link-exact-active {
-      color: #42b983;
+    //监听url变化
+    watch: {
+      '$route'(to, from) {
+        this.path = to.fullPath;
+        this.changeColor();
+      }
+    },
+
+    components: {
+      'Article':Article,
+      'Book':Book,
+      'Login':Login,
+      'Qa':Qa,
+      'Register':Register,
+      'Test':Test,
+      'Home':Home,
     }
   }
-}
+</script>
+
+<style lang='less' scoped>
+  .container {
+    width: 1920px;
+    height: 80px;
+    border-bottom: 0.6px solid rgba(0, 0, 0, 1);
+    overflow: hidden;
+  }
+
+  a {
+    color: rgba(71, 71, 71, 1);
+    line-height: 80px;
+    font-family: PingFang SC;
+    font-size: 20px;
+  }
+
+  .register {
+    font-family: PingFang SC;
+    font-size: 20px;
+    height: 40px;
+    line-height: 20px;
+    margin-top: 20px;
+  }
+
+  .login {
+    color: rgba(71, 71, 71, 1);
+    line-height: 80px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    padding-left: 5px;
+  }
+
+  #log :hover{
+    cursor: pointer;
+    color: azure;
+  }
+
+  a:hover {
+    color: azure;
+    font-size: 24px;
+  }
+
+  .title {
+    font-family: Alibaba PuHuiTi;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 18%;
+  }
+
+  img {
+    width: 35%;
+    margin-left: 150px;
+  }
+
+  .regPage {
+    position: absolute;
+    top: 205px;
+    left: 710px;
+    width: 500px;
+    height: 560px;
+    z-index: 999;
+  }
 </style>
