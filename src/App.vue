@@ -49,7 +49,8 @@
       </el-row>
     </div>
     <router-view></router-view>
-    <component :is='comName' class="regPage" v-show="isVisible" :isVisible="isVisible" @dialogVisibleEvent="showDialog" @dialogNameEvent='showName'></component>
+    <component :is='comName' class="regPage" v-show="isVisible" :isVisible="isVisible" @dialogVisibleEvent="showDialog"
+      @dialogNameEvent='showName'></component>
   </div>
 </template>
 
@@ -70,7 +71,7 @@
         regColor: 'rgba(71, 71, 71, 1);',
         path: this.$route.fullPath,
         isVisible: false,
-        comName:'',
+        comName: '',
       }
     },
 
@@ -89,17 +90,17 @@
       },
       showReg() {
         this.isVisible = true;
-        this.comName='Register';
+        this.comName = 'Register';
       },
-      showLog(){
+      showLog() {
         this.isVisible = true;
-        this.comName='Login';
+        this.comName = 'Login';
       },
       showDialog(visible) {
         this.isVisible = visible;
       },
-      showName(name){
-        this.comName=name;
+      showName(name) {
+        this.comName = name;
       }
     },
 
@@ -112,13 +113,13 @@
     },
 
     components: {
-      'Article':Article,
-      'Book':Book,
-      'Login':Login,
-      'Qa':Qa,
-      'Register':Register,
-      'Test':Test,
-      'Home':Home,
+      'Article': Article,
+      'Book': Book,
+      'Login': Login,
+      'Qa': Qa,
+      'Register': Register,
+      'Test': Test,
+      'Home': Home,
     }
   }
 </script>
@@ -154,7 +155,7 @@
     padding-left: 5px;
   }
 
-  #log :hover{
+  #log :hover {
     cursor: pointer;
     color: azure;
   }

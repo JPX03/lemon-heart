@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="lunbo">
-            <img src='@/assets/pictures/lunbo1.png' />
+            <img src='@/assets/pictures/info.gif' />
         </div>
         <div class="Catalogue">
             <div class="data">

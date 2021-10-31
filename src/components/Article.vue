@@ -19,7 +19,7 @@
         </div>
         <div class="border-2">
           <img
-            src="../assets\pictures\思考图片素材IDVCG41pha295000017_1.png"
+            src="../assets\pictures\think1.png"
             alt=""
           />
         </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="border-3">
           <img
-            src="../assets\pictures\思考图片素材IDVCG211128975283_1.png"
+            src="../assets\pictures\think2.png"
             alt=""
           />
         </div>
