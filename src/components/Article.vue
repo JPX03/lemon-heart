@@ -60,10 +60,7 @@
       </el-menu>
     </div>
     <div class="router">
-
         <router-view></router-view>      
- 
-
     </div>
   </div>
 </template>

@@ -40,6 +40,7 @@
         :comNum='item.comment' :likeNum='item.like'  v-for="item in qas" :key="item.id"></QaArticle>
     </div>
     <Pages id="pages" @changePage='changePage'></Pages>
+    <Foot id="foot"></Foot>
   </div>
 
 </template>
@@ -278,7 +279,12 @@
 
   #pages {
     position: relative;
-    top: 229px;
-    left: 260px;
+    top: 249px;
+    left: 250px;
+  }
+
+  #foot{
+    position: relative;
+    top: 400px;
   }
 </style>
