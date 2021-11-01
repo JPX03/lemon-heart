@@ -4,11 +4,13 @@ import router from './router'
 import '@/assets/styles/global.css'
 import '@/assets/styles/reset.css'
 import ElementUI from 'element-ui';
+Vue.use(ElementUI);
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/fonts/font.css'
 import Foot from '@/components/Foot.vue'
+import cookie from '@/utils/cookie.js'
+Vue.prototype.cookie = cookie;
 
-Vue.use(ElementUI);
 Vue.component("Foot", Foot);
 Vue.config.productionTip = false;
 new Vue({

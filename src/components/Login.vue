@@ -56,7 +56,7 @@
         this.isShowLog = false;
         this.$emit('dialogVisibleEvent', false);
       },
-      toReg(){
+      toReg() {
         this.$emit('dialogNameEvent', 'Register')
       },
       sub1() {
@@ -70,8 +70,16 @@
         }).then((response) => {
           if (response.data.status == true) {
             this.isShowLog = false;
+            // 以json格式传给setCookie方法存入信息,方法里面会循环遍历该json以单个数据存储的方式，多次存入cookie中
+            // 注：cookie不支持直接以json的方式存入
+            let loginInfo = {
+              LoginName: this.userName,
+            }
+            // 调用setCookie方法，同时传递需要存储的数据，保存天数
+            this.cookie.setCookie(loginInfo, 7)
+            alert("存入cookie");
             this.close();
-            alert('登录成功!')
+            alert("登录成功");
           } else {
             this.isShowLog = true;
           }

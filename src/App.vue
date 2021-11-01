@@ -51,6 +51,7 @@
     <router-view></router-view>
     <component :is='comName' class="regPage" v-show="isVisible" :isVisible="isVisible" @dialogVisibleEvent="showDialog"
       @dialogNameEvent='showName'></component>
+      <button @click="isLog">是否登录</button>
   </div>
 </template>
 
@@ -100,6 +101,14 @@
       },
       showName(name) {
         this.comName = name;
+      },
+      isLog(){
+        console.log(this.cookie.getCookie('LoginName'));
+        if(this.cookie.getCookie('LoginName')!=null){
+          console.log('true')
+        }else{
+          console.log(false);
+        }
       }
     },
 
