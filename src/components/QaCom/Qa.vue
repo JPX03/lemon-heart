@@ -4,7 +4,7 @@
       <div class="top1">
         <img src="@/assets/pictures/qaBgimg.gif">
         <div>
-          <router-link to='QaDetail' id="ask">
+          <router-link to='Qa/Ask' id="ask">
             提问
           </router-link>
         </div>

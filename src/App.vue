@@ -37,21 +37,21 @@
           </div>
         </el-col>
         <el-col :xs="2" :sm="1" :md="1" :lg="1" :xl="1" id="log">
-          <div class="grid-content bg-purple login" @click="showLog">
+          <div class="grid-content bg-purple login" @click="showLog" v-show="!isLog">
             <div>登录</div>
           </div>
         </el-col>
         <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
-          <div class="grid-content bg-purple" @click="showReg">
+          <div class="grid-content bg-purple" @click="showReg" v-show="!isLog">
             <el-button round size='mini' class="register" :style="{'background':regBgc,'color':regColor}">注册</el-button>
           </div>
+          <UserHead></UserHead>
         </el-col>
       </el-row>
     </div>
     <router-view></router-view>
     <component :is='comName' class="regPage" v-show="isVisible" :isVisible="isVisible" @dialogVisibleEvent="showDialog"
       @dialogNameEvent='showName'></component>
-      <button @click="isLog">是否登录</button>
   </div>
 </template>
 
@@ -63,6 +63,7 @@
   import Register from '@/components/Register.vue'
   import Test from '@/components/TestCom/Test.vue'
   import Home from '@/components/Home.vue'
+  import UserHead from '@/components/UserCom/UserHead.vue'
 
   export default {
     data() {
@@ -73,6 +74,7 @@
         path: this.$route.fullPath,
         isVisible: false,
         comName: '',
+        isLog:false,
       }
     },
 
@@ -102,16 +104,18 @@
       showName(name) {
         this.comName = name;
       },
-      isLog(){
+      isLogin(){
         console.log(this.cookie.getCookie('LoginName'));
         if(this.cookie.getCookie('LoginName')!=null){
-          console.log('true')
+          this.isLog=true;
         }else{
-          console.log(false);
+          this.isLog=false;
         }
       }
     },
-
+    created(){
+      this.isLogin();
+    },
     //监听url变化
     watch: {
       '$route'(to, from) {
@@ -128,6 +132,7 @@
       'Register': Register,
       'Test': Test,
       'Home': Home,
+      'UserHead': UserHead,
     }
   }
 </script>
@@ -165,11 +170,9 @@
 
   #log :hover {
     cursor: pointer;
-    color: azure;
   }
 
   a:hover {
-    color: azure;
     font-size: 24px;
   }
 

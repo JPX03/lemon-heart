@@ -8,6 +8,7 @@ import Register from '@/components/Register.vue'
 import Test from '@/components/TestCom/Test.vue'
 import Home from '@/components/Home.vue'
 import QaDetails from '@/components/QaCom/QaDetails.vue'
+import Ask from '@/components/QaCom/Ask.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,10 @@ const router = new VueRouter({
     {
       path:'/Qa',
       component:Qa,
+    },
+    {
+      path:'/Qa/Ask',
+      component:Ask,
     },
     {
       path: '/Qa/:id',
