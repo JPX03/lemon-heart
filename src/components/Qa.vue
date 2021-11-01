@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="top1">
-        <img src="@/assets/pictures/qa1.png">
+        <img src="@/assets/pictures/qaBgimg.gif">
         <div>
           <router-link to='QaDetail' id="ask">
             提问
@@ -35,9 +35,10 @@
       </router-link>
     </div>
     <div id="title2">最新问答</div>
+    <ToAsk id="toAsk"></ToAsk>
     <div id="qaContainer">
       <QaArticle :title="item.questionTitile" :content='item.questionContent' :date='item.questionTime'
-        :comNum='item.comment' :likeNum='item.like'  v-for="item in qas" :key="item.id"></QaArticle>
+        :comNum='item.comment' :likeNum='item.like' v-for="item in qas" :key="item.id"></QaArticle>
     </div>
     <Pages id="pages" @changePage='changePage'></Pages>
     <Foot id="foot"></Foot>
@@ -49,10 +50,12 @@
   import request from '@/utils/request.js'
   import Pages from '@/components/QaCom/Pages.vue'
   import QaArticle from '@/components/QaCom/QaArticle.vue'
+  import ToAsk from '@/components/QaCom/ToAsk.vue'
   export default {
     components: {
       Pages,
-      QaArticle
+      QaArticle,
+      ToAsk,
     },
 
     data() {
@@ -60,7 +63,7 @@
         text: [],
         qas: [],
         page: 0,
-        isReady:false,
+        isReady: false,
       }
     },
 
@@ -140,6 +143,7 @@
     font-size: 18px;
     line-height: 130.265629%;
     text-align: center;
+    padding-top: 7px;
   }
 
   .top2 {
@@ -171,18 +175,18 @@
     position: absolute;
     top: 187px;
     left: 260px;
-    width: 0.1px;
+    width: 0.6px;
     height: 239px;
-    border: 0.6px solid rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 1);
   }
 
   #line2 {
     position: absolute;
     top: 187px;
     left: 1097px;
-    width: 0.1px;
+    width: 0.6px;
     height: 239px;
-    border: 0.6px solid rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 1);
   }
 
   #text0 {
@@ -283,8 +287,15 @@
     left: 250px;
   }
 
-  #foot{
+  #foot {
     position: relative;
     top: 400px;
+  }
+
+  #toAsk {
+    position: fixed;
+    top: 350px;
+    right: 450px;
+    ;
   }
 </style>
