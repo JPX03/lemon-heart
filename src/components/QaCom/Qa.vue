@@ -37,8 +37,12 @@
     <div id="title2">最新问答</div>
     <ToAsk id="toAsk"></ToAsk>
     <div id="qaContainer">
+      <div v-for="item in qas" :key="item.id">
+      <router-link :to="'/Qa/'+ item.id">
       <QaArticle :title="item.questionTitile" :content='item.questionContent' :date='item.questionTime'
-        :comNum='item.comment' :likeNum='item.like' v-for="item in qas" :key="item.id"></QaArticle>
+        :comNum='item.comment' :likeNum='item.like'></QaArticle>
+      </router-link>
+      </div>
     </div>
     <Pages id="pages" @changePage='changePage'></Pages>
     <Foot id="foot"></Foot>
