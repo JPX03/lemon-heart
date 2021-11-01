@@ -44,6 +44,7 @@
 <script>
   import request from '@/utils/request.js'
   export default {
+    name: 'Register',
     data() {
       return {
         props: {

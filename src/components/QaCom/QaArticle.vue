@@ -16,12 +16,13 @@
 
 <script>
     export default {
-        props:{
-            title:{},
-            content:{},
-            comNum:{},
-            likeNum:{},
-            date:{},
+        name: 'QaArtcle',
+        props: {
+            title: {},
+            content: {},
+            comNum: {},
+            likeNum: {},
+            date: {},
         }
     }
 </script>

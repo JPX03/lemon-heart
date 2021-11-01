@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'QaDetails',
     data() {
       return {
         id: this.$route.params.id,

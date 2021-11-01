@@ -26,6 +26,7 @@
 <script>
   import request from '@/utils/request.js'
   export default {
+    name: 'Login',
     data() {
       return {
         props: {
@@ -81,7 +82,7 @@
             alert("存入cookie");
             this.close();
             alert("登录成功");
-            this.$emit('logSuccess',this.cookie.getCookie('userName'))
+            this.$emit('logSuccess', this.cookie.getCookie('userName'))
           } else {
             this.isShowLog = true;
           }

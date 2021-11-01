@@ -8,6 +8,7 @@
 
 <script>
     export default {
+        name: 'Pages',
         data() {
             return {
                 curPage,
@@ -15,7 +16,7 @@
         },
         methods: {
             changePage() {
-                this.$emit('changePage',this.curPage);
+                this.$emit('changePage', this.curPage);
             },
         }
     }

@@ -18,10 +18,11 @@
 <script>
   import RelativeThing from '@/components/QaCom/RelativeThing.vue'
   export default {
+    name: 'Ask',
     data() {
       return {
-        askTitle:'',
-        askContent:'',
+        askTitle: '',
+        askContent: '',
         block1: '参考问题',
         block2: '我该怎么接纳孤独，享受孤独，更好地与它相处？',
         block3: '有烦恼不能说出来，为什么我老憋着事情在肚子里呢？',
@@ -35,8 +36,8 @@
       back() {
         this.$router.go(-1);
       },
-      pub(){
-        
+      pub() {
+
       }
     }
   }

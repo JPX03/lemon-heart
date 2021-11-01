@@ -10,11 +10,12 @@
 
 <script>
     export default {
-        props:{
-            block1:{},
-            block2:{},
-            block3:{},
-            block4:{},
+        name: 'RelativeThing',
+        props: {
+            block1: {},
+            block2: {},
+            block3: {},
+            block4: {},
         }
     }
 </script>

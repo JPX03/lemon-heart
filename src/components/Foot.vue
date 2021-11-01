@@ -5,7 +5,6 @@
                 <router-link to="/Home">
                     <img src="../assets/pictures/Group_15.png" alt="">
                 </router-link>
-
             </div>
             <div class="bottom-text">
                 <router-link to="/Home">柠檬心理</router-link>
@@ -63,7 +62,7 @@
 
 <script>
     export default {
-
+        name: 'Foot',
     }
 </script>
 

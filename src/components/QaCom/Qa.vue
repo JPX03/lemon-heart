@@ -38,10 +38,10 @@
     <ToAsk id="toAsk"></ToAsk>
     <div id="qaContainer">
       <div v-for="item in qas" :key="item.id">
-      <router-link :to="'/Qa/'+ item.id">
-      <QaArticle :title="item.questionTitile" :content='item.questionContent' :date='item.questionTime'
-        :comNum='item.comment' :likeNum='item.like'></QaArticle>
-      </router-link>
+        <router-link :to="'/Qa/'+ item.id">
+          <QaArticle :title="item.questionTitile" :content='item.questionContent' :date='item.questionTime'
+            :comNum='item.comment' :likeNum='item.like'></QaArticle>
+        </router-link>
       </div>
     </div>
     <Pages id="pages" @changePage='changePage'></Pages>
@@ -56,6 +56,7 @@
   import QaArticle from '@/components/QaCom/QaArticle.vue'
   import ToAsk from '@/components/QaCom/ToAsk.vue'
   export default {
+    name: 'Qa',
     components: {
       Pages,
       QaArticle,

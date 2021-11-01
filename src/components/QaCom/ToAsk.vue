@@ -11,7 +11,7 @@
 
 <script>
     export default {
-
+        name: 'ToAsk',
     }
 </script>
 
@@ -24,7 +24,7 @@
         position: absolute;
         width: 0.6px;
         height: 143px;
-        background-color:  rgba(0, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 1);
     }
 
     #toAsk1 {
