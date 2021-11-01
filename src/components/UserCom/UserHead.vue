@@ -1,7 +1,7 @@
 <template>
   <div id="infor">
     <img src="@/assets/pictures/infoHead.png">
-    <div id="userName">{{this.cookie.getCookie('LoginName')}}</div>
+    <div id="userName">{{this.cookie.getCookie('userName')}}</div>
   </div>
 </template>
 

@@ -51,7 +51,7 @@
     </div>
     <router-view></router-view>
     <component :is='comName' class="regPage" v-show="isVisible" :isVisible="isVisible" @dialogVisibleEvent="showDialog"
-      @dialogNameEvent='showName'></component>
+      @dialogNameEvent='showName' @logSuccess='logSuccess'></component>
   </div>
 </template>
 
@@ -105,12 +105,16 @@
         this.comName = name;
       },
       isLogin(){
-        console.log(this.cookie.getCookie('LoginName'));
-        if(this.cookie.getCookie('LoginName')!=null){
+        console.log(this.cookie.getCookie('userName'));
+        if(this.cookie.getCookie('userName')!=null){
           this.isLog=true;
         }else{
           this.isLog=false;
         }
+      },
+      logSuccess(val){
+        this.isLogin();
+        location.reload();
       }
     },
     created(){

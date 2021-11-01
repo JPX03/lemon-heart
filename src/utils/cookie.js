@@ -40,5 +40,5 @@ function clearCookie(name) {
 export default {
     setCookie,
     getCookie,
-    clearCookie
+    clearCookie,
 }
