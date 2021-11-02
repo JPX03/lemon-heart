@@ -34,6 +34,13 @@
         isAnsing: false,
       }
     },
+    props: {
+      title: {},
+      date: {},
+      text: {},
+      likeNum: {},
+      questionId: {},
+    },
     methods: {
       likeIt() {
         console.log("点赞")
@@ -48,28 +55,23 @@
         await request({
           method: 'post',
           url: '/answer/sendAnswer',
-          questionId: this.questionId,
-          userId: this.cookie.getCookie('userId'),
-          userName: this.cookie.getCookie('userName'),
-          answerContent: this.ansContent,
-        }).then((response)=>{
-          if(response.data.status==true){
+          params: {
+            questionId: this.questionId,
+            userId: this.cookie.getCookie('userId'),
+            userName: this.cookie.getCookie('userName'),
+            answerContent: this.ansContent,
+          },
+        }).then((response) => {
+          if (response.data.status == true) {
             alert('发布成功!');
-            this.ansContent='';
+            this.ansContent = '';
             location.reload();
-          }else{
+          } else {
             alert('发布失败!');
           }
         })
       },
     },
-    props: {
-      title: {},
-      date: {},
-      text: {},
-      likeNum: {},
-      questionId: {},
-    }
   }
 </script>
 

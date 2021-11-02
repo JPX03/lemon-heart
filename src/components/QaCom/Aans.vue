@@ -2,8 +2,8 @@
     <div id="container">
         <div id="line"></div>
         <img src="@/assets/pictures/infoHead2.png" id="img1">
-        <div id="name">{{name}}1</div>
-        <div id="date">{{date}}2</div>
+        <div id="name">{{name}}</div>
+        <div id="date">{{date}}</div>
         <div id="text">{{text}}</div>
     </div>
 </template>
