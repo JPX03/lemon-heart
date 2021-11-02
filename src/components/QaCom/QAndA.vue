@@ -1,43 +1,69 @@
 <template>
   <div>
-    1111
+    <div id="qContainer">
+      <Aans :title="qInfor.questionTitile" :text="qInfor.questionContent" :date='qInfor.questionTime'
+        :likeNum='qInfor.like' :questionId="qInfor.id"></Aans>
+    </div>
   </div>
 </template>
 
 <script>
   import request from '@/utils/request.js'
+  import Aans from '@/components/QaCom/Aans.vue'
+  import Aquestion from '@/components/QaCom/Aqustion.vue'
   export default {
     name: 'QAndA',
+    components: {
+      Aans,
+      Aquestion,
+    },
     data() {
       return {
-        QaId: this.$route.params.id,
-        Qa: {},
+        qId: this.$route.params.id,
+        qInfor: {},
         ansArr: [],
       }
     },
     methods: {
+      async getQ() {
+        await request({
+          method: 'post',
+          url: '/question/oneQuesition',
+          params: {
+            id: this.qId,
+          }
+        }).then(({
+          data: res
+        }) => {
+          this.$set(this, 'qInfor', res.data);
+          console.log(this.qInfor);
+        })
+      },
       async getAns() {
         await request({
           method: 'post',
           url: '/answer/showAnswersOfOneQuestion',
           params: {
-            questionId: this.QaId,
+            questionId: this.qId,
           }
         }).then(({
           data: res
         }) => {
-          console.log(res);
-          //this.$set(this, 'theQa', res.data.records);
+          this.$set(this, 'ansArr', res.data);
+          console.log(this.ansArr);
         })
       }
     },
     created() {
-      console.log(this.QaId);
+      this.getQ();
       this.getAns();
     }
   }
 </script>
 
 <style lang="less" scoped>
-
+  #qContainer {
+    margin-top: 120px;
+    margin-left: 262px;
+  }
 </style>
