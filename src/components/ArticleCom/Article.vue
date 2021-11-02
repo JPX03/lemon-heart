@@ -44,6 +44,7 @@
           :kind='item.passageLei'></ArticleList>
       </router-link>
     </div>
+    <Foot id="foot"></Foot>
   </div>
 </template>
 
@@ -225,5 +226,9 @@
     width: 920px;
     left: 260px;
     top: 20px;
+  }
+
+  #foot{
+    margin-top:300px;
   }
 </style>
