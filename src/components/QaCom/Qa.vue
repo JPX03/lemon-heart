@@ -4,7 +4,7 @@
       <div class="top1">
         <img src="@/assets/pictures/qaBgimg.gif">
         <div>
-          <router-link to='Qa/Ask' id="ask">
+          <router-link to='Qa/PublishQ' id="ask">
             提问
           </router-link>
         </div>
@@ -37,12 +37,10 @@
     <div id="title2">最新问答</div>
     <ToAsk id="toAsk"></ToAsk>
     <div id="qaContainer">
-      <div v-for="item in qas" :key="item.id">
-        <router-link :to="'/Qa/'+ item.id">
-          <QaArticle :title="item.questionTitile" :content='item.questionContent' :date='item.questionTime'
-            :comNum='item.comment' :likeNum='item.like'></QaArticle>
-        </router-link>
-      </div>
+      <router-link :to="'/Qa/'+ item.id" v-for="item in qas" :key="item.id">
+        <QaArticleList :title="item.questionTitile" :content='item.questionContent' :date='item.questionTime'
+          :comNum='item.comment' :likeNum='item.like'></QaArticleList>
+      </router-link>
     </div>
     <Pages id="pages" @changePage='changePage'></Pages>
     <Foot id="foot"></Foot>
@@ -53,13 +51,13 @@
 <script>
   import request from '@/utils/request.js'
   import Pages from '@/components/QaCom/Pages.vue'
-  import QaArticle from '@/components/QaCom/QaArticle.vue'
+  import QaArticleList from '@/components/QaCom/QaArticleList.vue'
   import ToAsk from '@/components/QaCom/ToAsk.vue'
   export default {
     name: 'Qa',
     components: {
       Pages,
-      QaArticle,
+      QaArticleList,
       ToAsk,
     },
 
@@ -96,7 +94,6 @@
         }).then(({
           data: res
         }) => {
-          console.log(res);
           this.$set(this, 'qas', res.data.records);
           for (const item of this.qas) {
             item.questionContent = item.questionContent.slice(0, 80) + "……";

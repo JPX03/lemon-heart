@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-pagination small layout="prev, pager, next" :total="48" id="pages" page-size='6' background
-            @current-change='changePage' :current-page.sync="curPage">111
+            @current-change='changePage' :current-page.sync="curPage">
         </el-pagination>
     </div>
 </template>

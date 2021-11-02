@@ -37,18 +37,53 @@
         </div>
       </div>
     </div>
+    <ArticleNav id="ArticleNav"></ArticleNav>
+    <div id="ArticleListContainer">
+      <router-link :to="'/Article/'+ item.id" v-for="item in allArticle" :key="item.id">
+        <ArticleList :imgSrc='item.passageImg' :title='item.passageTitle' :text="item.passageSmallTitle"
+          :kind='item.passageLei'></ArticleList>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
+  import ArticleNav from '@/components/ArticleCom/ArticleNav.vue';
+  import ArticleList from '@/components/ArticleCom/ArticleList.vue'
+  import request from '@/utils/request.js'
   export default {
     name: "Article",
-  };
+    data() {
+      return {
+        allArticle: [],
+      }
+    },
+    components: {
+      ArticleNav,
+      ArticleList,
+    },
+    methods: {
+      async getAllArticle() {
+        await request({
+          method: 'post',
+          url: '/passage/listAllByPage',
+        }).then(({
+          data: res
+        }) => {
+          this.$set(this, 'allArticle', res.data.records);
+          console.log(this.allArticle);
+        })
+      }
+    },
+    created() {
+      this.getAllArticle();
+    },
+  }
 </script>
 
 <style scoped>
   .pictures-top {
-    height: 1000px;
+    height: 850px;
     position: relative;
   }
 
@@ -177,5 +212,18 @@
     font-size: 18px;
   }
 
+  #ArticleNav {
+    position: relative;
+    top: 0px;
+    left: 260px;
+    margin-bottom: 20px;
+  }
 
+  #ArticleListContainer {
+    position: relative;
+    height: 1470px;
+    width: 920px;
+    left: 260px;
+    top: 20px;
+  }
 </style>

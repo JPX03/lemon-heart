@@ -16,7 +16,7 @@
 
 <script>
     export default {
-        name: 'QaArtcle',
+        name: 'QaArtcleList',
         props: {
             title: {},
             content: {},

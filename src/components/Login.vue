@@ -76,10 +76,10 @@
             // 注：cookie不支持直接以json的方式存入
             let loginInfo = {
               userName: this.userName,
+              userId:response.data.data.uid,
             }
             // 调用setCookie方法，同时传递需要存储的数据，保存天数
             this.cookie.setCookie(loginInfo, 7)
-            alert("存入cookie");
             this.close();
             alert("登录成功");
             this.$emit('logSuccess', this.cookie.getCookie('userName'))

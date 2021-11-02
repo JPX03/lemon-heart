@@ -36,7 +36,7 @@
     color: rgba(71, 71, 71, 1);
     font-family: PingFang SC;
     font-size: 18px;
-    top: 8px;
+    top: -20px;
     left: 50px;
   }
 </style>

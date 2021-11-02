@@ -18,7 +18,7 @@
 <script>
   import RelativeThing from '@/components/QaCom/RelativeThing.vue'
   export default {
-    name: 'Ask',
+    name: 'PublishQa',
     data() {
       return {
         askTitle: '',

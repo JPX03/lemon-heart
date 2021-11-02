@@ -45,7 +45,11 @@
           <div class="grid-content bg-purple" @click="showReg" v-show="!isLog">
             <el-button round size='mini' class="register" :style="{'background':regBgc,'color':regColor}">注册</el-button>
           </div>
-          <UserHead></UserHead>
+          <div v-show="isLog">
+            <router-link to="/UserPage">
+              <UserHead></UserHead>
+            </router-link>
+          </div>
         </el-col>
       </el-row>
     </div>
@@ -74,7 +78,7 @@
         path: this.$route.fullPath,
         isVisible: false,
         comName: '',
-        isLog:false,
+        isLog: false,
       }
     },
 
@@ -104,20 +108,20 @@
       showName(name) {
         this.comName = name;
       },
-      isLogin(){
+      isLogin() {
         console.log(this.cookie.getCookie('userName'));
-        if(this.cookie.getCookie('userName')!=null){
-          this.isLog=true;
-        }else{
-          this.isLog=false;
+        if (this.cookie.getCookie('userName') != null) {
+          this.isLog = true;
+        } else {
+          this.isLog = false;
         }
       },
-      logSuccess(val){
+      logSuccess(val) {
         this.isLogin();
-        location.reload();
+        //location.reload();
       }
     },
-    created(){
+    created() {
       this.isLogin();
     },
     //监听url变化
