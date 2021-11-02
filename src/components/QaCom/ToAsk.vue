@@ -3,7 +3,7 @@
         <div id="line"></div>
         <div id="toAsk1">向专家提问</div>
         <div id="toAsk2">已有66+心理专家入驻柠檬心理</div>
-        <router-link to='Qa/PublishQ' id="toAsk3">
+        <router-link  id="toAsk3" to="/publishQ">
             去提问
         </router-link>
     </div>

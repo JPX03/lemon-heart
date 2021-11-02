@@ -9,7 +9,6 @@ import Test from '@/components/TestCom/Test.vue'
 import Home from '@/components/Home.vue'
 import QAndA from '@/components/QaCom/QAndA.vue'
 import PublishQ from '@/components/QaCom/PublishQ.vue'
-import PublishA from '@/components/QaCom/PublishA.vue'
 import UserPage from '@/components/UserCom/UserPage.vue'
 
 Vue.use(VueRouter)
@@ -38,16 +37,12 @@ const router = new VueRouter({
       component:Qa,
     },
     {
-      path:'/Qa/PublishQ',
+      path:'/PublishQ',
       component:PublishQ,
     },
     {
       path: '/Qa/:id',
       component: QAndA,
-    },
-    {
-      path:'/Qa/:id/PublishA',
-      component:PublishA,
     },
     {
       path:'/Test',

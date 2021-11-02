@@ -14,23 +14,23 @@
       <img src="@/assets/pictures/Rectangle_25.png" id="img1">
       <div id="title1">精选问答</div>
       <div id="line1"></div>
-      <router-link to="a" id="text0">
+      <router-link :to="'/Qa/'+text[0].id" id="text0">
         <div v-text="this.text[0].questionTitile"></div>
       </router-link>
-      <router-link to="a" id="text1">
+      <router-link :to="'/Qa/'+text[1].id" id="text1">
         <div v-text="this.text[1].questionTitile"></div>
       </router-link>
-      <router-link to="a" id="text2">
+      <router-link :to="'/Qa/'+text[2].id" id="text2">
         <div v-text="this.text[2].questionTitile"></div>
       </router-link>
       <div id="line2"></div>
-      <router-link to="a" id="text3">
+      <router-link :to="'/Qa/'+text[3].id" id="text3">
         <div v-text="this.text[3].questionTitile"></div>
       </router-link>
-      <router-link to="a" id="text4">
+      <router-link :to="'/Qa/'+text[4].id" id="text4">
         <div v-text="this.text[4].questionTitile"></div>
       </router-link>
-      <router-link to="a" id="text5">
+      <router-link :to="'/Qa/'+text[5].id" id="text5">
         <div v-text="this.text[5].questionTitile"></div>
       </router-link>
     </div>
@@ -76,7 +76,7 @@
           method: 'post',
           url: '/question/listQuestionByPage',
           params: {
-            pageNo: 2,
+            pageNo: 7,
           }
         }).then(({
           data: res
@@ -256,7 +256,7 @@
     top: 359px;
     left: 1117px;
     width: 359px;
-    height: 1117px;
+    height: 62px;
     color: rgba(0, 0, 0, 1);
     font-family: FZBaoSong-Z04S;
     font-size: 24px;

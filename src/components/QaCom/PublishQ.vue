@@ -17,6 +17,7 @@
 
 <script>
   import RelativeThing from '@/components/QaCom/RelativeThing.vue'
+  import request from '@/utils/request.js'
   export default {
     name: 'PublishQa',
     data() {
@@ -37,7 +38,26 @@
         this.$router.go(-1);
       },
       pub() {
+        request({
+          method:'post',
+          url:'/question/sendQuestion',
+          params:{
+            questionUid : this.cookie.getCookie('userId'),
+            questionTitile : this.askTitle,
+            questionContent : this.askContent,
+          }
+        }).then((response)=>{
 
+          if(response.data.status == true){
+            alert('发布成功！')
+            this.askTitle='';
+            this.askContent='';
+            this.$router.replace('/Qa');
+            location.reload();
+          }else{
+            alert('发布失败，请重试！')
+          }
+        })
       }
     }
   }

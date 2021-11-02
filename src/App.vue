@@ -118,7 +118,7 @@
       },
       logSuccess(val) {
         this.isLogin();
-        //location.reload();
+        location.reload();
       }
     },
     created() {
