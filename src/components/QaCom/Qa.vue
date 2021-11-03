@@ -72,7 +72,7 @@
     },
 
     methods: {
-      async getArticle1() {
+      async getQuestion1() {
         await request({
           method: 'post',
           url: '/question/listQuestionByPage',
@@ -87,7 +87,7 @@
           console.log(this.totalPage);
         })
       },
-      async getArticle2(val) {
+      async getQuestion2(val) {
         await request({
           method: 'post',
           url: '/question/listQuestionByPage',
@@ -105,13 +105,13 @@
         })
       },
       changePage(val) {
-        this.getArticle2(val);
+        this.getQuestion2(val);
       }
     },
 
     created() {
-      this.getArticle1();
-      this.getArticle2(1);
+      this.getQuestion1();
+      this.getQuestion2(1);
     },
 
   }

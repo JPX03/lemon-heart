@@ -1,15 +1,29 @@
 <template>
     <div>
-        <el-pagination  layout="prev, pager, next" :total="totalPage"  background page-size='6'>
+        <el-pagination layout="prev, pager, next" :total="totalPage" background :page-size='pageSize'
+            @current-change='changePage' :current-page.sync="pageNo">
         </el-pagination>
     </div>
 </template>
 
 <script>
-    name:'APages'
+    name: 'APages'
     export default {
-        props:{
-            totalPage:{},
+        data() {
+            return {
+               
+            }
+        },
+        props: {
+            totalPage: {},
+            pageSize:{},
+            pageNo:{},
+        },
+        methods: {
+            changePage() {
+                console.log(this.pageNo);
+                this.$emit('changePage', this.pageNo);
+            },
         }
     }
 </script>

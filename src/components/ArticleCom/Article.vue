@@ -44,7 +44,7 @@
           :kind='item.passageLei'></ArticleList>
       </router-link>
     </div>
-    <APages id="pages" :totalPage='totalPage'></APages>
+    <APages id="pages" :totalPage='totalPage' @changePage='changePage' :pageSize='pageSize' :pageNo='pageNo'></APages>
     <Foot id="foot"></Foot>
     -->
   </div>
@@ -60,10 +60,11 @@
     data() {
       return {
         Articles: [],
-        showedArticles:[],
-        pageNum: 1, 
-        pageSize: 6,
-        totalPage:{},
+        showedArticles: [],
+        pageSize: 6,   //每一页展示的文章数
+        totalPage: {},//文章总数或某一类型文章总数
+        kind: '',     //文章类型的名称
+        pageNo: 1,    //当前页面索引值,初始化为1(在created时,调用值为1)
       }
     },
     components: {
@@ -72,48 +73,56 @@
       APages,
     },
     methods: {
-      async getAllArticle() {
+      async getAllArticle(pageNo) {
         await request({
           method: 'post',
           url: '/passage/listAllByPage',
-        }).then(({
-          data: res
-        }) => {
-          console.log(res);
-          this.totalPage = res.data.total;
-          this.$set(this, 'Articles', res.data.records);
-          //console.log(this.Articles);
-        })
-      },
-      async getKindArticle(val) {
-        await request({
-          methods: 'post',
-          url: '/passage/listPassageByLei',
           params: {
-            passageLei: val
+            pageNo: pageNo
           }
         }).then(({
           data: res
         }) => {
-          //console.log(res);
-          this.totalPage = res.data.length;
-          this.$set(this, 'Articles', res.data);
-          //console.log(this.Articles);
-          //console.log(this.totalPage)
+          this.totalPage = res.data.total;
+          this.$set(this, 'Articles', res.data.records);
+          this.kind = 'all';
+        })
+      },
+      async getKindArticle(kinds) {
+        await request({
+          methods: 'post',
+          url: '/passage/listPassageByLei',
+          params: {
+            passageLei: kinds
+          }
+        }).then(({
+          data: res
+        }) => {
+          this.totalPage = res.data.length; //获取本类型所有文章数
+          this.$set(this, 'Articles', res.data); //将所有文章存入Articles数组
+          this.Articles = this.Articles.slice((this.pageNo - 1) * this.pageSize, this.pageNo * this.pageSize); //根据当前页面(pageNo)，截取要展示的数组
         })
       },
       changeKind(val) {
-        //console.log(val)
+        this.pageNo = 1; //每次切换文章类型时，把初始页面数设置1
         if (val == '全部') {
-          this.getAllArticle();
+          this.getAllArticle(this.pageNo);
         } else {
-          this.getKindArticle(val);
-          //console.log(val);
+          this.kind = val;
+          this.getKindArticle(this.kind);
         }
-      }
+      },
+      changePage(val) {
+        this.pageNo = val;  //保存传递的页面索引值
+        if (this.kind == 'all') {
+          this.getAllArticle(val);
+        } else {
+          this.getKindArticle(this.kind)
+        }
+      },
     },
     created() {
-      this.getAllArticle();
+      this.getAllArticle(this.pageNo);
     },
   }
 </script>
@@ -264,7 +273,7 @@
     top: 20px;
   }
 
-  #pages{
+  #pages {
     position: relative;
     height: 100px;
     width: 900px;
