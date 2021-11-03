@@ -109,7 +109,7 @@
         this.comName = name;
       },
       isLogin() {
-        console.log(this.cookie.getCookie('userName'));
+        //console.log(this.cookie.getCookie('userName'));
         if (this.cookie.getCookie('userName') != null) {
           this.isLog = true;
         } else {

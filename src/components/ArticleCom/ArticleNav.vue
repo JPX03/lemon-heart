@@ -4,11 +4,8 @@
             <el-tabs v-model="activeName" @tab-click="handleClick">
                 <el-tab-pane label="全部" name="first"></el-tab-pane>
                 <el-tab-pane label="心理科普" name="second"></el-tab-pane>
-                <el-tab-pane label="人际关系" name="third"></el-tab-pane>
-                <el-tab-pane label="自我情绪" name="fourth"></el-tab-pane>
-                <el-tab-pane label="恋爱关系" name="fifth"></el-tab-pane>
-                <el-tab-pane label="学业工作" name="sixth"></el-tab-pane>
-                <el-tab-pane label="家庭关系" name="seventh"></el-tab-pane>
+                <el-tab-pane label="家庭关系" name="third"></el-tab-pane>
+                <el-tab-pane label="话题" name="fourth"></el-tab-pane>
             </el-tabs>
         </template>
     </div>
@@ -23,8 +20,9 @@
             };
         },
         methods: {
-            handleClick(tab, event) {
-                console.log(tab, event);
+            handleClick(tab) {
+                this.$emit('changeKind',tab._props.label)
+                //console.log(tab._props.label);
             }
         }
     }

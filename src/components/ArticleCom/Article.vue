@@ -37,31 +37,39 @@
         </div>
       </div>
     </div>
-    <ArticleNav id="ArticleNav"></ArticleNav>
+    <ArticleNav id="ArticleNav" @changeKind='changeKind'></ArticleNav>
     <div id="ArticleListContainer">
-      <router-link :to="'/Article/'+ item.id" v-for="item in allArticle" :key="item.id">
+      <router-link :to="'/Article/'+ item.id" v-for="item in Articles" :key="item.id">
         <ArticleList :imgSrc='item.passageImg' :title='item.passageTitle' :text="item.passageSmallTitle"
           :kind='item.passageLei'></ArticleList>
       </router-link>
     </div>
+    <APages id="pages" :totalPage='totalPage'></APages>
     <Foot id="foot"></Foot>
+    -->
   </div>
 </template>
 
 <script>
   import ArticleNav from '@/components/ArticleCom/ArticleNav.vue';
   import ArticleList from '@/components/ArticleCom/ArticleList.vue'
+  import APages from '@/components/ArticleCom/APages.vue'
   import request from '@/utils/request.js'
   export default {
     name: "Article",
     data() {
       return {
-        allArticle: [],
+        Articles: [],
+        showedArticles:[],
+        pageNum: 1, 
+        pageSize: 6,
+        totalPage:{},
       }
     },
     components: {
       ArticleNav,
       ArticleList,
+      APages,
     },
     methods: {
       async getAllArticle() {
@@ -71,9 +79,37 @@
         }).then(({
           data: res
         }) => {
-          this.$set(this, 'allArticle', res.data.records);
-          console.log(this.allArticle);
+          console.log(res);
+          this.totalPage = res.data.total;
+          this.$set(this, 'Articles', res.data.records);
+          //console.log(this.Articles);
         })
+      },
+      async getKindArticle(val) {
+        await request({
+          methods: 'post',
+          url: '/passage/listPassageByLei',
+          params: {
+            passageLei: val
+          }
+        }).then(({
+          data: res
+        }) => {
+          //console.log(res);
+          this.totalPage = res.data.length;
+          this.$set(this, 'Articles', res.data);
+          //console.log(this.Articles);
+          //console.log(this.totalPage)
+        })
+      },
+      changeKind(val) {
+        //console.log(val)
+        if (val == '全部') {
+          this.getAllArticle();
+        } else {
+          this.getKindArticle(val);
+          //console.log(val);
+        }
       }
     },
     created() {
@@ -228,7 +264,15 @@
     top: 20px;
   }
 
-  #foot{
-    margin-top:300px;
+  #pages{
+    position: relative;
+    height: 100px;
+    width: 900px;
+    left: 245px;
+    top: 170px;
+  }
+
+  #foot {
+    margin-top: 300px;
   }
 </style>

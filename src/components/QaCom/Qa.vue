@@ -42,7 +42,7 @@
           :comNum='item.comment' :likeNum='item.like'></QaArticleList>
       </router-link>
     </div>
-    <Pages id="pages" @changePage='changePage'></Pages>
+    <QaPages id="pages" @changePage='changePage' :totalPage='totalPage'></QaPages>
     <Foot id="foot"></Foot>
   </div>
 
@@ -50,13 +50,13 @@
 
 <script>
   import request from '@/utils/request.js'
-  import Pages from '@/components/QaCom/Pages.vue'
+  import QaPages from '@/components/QaCom/QaPages.vue'
   import QaArticleList from '@/components/QaCom/QaArticleList.vue'
   import ToAsk from '@/components/QaCom/ToAsk.vue'
   export default {
     name: 'Qa',
     components: {
-      Pages,
+      QaPages,
       QaArticleList,
       ToAsk,
     },
@@ -67,6 +67,7 @@
         qas: [],
         page: 0,
         isReady: false,
+        totalPage:{},
       }
     },
 
@@ -82,6 +83,8 @@
           data: res
         }) => {
           this.$set(this, 'text', res.data.records);
+          this.totalPage = res.data.total;
+          console.log(this.totalPage);
         })
       },
       async getArticle2(val) {
@@ -95,6 +98,7 @@
           data: res
         }) => {
           this.$set(this, 'qas', res.data.records);
+          this.totalPage = res.data.total;
           for (const item of this.qas) {
             item.questionContent = item.questionContent.slice(0, 80) + "……";
           }
