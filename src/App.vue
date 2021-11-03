@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!--导航栏-->
     <div class="container" :style="{'background':containerBgc}">
       <el-row :gutter="10">
         <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
@@ -53,15 +54,17 @@
         </el-col>
       </el-row>
     </div>
+    <!-- -->
     <router-view></router-view>
     <component :is='comName' class="regPage" v-show="isVisible" :isVisible="isVisible" @dialogVisibleEvent="showDialog"
-      @dialogNameEvent='showName' @logSuccess='logSuccess'></component>
+      @dialogNameEvent='showName' @logSuccess='logSuccess'>
+    </component>
   </div>
 </template>
 
 <script>
   import Article from '@/components/ArticleCom/Article.vue'
-  import Book from '@/components/Book.vue'
+  import Book from '@/components/BookCom/Book.vue'
   import Login from '@/components/Login.vue'
   import Qa from '@/components/QaCom/Qa.vue'
   import Register from '@/components/Register.vue'

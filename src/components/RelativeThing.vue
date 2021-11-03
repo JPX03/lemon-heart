@@ -2,9 +2,10 @@
     <div id="container">
         <div id="line"></div>
         <div id="title">{{block1}}</div>
-        <div id="qes1">{{block2}}</div>
-        <div id="qes2">{{block3}}</div>
-        <div id="qes3">{{block4}}</div>
+        <div id="text1">{{block2}}</div>
+        <div id="text2">{{block3}}</div>
+        <div id="text3">{{block4}}</div>
+        <div id="text4">{{block5}}</div>
     </div>
 </template>
 
@@ -16,6 +17,7 @@
             block2: {},
             block3: {},
             block4: {},
+            block5: {},
         }
     }
 </script>
@@ -43,7 +45,7 @@
         font-size: 24px;
     }
 
-    #qes1 {
+    #text1 {
         position: absolute;
         left: 24px;
         top: 70px;
@@ -55,7 +57,7 @@
         line-height: 130.799997%;
     }
 
-    #qes2 {
+    #text2 {
         position: absolute;
         left: 24px;
         top: 160px;
@@ -67,10 +69,22 @@
         line-height: 130.799997%;
     }
 
-    #qes3 {
+    #text3 {
         position: absolute;
         left: 24px;
         top: 250px;
+        width: 317px;
+        height: 48px;
+        color: rgba(0, 0, 0, 1);
+        font-family: FZBaoSong-Z04S;
+        font-size: 18px;
+        line-height: 130.799997%;
+    }
+
+    #text4 {
+        position: absolute;
+        left: 24px;
+        top: 340px;
         width: 317px;
         height: 48px;
         color: rgba(0, 0, 0, 1);

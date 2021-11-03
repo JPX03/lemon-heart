@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import RelativeThing from '@/components/QaCom/RelativeThing.vue'
+  import RelativeThing from '@/components/RelativeThing.vue'
   import request from '@/utils/request.js'
   export default {
     name: 'PublishQa',

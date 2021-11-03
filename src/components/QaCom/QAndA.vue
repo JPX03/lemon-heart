@@ -20,7 +20,7 @@
   import Aquestion from '@/components/QaCom/Aqustion.vue'
   import Aans from '@/components/QaCom/Aans.vue'
   import ToAsk from '@/components/QaCom/ToAsk.vue'
-  import RelativeThing from '@/components/QaCom/RelativeThing.vue'
+  import RelativeThing from '@/components/RelativeThing.vue'
 
   export default {
     name: 'QAndA',
