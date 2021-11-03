@@ -42,7 +42,7 @@
           :comNum='item.comment' :likeNum='item.like'></QaArticleList>
       </router-link>
     </div>
-    <QaPages id="pages" @changePage='changePage' :totalPage='totalPage'></QaPages>
+    <Paging id="pages" @changePage='changePage' :totalPage='totalPage' :pageSize='pageSize' :pageNo='pageNo'></Paging>
     <Foot id="foot"></Foot>
   </div>
 
@@ -50,13 +50,13 @@
 
 <script>
   import request from '@/utils/request.js'
-  import QaPages from '@/components/QaCom/QaPages.vue'
+  import Paging from '@/components/Paging.vue'
   import QaArticleList from '@/components/QaCom/QaArticleList.vue'
   import ToAsk from '@/components/QaCom/ToAsk.vue'
   export default {
     name: 'Qa',
     components: {
-      QaPages,
+      Paging,
       QaArticleList,
       ToAsk,
     },
@@ -65,9 +65,10 @@
       return {
         text: [],
         qas: [],
-        page: 0,
         isReady: false,
         totalPage:{},
+        pageSize:6,
+        pageNo:1,
       }
     },
 
@@ -105,6 +106,7 @@
         })
       },
       changePage(val) {
+        this.pageNo = val;
         this.getQuestion2(val);
       }
     },

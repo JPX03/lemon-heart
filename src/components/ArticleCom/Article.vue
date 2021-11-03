@@ -44,7 +44,7 @@
           :kind='item.passageLei'></ArticleList>
       </router-link>
     </div>
-    <APages id="pages" :totalPage='totalPage' @changePage='changePage' :pageSize='pageSize' :pageNo='pageNo'></APages>
+    <Paging id="pages" :totalPage='totalPage' @changePage='changePage' :pageSize='pageSize' :pageNo='pageNo'></Paging>
     <Foot id="foot"></Foot>
     -->
   </div>
@@ -52,9 +52,9 @@
 
 <script>
   import ArticleNav from '@/components/ArticleCom/ArticleNav.vue';
-  import ArticleList from '@/components/ArticleCom/ArticleList.vue'
-  import APages from '@/components/ArticleCom/APages.vue'
-  import request from '@/utils/request.js'
+  import ArticleList from '@/components/ArticleCom/ArticleList.vue';
+  import Paging from '@/components/Paging.vue';
+  import request from '@/utils/request.js';
   export default {
     name: "Article",
     data() {
@@ -70,7 +70,7 @@
     components: {
       ArticleNav,
       ArticleList,
-      APages,
+      Paging,
     },
     methods: {
       async getAllArticle(pageNo) {
