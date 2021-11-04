@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="qContainer">
-      <Aquestion :title="qInfor.questionTitile" :text="qInfor.questionContent" :date='qInfor.questionTime'
+      <Aquestion :title="qInfor.questionTitile" :name="qInfor.questionUserName" :text="qInfor.questionContent" :date='qInfor.questionTime'
         :likeNum='qInfor.like' :questionId="qInfor.id"></Aquestion>
     </div>
     <div id="aTitle">所有解答</div>
@@ -42,8 +42,8 @@
       }
     },
     methods: {
-      async getQ() {
-        await request({
+      getQ() {
+        request({
           method: 'post',
           url: '/question/oneQuesition',
           params: {
@@ -56,8 +56,8 @@
           console.log(this.qInfor);
         })
       },
-      async getAns() {
-        await request({
+      getAns() {
+        request({
           method: 'post',
           url: '/answer/showAnswersOfOneQuestion',
           params: {

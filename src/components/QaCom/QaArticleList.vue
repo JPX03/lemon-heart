@@ -30,12 +30,9 @@
 <style lang="less" scoped>
     #divContainer {
         position: relative;
-        top: 0px;
         height: 243px;
         width: 100%;
         color: rgba(0, 0, 0, 1);
-        margin-top: 0px;
-        margin-bottom: 0px;
     }
 
     #line3 {

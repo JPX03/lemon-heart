@@ -87,7 +87,7 @@
 
     methods: {
       changeColor() {
-        if (this.path == '/Home') {
+        if (this.path == '/Home' || this.path == '/UserPage') {
           this.containerBgc = 'rgba(177, 243, 243, 1)';
           this.regBgc = 'rgba(255, 255, 255, 1)';
           this.regColor = 'rgba(71, 71, 71, 1)';
@@ -112,7 +112,6 @@
         this.comName = name;
       },
       isLogin() {
-        //console.log(this.cookie.getCookie('userName'));
         if (this.cookie.getCookie('userName') != null) {
           this.isLog = true;
         } else {

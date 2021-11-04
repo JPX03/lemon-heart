@@ -80,7 +80,6 @@
         name: 'Home',
     }
 </script>
-
 <style lang="less" scoped>
     .lunbo {
         width: 1920px;

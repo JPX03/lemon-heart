@@ -1,21 +1,24 @@
 <template>
-    <div id="container">
-        <div id='category'>精彩文章>{{Article.passageLei}}</div>
-        <div id="title">{{Article.passageTitle}}</div>
-        <div id="like1">{{Article.passageLike}}
-            <img src="@/assets/pictures/like.png" id="img0">
-        </div>
-        <img :src='imgSrc' id="img1">
-        <div id="content" v-for="item in Article.passageContent" :key="item.id">{{item}}</div>
-        <div class="hoverIt">
-            <div id="like2" @click="likeIt">
-                <img src="@/assets/pictures/like.png" id="img2">
-                <div id="likeNum">{{Article.passageLike}}</div>
+    <div>
+        <div id="container">
+            <div id='category'>精彩文章>{{Article.passageLei}}</div>
+            <div id="title">{{Article.passageTitle}}</div>
+            <div id="like1">{{Article.passageLike}}
+                <img src="@/assets/pictures/like.png" id="img0">
             </div>
+            <img :src='imgSrc' id="img1">
+            <div id="content" v-for="item in Article.passageContent" :key="item.id">{{item}}</div>
+            <div class="hoverIt">
+                <div id="like2" @click="likeIt">
+                    <img src="@/assets/pictures/like.png" id="img2">
+                    <div id="likeNum">{{Article.passageLike}}</div>
+                </div>
+            </div>
+            <div id='blank'></div>
+            <RelativeThing id="relative" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
+                :block5='block5'></RelativeThing>
         </div>
-        <div id='blank'></div>
-        <RelativeThing id="relative" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
-            :block5='block5'></RelativeThing>
+        <Foot></Foot>
     </div>
 </template>
 
@@ -46,7 +49,7 @@
             RelativeThing,
         },
         methods: {
-            likeIt(){
+            likeIt() {
                 alert('点赞');
             },
             getArticle() {
@@ -123,9 +126,12 @@
     }
 
     #img1 {
-        margin-top: 24px;
+        position: relative;
+        left: 0px;
         width: 877px;
         height: 352px;
+        top: -20px;
+        bottom: 30px;
     }
 
     #content {
@@ -176,7 +182,7 @@
         line-height: 150%;
     }
 
-    #blank{
+    #blank {
         height: 260px;
     }
 </style>

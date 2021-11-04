@@ -2,7 +2,7 @@
   <div id="container">
     <div id='title'>{{title}}</div>
     <img src="@/assets/pictures/infoHead.png" id="img1">
-    <div id="name">name</div>
+    <div id="name">{{name}}</div>
     <div id="date">{{date}}</div>
     <div id="text">{{text}}</div>
     <div class="hoverIt">
@@ -40,6 +40,7 @@
       text: {},
       likeNum: {},
       questionId: {},
+      name:{},
     },
     methods: {
       likeIt() {
@@ -51,8 +52,8 @@
       cancle() {
         this.isAnsing = false;
       },
-      async publish() {
-        await request({
+      publish() {
+        request({
           method: 'post',
           url: '/answer/sendAnswer',
           params: {
@@ -93,6 +94,7 @@
 
   #img1 {
     position: absolute;
+    left: 10px;
     top: 60px;
     width: 28px;
     height: 28px;

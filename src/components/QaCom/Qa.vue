@@ -73,8 +73,8 @@
     },
 
     methods: {
-      async getQuestion1() {
-        await request({
+      getQuestion1() {
+        request({
           method: 'post',
           url: '/question/listQuestionByPage',
           params: {
@@ -88,8 +88,8 @@
           console.log(this.totalPage);
         })
       },
-      async getQuestion2(val) {
-        await request({
+      getQuestion2(val) {
+        request({
           method: 'post',
           url: '/question/listQuestionByPage',
           params: {

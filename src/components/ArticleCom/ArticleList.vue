@@ -24,9 +24,6 @@
         width: 100%px;
         height: 262px;
         position: relative;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        top: 0px;
     }
 
     img {

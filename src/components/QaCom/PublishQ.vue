@@ -43,11 +43,11 @@
           url:'/question/sendQuestion',
           params:{
             questionUid : this.cookie.getCookie('userId'),
+            questionUserName: this.cookie.getCookie('userName'),
             questionTitile : this.askTitle,
             questionContent : this.askContent,
           }
         }).then((response)=>{
-
           if(response.data.status == true){
             alert('发布成功！')
             this.askTitle='';
