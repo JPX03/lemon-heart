@@ -58,9 +58,9 @@
         kind: '', //文章类型的名称
         pageNo: 1, //当前页面索引值,初始化为1(在created时,调用值为1)
         block1: '精彩问答',
-        block2: '我该怎么接纳孤独，享受孤独，更好地与它相处？',
-        block3: '我该怎么接纳孤独，享受孤独，更好地与它相处？',
-        block4: '我该怎么接纳孤独，享受孤独，更好地与它相处？',
+        block2: '',
+        block3: '',
+        block4: '',
         block5: '推荐图书',
         block6: '《被讨厌的勇气》太在意别人的看法？个体心理学创始者阿德勒带你走出自卑与困境',
         block7: '《心流》做事老分心？积极心理学奠基人之一米哈里让你全身心投入事情中',
@@ -87,8 +87,8 @@
       ToTestBlock,
     },
     methods: {
-      async getAllArticle(pageNo) {
-        await request({
+      getAllArticle(pageNo) {
+        request({
           method: 'post',
           url: '/passage/listAllByPage',
           params: {
@@ -102,8 +102,8 @@
           this.kind = 'all';
         })
       },
-      async getKindArticle(kinds) {
-        await request({
+      getKindArticle(kinds) {
+        request({
           methods: 'post',
           url: '/passage/listPassageByLei',
           params: {
@@ -116,6 +116,19 @@
           this.$set(this, 'Articles', res.data); //将所有文章存入Articles数组
           this.Articles = this.Articles.slice((this.pageNo - 1) * this.pageSize, this.pageNo * this
             .pageSize); //根据当前页面(pageNo)，截取要展示的数组
+        })
+      },
+      getThreeArticle() {
+        request({
+          methods: 'post',
+          url: '/question/listRandomThree',
+        }).then(({
+          data: res
+        }) => {
+          this.block2=res.data[0].questionTitile;
+          this.block3=res.data[1].questionTitile;
+          this.block4=res.data[2].questionTitile;
+
         })
       },
       changeKind(val) {
@@ -138,6 +151,7 @@
     },
     created() {
       this.getAllArticle(this.pageNo);
+      this.getThreeArticle();
     },
   }
 </script>
@@ -269,5 +283,4 @@
     font-family: PingFang SC;
     font-size: 18px;
   }
-
 </style>
