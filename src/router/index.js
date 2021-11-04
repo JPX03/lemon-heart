@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Article from '@/components/ArticleCom/Article.vue'
 import ArticleDetai from '@/components/ArticleCom/ArticleDetais.vue'
-import Book from '@/components/BookCom/Book.vue'
+import More from '@/components/MoreCom/More.vue'
 import Login from '@/components/Login.vue'
 import Qa from '@/components/QaCom/Qa.vue'
 import Register from '@/components/Register.vue'
@@ -38,8 +38,8 @@ const router = new VueRouter({
       component: ArticleDetai,
     },
     {
-      path: '/Book',
-      component: Book,
+      path: '/More',
+      component: More,
     },
     {
       path: '/Qa',

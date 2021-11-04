@@ -227,9 +227,9 @@
 
   #testContainer {
     position: relative;
-    height: 675px;
+    height: 475px;
     width: 1920px;
-    border: 0.6px solid rgba(0, 0, 0, 1);
+    border-top: 0.6px solid rgba(0, 0, 0, 1);
   }
 
   #img1 {
@@ -282,5 +282,10 @@
     color: rgba(97, 97, 97, 1);
     font-family: PingFang SC;
     font-size: 18px;
+  }
+
+  #foot{
+    position: relative;
+    border-top: 0.6px solid rgba(0, 0, 0, 1);;
   }
 </style>

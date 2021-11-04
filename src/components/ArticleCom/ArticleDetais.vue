@@ -9,9 +9,9 @@
             <img :src='imgSrc' id="img1">
             <div id="content" v-for="item in Article.passageContent" :key="item.id">{{item}}</div>
             <div class="hoverIt">
-                <div id="like2" @click="likeIt">
-                    <img src="@/assets/pictures/like.png" id="img2">
-                    <div id="likeNum">{{Article.passageLike}}</div>
+                <div id="like2" @click="likeIt" :style="{'background':bgc1}">
+                    <img :src="img2Src" id="img2">
+                    <div id="likeNum" :style="{'color':color1}">{{likeNum}}</div>
                 </div>
             </div>
             <div id='blank'></div>
@@ -31,6 +31,8 @@
     import img4 from '@/assets/pictures/think.png'
     import img5 from '@/assets/pictures/mood.png'
     import img6 from '@/assets/pictures/emotion.png'
+    import like1 from '@/assets/pictures/like.png'
+    import like2 from '@/assets/pictures/like2.png'
     export default {
         name: 'ArticleDetai',
         data() {
@@ -43,6 +45,11 @@
                 block3: '解决孤独的根本方法是，你得拥有它',
                 block4: '我该怎么接纳孤独，享受孤独，更好地与它相处？',
                 block5: '你把自己照顾好了，你的世界就好了',
+                likeNum: '',
+                canLike: true,
+                img2Src: like1,
+                bgc1: 'rgba(255, 255, 255, 1)',
+                color1: 'rgba(71, 71, 71, 1)',
             }
         },
         components: {
@@ -50,7 +57,23 @@
         },
         methods: {
             likeIt() {
-                alert('点赞');
+                if (this.canLike) {
+                    request({
+                        method: 'post',
+                        url: '/passage/pressLike',
+                        params: {
+                            id: this.ArticleId,
+                        }
+                    }).then((response => {
+                        this.likeNum = response.data.data;
+                        this.img2Src = like2;
+                        this.bgc1 = 'rgba(71, 71, 71, 1)';
+                        this.color1 = 'rgba(255, 255, 255, 1)';
+                        this.canLike = false;
+                    }))
+                } else {
+                    alert('你已经点过赞了噢~')
+                }
             },
             getArticle() {
                 request({
@@ -76,6 +99,7 @@
                     } else if (this.Article.passageLei == '#婚恋情感') {
                         this.imgSrc = img6;
                     }
+                    this.likeNum = this.Article.passageLike;
                     this.Article.passageLei = '\xa0\xa0' + this.Article.passageLei.slice(1);
                     this.Article.passageCategory = this.Article.passageCategory.slice(1);
                     this.Article.passageContent = this.Article.passageContent.split('。');
@@ -130,14 +154,14 @@
         left: 0px;
         width: 877px;
         height: 352px;
-        top: -20px;
-        bottom: 30px;
+        top: 25px;
+        margin-bottom: 60px;
     }
 
     #content {
         color: rgba(71, 71, 71, 1);
         font-family: PingFang SC;
-        font-size: 18px;
+        font-size: 20px;
         margin-top: 30px;
         margin-bottom: 35px;
     }
@@ -161,7 +185,6 @@
         border-radius: 23.5px;
         border: 0.6px solid rgba(0, 0, 0, 1);
         box-sizing: border-box;
-        background: rgba(255, 255, 255, 1);
     }
 
     #img2 {
@@ -176,7 +199,6 @@
         position: absolute;
         left: 77px;
         top: 6px;
-        color: rgba(71, 71, 71, 1);
         font-family: PingFang SC;
         font-size: 18px;
         line-height: 150%;

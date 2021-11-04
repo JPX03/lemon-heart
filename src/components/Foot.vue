@@ -75,7 +75,6 @@
         width: 1920px;
         height: 480px;
         background-color: rgba(177, 243, 243, 1);
-        ;
         position: relative;
     }
 

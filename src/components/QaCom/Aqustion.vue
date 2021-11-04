@@ -6,9 +6,9 @@
     <div id="date">{{date}}</div>
     <div id="text">{{text}}</div>
     <div class="hoverIt">
-      <div id="like" @click="likeIt">
-        <img id="img2" src="@/assets/pictures/like.png">
-        <div id="likeNum">{{likeNum}}</div>
+      <div id="like" @click="likeIt" :style="{'background':bgc1}">
+        <img id="img2" :src="img2Src">
+        <div id="likeNum" :style="{'color':color1}">{{likeNum}}</div>
       </div>
     </div>
     <div class="hoverIt" v-if="!isAnsing" @click="ansing">
@@ -26,12 +26,17 @@
 
 <script>
   import request from '@/utils/request.js'
-
+  import like1 from '@/assets/pictures/like.png'
+  import like2 from '@/assets/pictures/like2.png'
   export default {
     data() {
       return {
         ansContent: '',
         isAnsing: false,
+        canLike: true,
+        img2Src: like1,
+        bgc1: 'rgba(255, 255, 255, 1)',
+        color1: 'rgba(71, 71, 71, 1)',
       }
     },
     props: {
@@ -40,11 +45,27 @@
       text: {},
       likeNum: {},
       questionId: {},
-      name:{},
+      name: {},
     },
     methods: {
       likeIt() {
-        console.log("点赞")
+        if (this.canLike) {
+          request({
+            method: 'post',
+            url: '/question/pressLike',
+            params: {
+              id: this.questionId,
+            }
+          }).then((response => {
+            this.likeNum = response.data.data;
+            this.img2Src = like2;
+            this.bgc1 = 'rgba(71, 71, 71, 1)';
+            this.color1 = 'rgba(255, 255, 255, 1)';
+            this.canLike = false;
+          }))
+        } else {
+          alert('你已经点过赞了噢~')
+        }
       },
       ansing() {
         this.isAnsing = true;
@@ -137,7 +158,6 @@
     border-radius: 23.5px;
     border: 0.6px solid rgba(0, 0, 0, 1);
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 1);
   }
 
   .hoverIt :hover {
@@ -179,7 +199,6 @@
     position: absolute;
     top: 6px;
     left: 77px;
-    color: rgba(71, 71, 71, 1);
     font-family: PingFang SC;
     font-size: 18px;
     line-height: 150%;

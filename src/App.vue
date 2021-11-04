@@ -33,8 +33,8 @@
           </div>
         </el-col>
         <el-col :xs="4" :sm="2" :md="2" :lg="2" :xl="2">
-          <div class="grid-content bg-purple book">
-            <router-link to='/Book'>心理图书</router-link>
+          <div class="grid-content bg-purple b=more">
+            <router-link to='/More'>更多</router-link>
           </div>
         </el-col>
         <el-col :xs="2" :sm="1" :md="1" :lg="1" :xl="1" id="log">
@@ -64,7 +64,7 @@
 
 <script>
   import Article from '@/components/ArticleCom/Article.vue'
-  import Book from '@/components/BookCom/Book.vue'
+  import More from '@/components/MoreCom/More.vue'
   import Login from '@/components/Login.vue'
   import Qa from '@/components/QaCom/Qa.vue'
   import Register from '@/components/Register.vue'
@@ -87,7 +87,7 @@
 
     methods: {
       changeColor() {
-        if (this.path == '/Home' || this.path == '/UserPage') {
+        if (this.path == '/Home' || this.path == '/UserPage'||this.path=='/Test') {
           this.containerBgc = 'rgba(177, 243, 243, 1)';
           this.regBgc = 'rgba(255, 255, 255, 1)';
           this.regColor = 'rgba(71, 71, 71, 1)';
@@ -136,7 +136,7 @@
 
     components: {
       'Article': Article,
-      'Book': Book,
+      'More': More,
       'Login': Login,
       'Qa': Qa,
       'Register': Register,

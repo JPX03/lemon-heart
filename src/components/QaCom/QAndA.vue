@@ -12,6 +12,7 @@
     </div>
     <ToAsk id="toAsk"></ToAsk>
     <RelativeThing id="relative" :block1='block1' :block2='block2' :block3='block3' :block4='block4'></RelativeThing>
+    <Foot id="foot"></Foot>
   </div>
 </template>
 
@@ -119,5 +120,10 @@
     position: fixed;
     top: 550px;
     left: 1400px;
+  }
+
+  #foot{
+    position: relative;
+    top: 200px;
   }
 </style>

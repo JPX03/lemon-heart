@@ -1,11 +1,15 @@
 <template>
-    <div id="container">
-        <div id="line"></div>
-        <div id="title">{{block1}}</div>
-        <div id="text1">{{block2}}</div>
-        <div id="text2">{{block3}}</div>
-        <div id="text3">{{block4}}</div>
-        <div id="text4">{{block5}}</div>
+    <div class="hoverIt">
+        <div id="container">
+            <div id="line"></div>
+            <div id="title">{{block1}}</div>
+            <!-- <router-link> -->
+                <div id="text1">{{block2}}</div>
+            <!-- </router-link> -->
+            <div id="text2">{{block3}}</div>
+            <div id="text3">{{block4}}</div>
+            <div id="text4">{{block5}}</div>
+        </div>
     </div>
 </template>
 
@@ -23,13 +27,17 @@
 </script>
 
 <style lang="less" scoped>
+    .hoverIt :hover {
+        cursor: pointer;
+    }
+
     #container {
         position: relative;
     }
 
     #line {
         position: absolute;
-        top:0px;
+        top: 0px;
         width: 0.6px;
         height: 325px;
         background-color: rgba(0, 0, 0, 1);
