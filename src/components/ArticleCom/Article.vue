@@ -36,7 +36,6 @@
       </div>
     </div>
     <Foot id="foot"></Foot>
-    -->
   </div>
 </template>
 

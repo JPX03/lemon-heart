@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Article from '@/components/ArticleCom/Article.vue'
+import ArticleDetai from '@/components/ArticleCom/ArticleDetais.vue'
 import Book from '@/components/BookCom/Book.vue'
 import Login from '@/components/Login.vue'
 import Qa from '@/components/QaCom/Qa.vue'
@@ -31,6 +32,10 @@ const router = new VueRouter({
     {
       path: '/Article',
       component: Article,
+    },
+    {
+      path: '/Article/:id',
+      component: ArticleDetai,
     },
     {
       path: '/Book',

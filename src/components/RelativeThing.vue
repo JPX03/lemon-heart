@@ -29,8 +29,9 @@
 
     #line {
         position: absolute;
+        top:0px;
         width: 0.6px;
-        height: 315px;
+        height: 325px;
         background-color: rgba(0, 0, 0, 1);
     }
 
@@ -48,7 +49,7 @@
     #text1 {
         position: absolute;
         left: 24px;
-        top: 70px;
+        top: 65px;
         width: 317px;
         height: 48px;
         color: rgba(0, 0, 0, 1);
@@ -60,7 +61,7 @@
     #text2 {
         position: absolute;
         left: 24px;
-        top: 160px;
+        top: 145px;
         width: 317px;
         height: 48px;
         color: rgba(0, 0, 0, 1);
@@ -72,7 +73,7 @@
     #text3 {
         position: absolute;
         left: 24px;
-        top: 250px;
+        top: 230px;
         width: 317px;
         height: 48px;
         color: rgba(0, 0, 0, 1);
@@ -84,7 +85,7 @@
     #text4 {
         position: absolute;
         left: 24px;
-        top: 340px;
+        top: 315px;
         width: 317px;
         height: 48px;
         color: rgba(0, 0, 0, 1);
