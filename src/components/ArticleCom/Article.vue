@@ -213,7 +213,7 @@
     top: 0px;
     left: 260px;
     margin-bottom: 20px;
-    width: 1000px;
+    width: 900px;
     overflow: hidden;
   }
 

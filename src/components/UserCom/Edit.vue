@@ -4,27 +4,47 @@
         <div id="close" @click="close"><i class="el-icon-close"></i></div>
         <div id="title1">柠檬心理</div>
         <div id="title2">编辑昵称</div>
-        <input id="inp" type="text" placeholder="昵称" v-model="userName">
+        <input id="inp" type="text" placeholder="昵称" v-model="newUserName">
         <div id="wrong" v-show="isWrong">错误信息提醒:{{}}</div>
         <div id="sure" @click="sure">确定</div>
     </div>
 </template>
 
 <script>
+    import request from '@/utils/request.js'
     export default {
         name: 'Edit',
         data() {
             return {
-                userName: '',
+                newUserName: '',
                 isWrong: false,
+                userId:this.cookie.getCookie('userId'),
             }
         },
         methods: {
-            close(){
-                this.$emit('closeEdit',false)
+            close() {
+                this.$emit('closeEdit', false)
             },
             sure() {
-                alert("确定");
+                request({
+                    methods: 'post',
+                    url: '/user/updateName',
+                    params: {
+                        id: this.userId,
+                        newName: this.newUserName,
+                    }
+                }).then((response) => {
+                    console.log(response);
+                    let loginInfo = {
+                        userName: this.newUserName,
+                        userId: this.userId,
+                    }
+                    this.cookie.clearCookie('UserName');
+                    this.cookie.clearCookie('UserId');
+                    this.cookie.setCookie(loginInfo, 7);
+                    this.close();
+                    location.reload();
+                });
             }
         }
     }
@@ -90,6 +110,9 @@
         height: 60px;
         border: 0.6px solid rgba(0, 0, 0, 1);
         box-sizing: border-box;
+        color: rgba(0, 0, 0, 1);
+        font-family: FZBaoSong-Z04S;
+        font-size: 18px;
     }
 
     #wrong {

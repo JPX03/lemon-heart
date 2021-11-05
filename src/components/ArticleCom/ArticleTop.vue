@@ -61,7 +61,7 @@
         position: absolute;
         top: 113.1px;
         left: 291px;
-        width: 144px;
+        width: 160px;
         height: 47.5px;
         /* background: rgba(71, 71, 71, 1); */
         color: rgba(71, 71, 71, 1);
