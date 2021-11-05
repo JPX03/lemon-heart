@@ -1,23 +1,25 @@
 <template>
   <div>
     <ArticleTop id="top"></ArticleTop>
-    <RelativeThing id="relative1" :block1='block1' :block2='block2' :block3='block3' :block4='block4'></RelativeThing>
+    <RelativeThing id="relative1" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
+      :url2='urlA2' :url3='urlA3' :url4='urlA4'></RelativeThing>
     <div id="toAsk">
       <router-link to="/PublishQ">
         <div>去提问></div>
       </router-link>
     </div>
-    <RelativeThing id="relative2" :block1='block5' :block2='block6' :block4='block7'></RelativeThing>
-    <div id="moreBook">
+    <!-- <RelativeThing id="relative2" :block1='block5' :block2='block6' :block4='block7'
+      :url2='urlB2' :url4='urlB4'></RelativeThing> -->
+    <!-- <div id="moreBook">
       <router-link to='/Book'>
         <div>更多></div>
       </router-link>
-    </div>
+    </div> -->
     <ArticleNav id="ArticleNav" @changeKind='changeKind'></ArticleNav>
     <div id="ArticleListContainer">
       <router-link :to="'/Article/'+ item.id" v-for="item in Articles" :key="item.id">
         <ArticleList :imgSrc='item.passageImg' :title='item.passageTitle' :text="item.passageSmallTitle"
-          :kind='item.passageLei'></ArticleList>
+          :kind='item.passageCategory'></ArticleList>
       </router-link>
     </div>
     <Paging id="pages" :totalPage='totalPage' @changePage='changePage' :pageSize='pageSize' :pageNo='pageNo'></Paging>
@@ -61,9 +63,14 @@
         block2: '',
         block3: '',
         block4: '',
-        block5: '推荐图书',
-        block6: '《被讨厌的勇气》太在意别人的看法？个体心理学创始者阿德勒带你走出自卑与困境',
-        block7: '《心流》做事老分心？积极心理学奠基人之一米哈里让你全身心投入事情中',
+        urlA2:'',
+        urlA3:'',
+        urlA4:'',
+        // block5: '推荐图书',
+        // block6: '《被讨厌的勇气》太在意别人的看法？个体心理学创始者阿德勒带你走出自卑与困境',
+        // block7: '《心流》做事老分心？积极心理学奠基人之一米哈里让你全身心投入事情中',
+        // urlB2:'',
+        // urlB4:'',
         url1: '/Test1',
         text1: '人',
         text2: '格测试',
@@ -99,6 +106,7 @@
         }) => {
           this.totalPage = res.data.total;
           this.$set(this, 'Articles', res.data.records);
+          console.log(this.Articles)
           this.kind = 'all';
         })
       },
@@ -114,6 +122,7 @@
         }) => {
           this.totalPage = res.data.length; //获取本类型所有文章数
           this.$set(this, 'Articles', res.data); //将所有文章存入Articles数组
+          console.log(this.Articles);
           this.Articles = this.Articles.slice((this.pageNo - 1) * this.pageSize, this.pageNo * this
             .pageSize); //根据当前页面(pageNo)，截取要展示的数组
         })
@@ -125,6 +134,10 @@
         }).then(({
           data: res
         }) => {
+          console.log(res);
+          this.urlA2='/Qa/'+`${res.data[0].id}`;
+          this.urlA3='/Qa/'+`${res.data[1].id}`;
+          this.urlA4='/Qa/'+`${res.data[2].id}`;
           this.block2=res.data[0].questionTitile;
           this.block3=res.data[1].questionTitile;
           this.block4=res.data[2].questionTitile;
@@ -158,19 +171,21 @@
 
 <style scoped>
   #relative1 {
-    position: relative;
+    position: sticky;
     top: 100px;
     left: 1400px;
     width: 200px;
+    z-index: 99;
   }
 
 
   #toAsk {
-    position: relative;
+    position: sticky;
     top: 130px;
     left: 1650px;
     width: 65px;
     overflow: hidden;
+    z-index: 99;
   }
 
   #toAsk :hover {
@@ -184,15 +199,15 @@
   }
 
   #relative2 {
-    position: relative;
-    top: 500px;
+    position: sticky;
+    top: 800px;
     left: 1400px;
     width: 200px;
   }
 
   #moreBook {
-    position: relative;
-    top: 530px;
+    position: sticky;
+    top: 800px;
     left: 1670px;
     width: 50px;
     overflow: hidden;

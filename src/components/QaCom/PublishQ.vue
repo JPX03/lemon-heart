@@ -10,7 +10,8 @@
       <div id="pub" @click="pub">
         <div id="pubtext">发布</div>
       </div>
-      <RelativeThing id="block" :block1='block1' :block2='block2' :block3='block3' :block4='block4'></RelativeThing>
+      <RelativeThing id="relative" :block1='block1' :block2='block2' :block3='block3' :block4='block4' :url2='url2'
+        :url3='url3' :url4='url4'></RelativeThing>
     </div>
   </div>
 </template>
@@ -25,9 +26,12 @@
         askTitle: '',
         askContent: '',
         block1: '参考问题',
-        block2: '我该怎么接纳孤独，享受孤独，更好地与它相处？',
-        block3: '有烦恼不能说出来，为什么我老憋着事情在肚子里呢？',
-        block4: '社交恐惧，不想接电话，朋友觉得我很不会做人？',
+        block2: '',
+        block3: '',
+        block4: '',
+        url2: '',
+        url3: '',
+        url4: '',
       }
     },
     components: {
@@ -38,27 +42,49 @@
         this.$router.go(-1);
       },
       pub() {
+        if (this.askTitle == '' || this.askContent == '') {
+          alert('标题或描述不能为空')
+        } else {
+          request({
+            method: 'post',
+            url: '/question/sendQuestion',
+            params: {
+              questionUid: this.cookie.getCookie('userId'),
+              questionUserName: this.cookie.getCookie('userName'),
+              questionTitile: this.askTitle,
+              questionContent: this.askContent,
+            }
+          }).then((response) => {
+            if (response.data.status == true) {
+              alert('发布成功！')
+              this.askTitle = '';
+              this.askContent = '';
+              this.$router.replace('/Qa');
+              location.reload();
+            } else {
+              alert('发布失败，请重试！')
+            }
+          })
+        }
+      },
+      getThreeQuestion() {
         request({
-          method:'post',
-          url:'/question/sendQuestion',
-          params:{
-            questionUid : this.cookie.getCookie('userId'),
-            questionUserName: this.cookie.getCookie('userName'),
-            questionTitile : this.askTitle,
-            questionContent : this.askContent,
-          }
-        }).then((response)=>{
-          if(response.data.status == true){
-            alert('发布成功！')
-            this.askTitle='';
-            this.askContent='';
-            this.$router.replace('/Qa');
-            location.reload();
-          }else{
-            alert('发布失败，请重试！')
-          }
+          methods: 'post',
+          url: 'question/listRandomThree'
+        }).then(({
+          data: res
+        }) => {
+          this.block2 = res.data[0].questionTitile;
+          this.block3 = res.data[1].questionTitile;
+          this.block4 = res.data[2].questionTitile;
+          this.url2 = '/Qa/' + res.data[0].id;
+          this.url3 = '/Qa/' + res.data[1].id;
+          this.url4 = '/Qa/' + res.data[2].id;
         })
       }
+    },
+    created() {
+      this.getThreeQuestion();
     }
   }
 </script>
@@ -154,7 +180,7 @@
     cursor: pointer;
   }
 
-  #block {
+  #relative {
     position: relative;
     top: 207px;
     left: 1420px;

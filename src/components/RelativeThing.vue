@@ -3,12 +3,18 @@
         <div id="container">
             <div id="line"></div>
             <div id="title">{{block1}}</div>
-            <!-- <router-link> -->
+            <router-link :to='url2'>
                 <div id="text1">{{block2}}</div>
-            <!-- </router-link> -->
-            <div id="text2">{{block3}}</div>
-            <div id="text3">{{block4}}</div>
-            <div id="text4">{{block5}}</div>
+            </router-link>
+            <router-link :to='url3'>
+                <div id="text2">{{block3}}</div>
+            </router-link>
+            <router-link :to='url4'>
+                <div id="text3">{{block4}}</div>
+            </router-link>
+            <router-link :to='url5'>
+                <div id="text4">{{block5}}</div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -18,9 +24,13 @@
         name: 'RelativeThing',
         props: {
             block1: {},
+            url2:'',
             block2: {},
+            url3:'',
             block3: {},
+            url4:'',
             block4: {},
+            url5:'',
             block5: {},
         }
     }
@@ -37,9 +47,9 @@
 
     #line {
         position: absolute;
-        top: 0px;
+        top:7px;
         width: 0.6px;
-        height: 325px;
+        height: 260px;
         background-color: rgba(0, 0, 0, 1);
     }
 
@@ -69,7 +79,7 @@
     #text2 {
         position: absolute;
         left: 24px;
-        top: 145px;
+        top: 130px;
         width: 317px;
         height: 48px;
         color: rgba(0, 0, 0, 1);
@@ -81,7 +91,7 @@
     #text3 {
         position: absolute;
         left: 24px;
-        top: 230px;
+        top: 195px;
         width: 317px;
         height: 48px;
         color: rgba(0, 0, 0, 1);
@@ -93,7 +103,7 @@
     #text4 {
         position: absolute;
         left: 24px;
-        top: 315px;
+        top: 260px;
         width: 317px;
         height: 48px;
         color: rgba(0, 0, 0, 1);

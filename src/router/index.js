@@ -16,6 +16,7 @@ import Test2 from '@/components/TestCom/Test2.vue'
 import Test3 from '@/components/TestCom/Test3.vue'
 import Test4 from '@/components/TestCom/Test4.vue'
 import Test5 from '@/components/TestCom/Test5.vue'
+import cookie from '@/utils/cookie.js'
 
 Vue.use(VueRouter)
 
@@ -89,7 +90,21 @@ const router = new VueRouter({
       path: '/UserPage',
       component: UserPage,
     }
-  ]
+  ],
+  
+});
+
+// 路由守卫
+router.beforeEach(function (to, from, next) {
+  if (to.path == '/PublishQ') {
+    if (!cookie.getCookie('userName')) {
+      alert('请先登录');
+    } else {
+      next();
+    }
+  }else{
+    next();
+  }
 })
 
-export default router
+export default router;

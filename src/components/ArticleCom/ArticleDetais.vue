@@ -16,9 +16,9 @@
             </div>
             <div id='blank'></div>
             <RelativeThing id="relative" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
-                :block5='block5'></RelativeThing>
+                :block5='block5' :url2='url2' :url3='url3' :url4='url4' :url5='url5'></RelativeThing>
         </div>
-        <Foot></Foot>
+        <Foot id="foot"></Foot>
     </div>
 </template>
 
@@ -41,10 +41,14 @@
                 Article: {},
                 imgSrc: '',
                 block1: '相关文章',
-                block2: '我该怎么接纳孤独，享受孤独，更好地与它相处？',
+                block2: '',
                 block3: '解决孤独的根本方法是，你得拥有它',
                 block4: '我该怎么接纳孤独，享受孤独，更好地与它相处？',
                 block5: '你把自己照顾好了，你的世界就好了',
+                url2: '',
+                url3: '',
+                url4: '',
+                url5: '',
                 likeNum: '',
                 canLike: true,
                 img2Src: like1,
@@ -57,7 +61,9 @@
         },
         methods: {
             likeIt() {
-                if (this.canLike) {
+                if (!this.cookie.getCookie('userName')) {
+                    alert('请先登录');
+                } else if (this.canLike) {
                     request({
                         method: 'post',
                         url: '/passage/pressLike',
@@ -103,12 +109,39 @@
                     this.Article.passageLei = '\xa0\xa0' + this.Article.passageLei.slice(1);
                     this.Article.passageCategory = this.Article.passageCategory.slice(1);
                     this.Article.passageContent = this.Article.passageContent.split('。');
-                    console.log(this.Article.passageContent);
                 })
             },
+            getThreeArticle() {
+                let num = Math.round(Math.random() * 7 + 1);
+                request({
+                    methods: 'post',
+                    url: '/passage/listAllByPage',
+                    params: {
+                        pageNo: num,
+                        pageSize: 5,
+                    }
+                }).then(({
+                    data: res
+                }) => {
+                    this.block2 = res.data.records[0].passageTitle;
+                    this.url2 = '/Article/' + `${res.data.records[0].id}`;
+                    this.block3 = res.data.records[1].passageTitle;
+                    this.url3 = '/Article/' + `${res.data.records[1].id}`;
+                    this.block4 = res.data.records[2].passageTitle;
+                    this.url4 = '/Article/' + `${res.data.records[2].id}`;
+                    this.block5 = res.data.records[3].passageTitle;
+                    this.url5 = '/Article/' + `${res.data.records[3].id}`;
+                })
+            }
         },
         created() {
             this.getArticle();
+            this.getThreeArticle();
+        },
+        watch: {
+            '$route'(to, from) {
+                location.reload();
+            }
         },
     }
 </script>
@@ -168,7 +201,7 @@
 
     #relative {
         position: fixed;
-        top: 360px;
+        top: 160px;
         left: 1400px;
     }
 
@@ -206,5 +239,10 @@
 
     #blank {
         height: 260px;
+    }
+
+    #foot {
+        margin-top: 170px;
+        border-top: 1px solid black;
     }
 </style>

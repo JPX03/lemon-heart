@@ -49,7 +49,9 @@
     },
     methods: {
       likeIt() {
-        if (this.canLike) {
+        if (!this.cookie.getCookie('userName')) {
+          alert('请先登录')
+        } else if (this.canLike) {
           request({
             method: 'post',
             url: '/question/pressLike',

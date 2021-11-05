@@ -4,7 +4,7 @@
       <div class="top1">
         <img src="@/assets/pictures/qaBgimg.gif">
         <div>
-          <router-link to='Qa/PublishQ' id="ask">
+          <router-link to='/PublishQ' id="ask">
             提问
           </router-link>
         </div>
@@ -302,8 +302,8 @@
   }
 
   #toAsk {
-    position: fixed;
-    top: 350px;
-    right: 450px;
+    position: sticky;
+    margin-left: 1400px;
+    top: 300px;
   }
 </style>
