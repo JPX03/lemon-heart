@@ -83,6 +83,8 @@
   #qContainer {
     margin-top: 120px;
     margin-left: 262px;
+    width: 1658px;
+    overflow: hidden;
   }
 
   #aTitle {
@@ -108,22 +110,26 @@
   #aContainer {
     margin-top: 120px;
     margin-left: 262px;
+    width: 1658px;
+    overflow: hidden;
   }
 
   #toAsk {
-    position: fixed;
-    top: 320px;
+    position:fixed;
+    top: 260px;
     left: 1400px;
+    width: 200px;
   }
 
   #relative{
-    position: fixed;
-    top: 550px;
+    position:fixed;
+    top:560px;
     left: 1400px;
+    width: 200px;
   }
 
   #foot{
-    position: relative;
+    position:relative;
     top: 200px;
   }
 </style>

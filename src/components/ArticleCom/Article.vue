@@ -161,13 +161,16 @@
     position: relative;
     top: 100px;
     left: 1400px;
+    width: 200px;
   }
 
 
   #toAsk {
     position: relative;
     top: 130px;
-    left: 1670px;
+    left: 1650px;
+    width: 65px;
+    overflow: hidden;
   }
 
   #toAsk :hover {
@@ -184,12 +187,15 @@
     position: relative;
     top: 500px;
     left: 1400px;
+    width: 200px;
   }
 
   #moreBook {
     position: relative;
     top: 530px;
     left: 1670px;
+    width: 50px;
+    overflow: hidden;
   }
 
   #moreBook :hover {
@@ -207,6 +213,8 @@
     top: 0px;
     left: 260px;
     margin-bottom: 20px;
+    width: 1000px;
+    overflow: hidden;
   }
 
   #ArticleListContainer {

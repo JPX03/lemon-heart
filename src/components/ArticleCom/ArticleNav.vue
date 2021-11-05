@@ -1,7 +1,6 @@
 <template>
     <div id="container1">
-        <template id="container2">
-            <el-tabs v-model="activeName" @tab-click="handleClick">
+            <el-tabs v-model="activeName" @tab-click="handleClick" >
                 <el-tab-pane label="全部" name="first"></el-tab-pane>
                 <el-tab-pane label="心理科普" name="second"></el-tab-pane>
                 <el-tab-pane label="职场技能" name="third"></el-tab-pane>
@@ -10,7 +9,6 @@
                 <el-tab-pane label="自我觉察" name="sixth"></el-tab-pane>
                 <el-tab-pane label="人际社交" name="seventh"></el-tab-pane>
             </el-tabs>
-        </template>
     </div>
 </template>
 

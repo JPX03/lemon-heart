@@ -18,7 +18,6 @@
         },
         data() {
             return {
-                url2: url1,
             }
         },
         props: {

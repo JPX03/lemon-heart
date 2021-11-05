@@ -171,7 +171,7 @@
     position: absolute;
     top: 80px;
     left: 260px;
-    width: 144px;
+    width: 180px;
     height: 47px;
     color: rgba(71, 71, 71, 1);
     font-family: PingFang SC;
@@ -273,7 +273,7 @@
     position: relative;
     top: 150px;
     left: 260px;
-    width: 144px;
+    width: 180px;
     height: 47px;
     color: rgba(71, 71, 71, 1);
     font-family: PingFang SC;
@@ -293,6 +293,7 @@
     position: relative;
     top: 249px;
     left: 250px;
+    width: 500px;
   }
 
   #foot {
@@ -304,6 +305,5 @@
     position: fixed;
     top: 350px;
     right: 450px;
-    ;
   }
 </style>
