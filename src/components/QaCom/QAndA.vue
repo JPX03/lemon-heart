@@ -107,7 +107,6 @@
     margin-top: 120px;
     margin-left: 262px;
     width: 1658px;
-    overflow: hidden;
   }
 
   #aTitle {
