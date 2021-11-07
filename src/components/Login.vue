@@ -79,7 +79,7 @@
               userId:response.data.data.uid,
             }
             // 调用setCookie方法，同时传递需要存储的数据，保存天数
-            this.cookie.setCookie(loginInfo, 7)
+            this.cookie.setCookie(loginInfo, 7);
             this.close();
             alert("登录成功");
             this.$emit('logSuccess', this.cookie.getCookie('userName'))

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='container'>
     <div id="qContainer">
       <Aquestion :title="qInfor.questionTitile" :name="qInfor.questionUserName" :text="qInfor.questionContent"
         :date='qInfor.questionTime' :likeNum='qInfor.like' :questionId="qInfor.id"></Aquestion>
@@ -103,10 +103,14 @@
 </script>
 
 <style lang="less" scoped>
+  #container {
+    width: 1920px;
+  }
+
   #qContainer {
     margin-top: 120px;
     margin-left: 262px;
-    width: 1658px;
+    width: 700px;
   }
 
   #aTitle {
@@ -137,7 +141,7 @@
   }
 
   #toAsk {
-    position: fixed;
+    position: absolute;
     top: 260px;
     left: 1400px;
     width: 200px;
@@ -145,7 +149,7 @@
   }
 
   #relative {
-    position: fixed;
+    position: absolute;
     top: 560px;
     left: 1400px;
     width: 200px;

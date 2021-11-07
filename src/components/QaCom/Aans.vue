@@ -36,12 +36,13 @@
         top: 37px;
         height: 30px;
         width: 35px;
+        left: 0px;
     }
 
     #name {
         position: absolute;
         top: 42px;
-        left: 50px;
+        left: 15px;
         color: rgba(97, 97, 97, 1);
         font-family: PingFang SC;
         font-size: 18px;
@@ -59,11 +60,12 @@
     }
 
     #text {
-        position: absolute;
+        position:relative;
         top:100px;
         color: rgba(97, 97, 97, 1);
         font-family: PingFang SC;
         font-size: 24px;
         line-height: 200%;
+        width: 1020px;
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="containers">
     <ArticleTop id="top"></ArticleTop>
     <RelativeThing id="relative1" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
       :url2='urlA2' :url3='urlA3' :url4='urlA4'></RelativeThing>
@@ -169,11 +169,15 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+  #containers{
+    height: 3500px;
+  }
+  
   #relative1 {
     position: sticky;
     top: 100px;
-    left: 1400px;
+    left: 1350px;
     width: 200px;
     z-index: 99;
   }
@@ -182,7 +186,7 @@
   #toAsk {
     position: sticky;
     top: 130px;
-    left: 1650px;
+    left: 1550px;
     width: 65px;
     overflow: hidden;
     z-index: 99;
@@ -198,7 +202,7 @@
     font-size: 16px;
   }
 
-  #relative2 {
+  /* #relative2 {
     position: sticky;
     top: 800px;
     left: 1400px;
@@ -221,23 +225,25 @@
     color: rgba(97, 97, 97, 1);
     font-family: PingFang SC;
     font-size: 16px;
-  }
+  } */
 
   #ArticleNav {
     position: relative;
-    top: 0px;
+    top: -520px;
     left: 260px;
     margin-bottom: 20px;
     width: 900px;
     overflow: hidden;
   }
 
+
+
   #ArticleListContainer {
     position: relative;
     height: 1700px;
     width: 920px;
     left: 260px;
-    top: 20px;
+    top: -480px;
   }
 
   #pages {
@@ -245,7 +251,7 @@
     height: 100px;
     width: 900px;
     left: 245px;
-    top: 0px;
+    top: -550px;
   }
 
   #testContainer {
@@ -253,6 +259,7 @@
     height: 475px;
     width: 1920px;
     border-top: 0.6px solid rgba(0, 0, 0, 1);
+    top: -500px;
   }
 
   #img1 {
@@ -309,6 +316,7 @@
 
   #foot{
     position: relative;
+    top: -500px;
     border-top: 0.6px solid rgba(0, 0, 0, 1);;
   }
 </style>

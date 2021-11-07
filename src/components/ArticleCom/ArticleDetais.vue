@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="container">
+        <div id="container1">
             <div id='category'>精彩文章>{{Article.passageLei}}</div>
             <div id="title">{{Article.passageTitle}}</div>
             <div id="like1">{{Article.passageLike}}
@@ -18,7 +18,7 @@
             <RelativeThing id="relative" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
                 :block5='block5' :url2='url2' :url3='url3' :url4='url4' :url5='url5'></RelativeThing>
         </div>
-        <Foot id="foot"></Foot>
+        <Foot id="Foot"></Foot>
     </div>
 </template>
 
@@ -147,7 +147,7 @@
 </script>
 
 <style lang="less" scoped>
-    #container {
+    #container1 {
         margin-top: 80px;
         margin-left: 260px;
         position: relative;
@@ -192,6 +192,7 @@
     }
 
     #content {
+        position: relative;
         color: rgba(71, 71, 71, 1);
         font-family: PingFang SC;
         font-size: 20px;
@@ -241,7 +242,7 @@
         height: 260px;
     }
 
-    #foot {
+    #Foot {
         margin-top: 170px;
         border-top: 1px solid black;
     }

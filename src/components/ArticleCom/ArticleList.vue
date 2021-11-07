@@ -47,6 +47,7 @@
         top: 67px;
         left: 286px;
         height: 52px;
+        width: 700px;
         color: rgba(0, 0, 0, 1);
         font-family: PingFangSC-ExtraLight;
         font-size: 20px;

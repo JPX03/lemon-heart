@@ -87,7 +87,7 @@
 
     methods: {
       changeColor() {
-        if (this.path == '/Home' || this.path == '/UserPage'||this.path=='/Test') {
+        if (this.path == '/Home' || this.path == '/UserPage' || this.path == '/Test') {
           this.containerBgc = 'rgba(177, 243, 243, 1)';
           this.regBgc = 'rgba(255, 255, 255, 1)';
           this.regColor = 'rgba(71, 71, 71, 1)';
@@ -131,8 +131,13 @@
       '$route'(to, from) {
         this.path = to.fullPath;
         this.changeColor();
+      },
+      '$route': function (to, from) {
+        document.body.scrollTop = 0
+        document.documentElement.scrollTop = 0
       }
     },
+
 
     components: {
       'Article': Article,

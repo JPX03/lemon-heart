@@ -125,8 +125,8 @@
 
   #name {
     position: absolute;
-    top: 60px;
-    left: 35px;
+    top: 62px;
+    left: 25px;
     color: rgba(97, 97, 97, 1);
     font-family: PingFang SC;
     font-size: 18px;
@@ -135,8 +135,8 @@
 
   #date {
     position: absolute;
-    top: 58px;
-    left: 110px;
+    top: 60px;
+    left: 125px;
     color: rgba(97, 97, 97, 1);
     font-family: PingFang SC;
     font-size: 14px;
@@ -150,6 +150,7 @@
     font-family: PingFang SC;
     font-size: 21px;
     line-height: 193.265629%;
+    width: 1020px;
   }
 
   #like {

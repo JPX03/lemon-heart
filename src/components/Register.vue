@@ -119,17 +119,33 @@
             }
           }).then((response) => {
             if (response.data.status == true) {
-              this.flag1 = true;
-              this.flag2 = false;
-              this.email = '';
-              this.pwd = '';
-              this.ver = '';
-              this.ver2 = '';
-              this.userName = '';
-              this.isShowmes1 = false;
-              this.isShowmes2 = false;
-              this.close();
-              alert('注册成功!')
+              request({
+                method: 'post',
+                url: '/user/login',
+                params: {
+                  userName: this.userName,
+                  userPwd: this.pwd,
+                }
+              }).then((response) => {
+                let loginInfo = {
+                  userName: this.userName,
+                  userId: response.data.data.uid,
+                }
+                // 调用setCookie方法，同时传递需要存储的数据，保存天数
+                this.cookie.setCookie(loginInfo, 7);
+                this.flag1 = true;
+                this.flag2 = false;
+                this.email = '';
+                this.pwd = '';
+                this.ver = '';
+                this.ver2 = '';
+                this.userName = '';
+                this.isShowmes1 = false;
+                this.isShowmes2 = false;
+                this.close();
+                alert('注册成功!')
+                location.reload();
+              })
             } else {
               this.wrongT = '用户名已被注册!请重新输入'
             }

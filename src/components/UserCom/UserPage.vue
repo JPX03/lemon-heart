@@ -93,10 +93,10 @@
 
     #name {
         position: absolute;
-        width: 120px;
+        width: 200px;
         height: 40px;
         top: 280px;
-        left: 890px;
+        left: 850px;
         text-align: center;
         color: rgba(0, 0, 0, 1);
         font-family: FZBaoSong-Z04S;
