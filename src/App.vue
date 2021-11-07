@@ -128,11 +128,9 @@
     },
     //监听url变化
     watch: {
-      '$route'(to, from) {
+      '$route': function (to, from) {
         this.path = to.fullPath;
         this.changeColor();
-      },
-      '$route': function (to, from) {
         document.body.scrollTop = 0
         document.documentElement.scrollTop = 0
       }
