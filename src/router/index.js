@@ -12,6 +12,7 @@ import QAndA from '@/components/QaCom/QAndA.vue'
 import PublishQ from '@/components/QaCom/PublishQ.vue'
 import UserPage from '@/components/UserCom/UserPage.vue'
 import Test1 from '@/components/TestCom/Test1.vue'
+import Test1Result from '@/components/TestCom/Test1Result.vue'
 import Test2 from '@/components/TestCom/Test2.vue'
 import Test3 from '@/components/TestCom/Test3.vue'
 import Test4 from '@/components/TestCom/Test4.vue'
@@ -61,6 +62,10 @@ const router = new VueRouter({
     {
       path: '/Test1',
       component: Test1,
+    },
+    {
+      path:'/Test1Result',
+      component:Test1Result,
     },
     {
       path: '/Test2',
