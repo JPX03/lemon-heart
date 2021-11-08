@@ -71,7 +71,7 @@
   import Test from '@/components/TestCom/Test.vue'
   import Home from '@/components/Home.vue'
   import UserHead from '@/components/UserCom/UserHead.vue'
-
+  import '@/assets/js/heart.js'
   export default {
     data() {
       return {
