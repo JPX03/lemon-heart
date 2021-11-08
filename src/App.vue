@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--导航栏-->
-    <div class="container" :style="{'background':containerBgc}">
+    <div class="navContainer" :style="{'background':containerBgc}">
       <el-row :gutter="10">
         <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
           <div class="grid-content bg-purple">
@@ -151,11 +151,15 @@
 </script>
 
 <style lang='less' scoped>
-  .container {
+  .navContainer {
     width: 1920px;
     height: 80px;
     border-bottom: 0.6px solid rgba(0, 0, 0, 1);
     overflow: hidden;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
   }
 
   a {

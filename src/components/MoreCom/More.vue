@@ -128,13 +128,13 @@
 
   #close {
     position: absolute;
-    z-index: 100;
+    z-index: 1001;
     top: -80px;
     right: 20px;
   }
 
   #mp4 {
-    z-index: 99;
+    z-index: 1000;
     position: absolute;
     top: -81px;
     min-width: 100%;

@@ -1,13 +1,13 @@
 <template>
   <div id="containers">
     <ArticleTop id="top"></ArticleTop>
-    <RelativeThing id="relative1" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
-      :url2='urlA2' :url3='urlA3' :url4='urlA4'></RelativeThing>
     <div id="toAsk">
       <router-link to="/PublishQ">
         <div>去提问></div>
       </router-link>
     </div>
+    <RelativeThing id="relative1" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
+      :url2='urlA2' :url3='urlA3' :url4='urlA4'></RelativeThing>
     <!-- <RelativeThing id="relative2" :block1='block5' :block2='block6' :block4='block7'
       :url2='urlB2' :url4='urlB4'></RelativeThing> -->
     <!-- <div id="moreBook">
@@ -176,7 +176,7 @@
   
   #relative1 {
     position: sticky;
-    top: 100px;
+    top: 80px;
     left: 1350px;
     width: 200px;
     z-index: 99;
@@ -185,7 +185,7 @@
 
   #toAsk {
     position: sticky;
-    top: 130px;
+    top: 90px;
     left: 1550px;
     width: 65px;
     overflow: hidden;

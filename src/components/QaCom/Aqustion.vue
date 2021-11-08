@@ -126,7 +126,7 @@
   #name {
     position: absolute;
     top: 62px;
-    left: 25px;
+    left: -10px;
     color: rgba(97, 97, 97, 1);
     font-family: PingFang SC;
     font-size: 18px;
