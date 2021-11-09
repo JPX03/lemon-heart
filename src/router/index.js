@@ -64,8 +64,8 @@ const router = new VueRouter({
       component: Test1,
     },
     {
-      path:'/Test1Result',
-      component:Test1Result,
+      path: '/Test1Result',
+      component: Test1Result,
     },
     {
       path: '/Test2',
@@ -103,6 +103,8 @@ const router = new VueRouter({
 router.beforeEach(function (to, from, next) {
 
   if (to.path == '/PublishQ' && !cookie.getCookie('userName')) {
+    alert('请先登录');
+  } else if (to.path == '/Test1' && !cookie.getCookie('userName')) {
     alert('请先登录');
   } else if (to.path == '/Test2' || to.path == '/Test3' || to.path == '/Test4' || to.path == '/Test5') {
     alert('功能尚未开放，敬请期待噢！')

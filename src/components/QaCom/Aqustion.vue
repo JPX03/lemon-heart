@@ -76,24 +76,28 @@
         this.isAnsing = false;
       },
       publish() {
-        request({
-          method: 'post',
-          url: '/answer/sendAnswer',
-          params: {
-            questionId: this.questionId,
-            userId: this.cookie.getCookie('userId'),
-            userName: this.cookie.getCookie('userName'),
-            answerContent: this.ansContent,
-          },
-        }).then((response) => {
-          if (response.data.status == true) {
-            alert('发布成功!');
-            this.ansContent = '';
-            location.reload();
-          } else {
-            alert('发布失败!');
-          }
-        })
+        if (!this.cookie.getCookie('userName')) {
+          alert('请先登录')
+        } else {
+          request({
+            method: 'post',
+            url: '/answer/sendAnswer',
+            params: {
+              questionId: this.questionId,
+              userId: this.cookie.getCookie('userId'),
+              userName: this.cookie.getCookie('userName'),
+              answerContent: this.ansContent,
+            },
+          }).then((response) => {
+            if (response.data.status == true) {
+              alert('发布成功!');
+              this.ansContent = '';
+              location.reload();
+            } else {
+              alert('发布失败!');
+            }
+          })
+        }
       },
     },
   }

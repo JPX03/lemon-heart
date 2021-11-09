@@ -5,11 +5,11 @@
         <div id="text2">{{text2}}</div>
         <div id="text3">{{text3}}</div>
         <div class="hoverIt">
-            <div id="btn1">
-                <a :href="details">查看详情</a>
+            <div id="btn1" @mouseenter="changeColor1" @mouseleave="changeColor2" :style="{'background':backColor1}">
+                <a :href="details" :style="{'color':fontColor1}">查看详情</a>
             </div>
-            <div id="btn2">
-                <a :href='buy'>购买</a>
+            <div id="btn2" @mouseenter="changeColor3" @mouseleave="changeColor4" :style="{'background':backColor2}">
+                <a :href='buy' :style="{'color':fontColor2}">购买</a>
             </div>
         </div>
     </div>
@@ -20,16 +20,37 @@
         name: 'BookList',
         data() {
             return {
-
+                backColor1: 'rgba(255,255,255,1)',
+                fontColor1: '',
+                backColor2: 'rgba(255,255,255,1)',
+                fontColor2: '',
             }
         },
         props: {
-            imgSrc: '',
+            imgSrc:'',
             text1: '',
             text2: '',
             text3: '',
             details: '',
             buy: '',
+        },
+        methods: {
+            changeColor1() {
+                this.backColor1 = 'rgba(0,0,0,1)';
+                this.fontColor1 = 'rgba(255,255,255,1)';
+            },
+            changeColor2() {
+                this.backColor1 = 'rgba(255,255,255,1)';
+                this.fontColor1 = 'rgba(71, 71, 71, 1)';
+            },
+            changeColor3() {
+                this.backColor2 = 'rgba(0,0,0,1)';
+                this.fontColor2 = 'rgba(255,255,255,1)';
+            },
+            changeColor4() {
+                this.backColor2 = 'rgba(255,255,255,1)';
+                this.fontColor2 = 'rgba(71, 71, 71, 1)';
+            },
         }
     }
 </script>
