@@ -43,6 +43,8 @@
 
     #container {
         position: relative;
+        width: 400px;
+        height: 500px;
     }
 
     #line {
@@ -54,22 +56,20 @@
     }
 
     #title {
-        position: absolute;
+        position:relative;
         left: 22px;
         top: 5px;
         width: 96px;
-        height: 34px;
         color: rgba(97, 97, 97, 1);
         font-family: PingFang-Regular;
         font-size: 24px;
     }
 
     #text1 {
-        position: absolute;
+        position:relative;
         left: 22px;
-        top: 56px;
+        top: 40px;
         width: 317px;
-        height: 48px;
         color: #616161;
         font-family: PingFang-Regular;
         font-size: 18px;
@@ -77,11 +77,10 @@
     }
 
     #text2 {
-        position: absolute;
+        position:relative;
         left: 22px;
-        top: 130px;
+        top: 60px;
         width: 317px;
-        height: 48px;
         color: #616161;
         font-family: PingFang-Regular;
         font-size: 18px;
@@ -89,11 +88,10 @@
     }
 
     #text3 {
-        position: absolute;
+        position:relative;
         left: 22px;
-        top: 205px;
+        top: 80px;
         width: 317px;
-        height: 48px;
         color: #616161;
         font-family: PingFang-Regular;
         font-size: 18px;
@@ -101,11 +99,10 @@
     }
 
     #text4 {
-        position: absolute;
+        position:relative;
         left: 22px;
-        top: 260px;
+        top: 100px;
         width: 317px;
-        height: 48px;
         color: #616161;
         font-family: PingFang-Regular;
         font-size: 18px;

@@ -1,9 +1,9 @@
 <template>
-    <div id="toAsk">
+    <div id="toAsk" @mouseenter="changeColor1" @mouseleave="changeColor2">
         <div id="line"></div>
         <div id="toAsk1">向专家提问</div>
         <div id="toAsk2">已有66+心理专家入驻柠檬心理</div>
-        <router-link  id="toAsk3" to="/PublishQ">
+        <router-link id="toAsk3" to="/PublishQ" :style="{'background':backColor,'color':fontColor}">
             去提问
         </router-link>
     </div>
@@ -12,6 +12,22 @@
 <script>
     export default {
         name: 'ToAsk',
+        data() {
+            return {
+                backColor: '',
+                fontColor: '',
+            }
+        },
+        methods: {
+            changeColor1() {
+                this.backColor = 'rgba(0,0,0,1)';
+                this.fontColor = 'rgba(255,255,255,1)';
+            },
+            changeColor2() {
+                this.backColor = 'rgba(255,255,255,1)';
+                this.fontColor = 'rgba(71, 71, 71, 1)';
+            }
+        },
     }
 </script>
 

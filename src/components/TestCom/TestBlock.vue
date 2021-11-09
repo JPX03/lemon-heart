@@ -1,28 +1,28 @@
 <template>
-    <div id="blockContainer">
-        <div id="titleA">{{text1}}</div>
-        <div id="titleB">{{text2}}</div>
-        <div id="des">{{text3}}</div>
-        <div v-show='isShow'>
-        <ToTestButton :urlB='urlA' id="tBtn"></ToTestButton>
+        <div id="blockContainer">
+            <div id="titleA">{{text1}}</div>
+            <div id="titleB">{{text2}}</div>
+            <div id="des">{{text3}}</div>
+            <div v-show='isShow'>
+                <ToTestButton :urlB='urlA' id="tBtn"></ToTestButton>
+            </div>
         </div>
-    </div>
 </template>
 
 <script>
     import ToTestButton from '@/components/ArticleCom/ToTestButton.vue'
     export default {
         name: 'TestBlock',
-        components:{
+        components: {
             ToTestButton,
         },
         props: {
             text1: '',
             text2: '',
             text3: '',
-            urlA:'',
-            isShow:{
-                default:true,
+            urlA: '',
+            isShow: {
+                default: true,
             }
         }
     }
@@ -50,6 +50,7 @@
         top: 105px;
         left: 108px;
         font-size: 18px;
+        font-family: FZBaoSong-Z04S;
     }
 
     #des {
@@ -59,13 +60,13 @@
         width: 542px;
         height: 76px;
         color: rgba(0, 0, 0, 1);
-        font-family: PingFang-ExtraLight-2;
+        font-family: FZBaoSong-Z04S;
         font-size: 24px;
         line-height: 156.765628%;
         letter-spacing: -5%;
     }
 
-    #tBtn{
+    #tBtn {
         position: absolute;
         top: 255px;
         left: 72px;

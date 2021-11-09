@@ -1,13 +1,17 @@
 <template>
   <div id="containers">
     <ArticleTop id="top"></ArticleTop>
-    <div id="toAsk">
-      <router-link to="/PublishQ">
-        <div>去提问></div>
-      </router-link>
+    <div id="linkContainer">
+      <div id="link">
+        <div id="toAsk">
+          <router-link to="/PublishQ">
+            <div>去提问></div>
+          </router-link>
+        </div>
+        <RelativeThing id="relative1" :block1='block1' :block2='block2' :block3='block3' :block4='block4' :url2='urlA2'
+          :url3='urlA3' :url4='urlA4'></RelativeThing>
+      </div>
     </div>
-    <RelativeThing id="relative1" :block1='block1' :block2='block2' :block3='block3' :block4='block4'
-      :url2='urlA2' :url3='urlA3' :url4='urlA4'></RelativeThing>
     <!-- <RelativeThing id="relative2" :block1='block5' :block2='block6' :block4='block7'
       :url2='urlB2' :url4='urlB4'></RelativeThing> -->
     <!-- <div id="moreBook">
@@ -63,9 +67,9 @@
         block2: '',
         block3: '',
         block4: '',
-        urlA2:'',
-        urlA3:'',
-        urlA4:'',
+        urlA2: '',
+        urlA3: '',
+        urlA4: '',
         // block5: '推荐图书',
         // block6: '《被讨厌的勇气》太在意别人的看法？个体心理学创始者阿德勒带你走出自卑与困境',
         // block7: '《心流》做事老分心？积极心理学奠基人之一米哈里让你全身心投入事情中',
@@ -135,12 +139,12 @@
           data: res
         }) => {
           console.log(res);
-          this.urlA2='/Qa/'+`${res.data[0].id}`;
-          this.urlA3='/Qa/'+`${res.data[1].id}`;
-          this.urlA4='/Qa/'+`${res.data[2].id}`;
-          this.block2=res.data[0].questionTitile;
-          this.block3=res.data[1].questionTitile;
-          this.block4=res.data[2].questionTitile;
+          this.urlA2 = '/Qa/' + `${res.data[0].id}`;
+          this.urlA3 = '/Qa/' + `${res.data[1].id}`;
+          this.urlA4 = '/Qa/' + `${res.data[2].id}`;
+          this.block2 = res.data[0].questionTitile;
+          this.block3 = res.data[1].questionTitile;
+          this.block4 = res.data[2].questionTitile;
 
         })
       },
@@ -170,12 +174,23 @@
 </script>
 
 <style lang="less" scoped>
-  #containers{
+  #containers {
     height: 3500px;
   }
-  
-  #relative1 {
+
+  #linkContainer{
+    position:absolute;
+    height: 1870px;
+    width: 1920px;
+  }
+
+  #link {
     position: sticky;
+    top: 10px;
+  }
+
+  #relative1 {
+    position: relative;
     top: 80px;
     left: 1350px;
     width: 200px;
@@ -184,8 +199,8 @@
 
 
   #toAsk {
-    position: sticky;
-    top: 90px;
+    position: relative;
+    top: 110px;
     left: 1550px;
     width: 65px;
     overflow: hidden;
@@ -229,7 +244,7 @@
 
   #ArticleNav {
     position: relative;
-    top: -520px;
+    top: 0px;
     left: 260px;
     margin-bottom: 20px;
     width: 900px;
@@ -241,9 +256,10 @@
   #ArticleListContainer {
     position: relative;
     height: 1700px;
-    width: 920px;
+    width: 1000px;
     left: 260px;
-    top: -480px;
+    top: 30px;
+    overflow: hidden;
   }
 
   #pages {
@@ -251,7 +267,7 @@
     height: 100px;
     width: 900px;
     left: 245px;
-    top: -550px;
+    top: 0px;
   }
 
   #testContainer {
@@ -259,7 +275,7 @@
     height: 475px;
     width: 1920px;
     border-top: 0.6px solid rgba(0, 0, 0, 1);
-    top: -500px;
+    top: 0px;
   }
 
   #img1 {
@@ -314,9 +330,10 @@
     font-size: 18px;
   }
 
-  #foot{
+  #foot {
     position: relative;
-    top: -500px;
-    border-top: 0.6px solid rgba(0, 0, 0, 1);;
+    top: 0px;
+    border-top: 0.6px solid rgba(0, 0, 0, 1);
+    ;
   }
 </style>

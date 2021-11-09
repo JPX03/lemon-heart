@@ -18,7 +18,7 @@
             return {
                 newUserName: '',
                 isWrong: false,
-                userId:this.cookie.getCookie('userId'),
+                userId: this.cookie.getCookie('userId'),
             }
         },
         methods: {
@@ -35,15 +35,19 @@
                     }
                 }).then((response) => {
                     console.log(response);
-                    let loginInfo = {
-                        userName: this.newUserName,
-                        userId: this.userId,
+                    if (response.data.status) {
+                        let loginInfo = {
+                            userName: this.newUserName,
+                            userId: this.userId,
+                        }
+                        this.cookie.clearCookie('UserName');
+                        this.cookie.clearCookie('UserId');
+                        this.cookie.setCookie(loginInfo, 7);
+                        this.close();
+                        // location.reload();
+                    } else {
+                        this.isWrong==true;
                     }
-                    this.cookie.clearCookie('UserName');
-                    this.cookie.clearCookie('UserId');
-                    this.cookie.setCookie(loginInfo, 7);
-                    this.close();
-                    location.reload();
                 });
             }
         }

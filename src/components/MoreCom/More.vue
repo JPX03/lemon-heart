@@ -1,15 +1,15 @@
 <template>
   <div id="container">
-    <div class="hoverIt">
+    <!-- <div class="hoverIt">
       <img src="@/assets/pictures/close.png" id="close" @click="close" v-if="isShow1">
     </div>
-    <video src="@/assets/pictures/press.mp4" autoplay='true' loop='true' id="mp4" v-if="isShow1"></video>
-    <div id='container1' v-if="!isShow1">
+    <video src="@/assets/pictures/press.mp4" autoplay='true' loop='true' id="mp4" v-if="isShow1"></video> -->
+    <div id='container1'>
       <div id="title1">减压动画</div>
       <div id="title2">放下烦恼，沉浸其中</div>
       <video src="@/assets/pictures/press.mp4" id="mp41" controls='true'></video>
     </div>
-    <div id="container2" v-if="!isShow1">
+    <div id="container2">
       <img src="@/assets/pictures/Rectangle_25.png" id="img1">
       <div id="title3">推荐图书</div>
       <div id="Books">
@@ -20,7 +20,7 @@
         <BookList :imgSrc='imgSrc3' :text1='text7' :text2='text8' :text3='text9' :details='details2' :buy='buy3'
           id="book3"></BookList>
       </div>
-      <div id="container3" v-if="!isShow1">
+      <div id="container3">
         <img src="@/assets/pictures/Rectangle_25.png" id="img2">
         <div id="title4">推荐视频</div>
         <div id="container4">
@@ -32,19 +32,19 @@
           <VideoList :videoHref='href6' :pic="src6" :des='des6' id="vid6" :isShowTurn="isShowTurn"></VideoList>
         </div>
       </div>
-      <div id="container5" v-if="!isShow1">
+      <div id="container5">
         <img src="@/assets/pictures/Rectangle_25.png" id="img3">
-        <div id="title4">推荐FM</div>
+        <div id="title5">推荐FM</div>
         <div id="container6">
           <img src="@/assets/pictures/otherWeb.png" id="img4">
-          <div id="title5">壹心理提供多场景多心情的电台，在你忧伤、抑郁、孤独的时候给予你力量</div>
+          <div id="title6">壹心理提供多场景多心情的电台，在你忧伤、抑郁、孤独的时候给予你力量</div>
           <div id="go">
             <a href="http://fm.xinli001.com/99405382">前往</a>
           </div>
         </div>
       </div>
     </div>
-    <Foot v-if="!isShow1" id="foot"></Foot>
+    <Foot id="foot"></Foot>
   </div>
 </template>
 
@@ -69,7 +69,6 @@
     },
     data() {
       return {
-        isShow1: true,
         imgSrc1: img1,
         text1: '被讨厌的勇气',
         text2: '克服你内心的自卑，不再为琐事烦恼',
@@ -110,9 +109,9 @@
       }
     },
     methods: {
-      close() {
-        this.isShow1 = false;
-      }
+    //   close() {
+    //     this.isShow1 = false;
+    //   }
     }
   }
 </script>
@@ -126,24 +125,24 @@
     cursor: pointer;
   }
 
-  #close {
-    position: absolute;
-    z-index: 1001;
-    top: -80px;
-    right: 20px;
-  }
+  // #close {
+  //   position: absolute;
+  //   z-index: 1001;
+  //   top: -80px;
+  //   right: 20px;
+  // }
 
-  #mp4 {
-    z-index: 1000;
-    position: absolute;
-    top: -81px;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: fill;
-    width: auto;
-    height: auto;
-    background-size: cover;
-  }
+  // #mp4 {
+  //   z-index: 1000;
+  //   position: absolute;
+  //   top: -81px;
+  //   min-width: 100%;
+  //   min-height: 100%;
+  //   object-fit: fill;
+  //   width: auto;
+  //   height: auto;
+  //   background-size: cover;
+  // }
 
   #container1 {
     height: 880px;
@@ -236,11 +235,11 @@
 
   #title4 {
     position: absolute;
-    left: 903px;
+    left: 0px;
     color: rgba(0, 0, 0, 1);
     font-family: FZBaoSong-Z04S;
     font-size: 36px;
-    top: 15px;
+    top: 35px;
   }
 
   #container4 {
@@ -301,8 +300,8 @@
 
   #title4 {
     position: absolute;
-    left: 905px;
-    top: 15px;
+    left: 902px;
+    top: 20px;
     color: rgba(0, 0, 0, 1);
     font-family: FZBaoSong-Z04S;
     font-size: 36px;
@@ -326,6 +325,15 @@
   }
 
   #title5 {
+    position: absolute;
+    left: 902px;
+    top: 20px;
+    color: rgba(0, 0, 0, 1);
+    font-family: FZBaoSong-Z04S;
+    font-size: 36px;
+  }
+
+  #title6 {
     position: absolute;
     left: 304px;
     top: 187px;
@@ -351,11 +359,11 @@
     padding-left: 37px;
   }
 
-  #go :hover{
+  #go :hover {
     cursor: pointer;
   }
 
-  #foot{
+  #foot {
     position: relative;
     top: 3350px;
     border-top: 0.6px solid rgba(0, 0, 0, 1);

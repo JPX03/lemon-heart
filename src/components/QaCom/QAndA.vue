@@ -7,8 +7,8 @@
     <div id="aTitle">所有解答</div>
     <div id="aNum">{{qInfor.comment}}解答</div>
     <div id="aContainer">
-      <Aans v-for="item in ansArr" :key="item.id" :name='item.userName' :date='item.answerTime'
-        :text='item.answerContent'></Aans>
+      <Aans v-for="item in ansArr" :key="item.id" :ansName='item.userName' :ansDate='item.answerTime'
+        :ansText='item.answerContent'></Aans>
     </div>
     <ToAsk id="toAsk"></ToAsk>
     <RelativeThing id="relative" :block1='block1' :block2='block2' :block3='block3' :block4='block4' :url2='url2'

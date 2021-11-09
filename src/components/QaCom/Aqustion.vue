@@ -2,9 +2,9 @@
   <div id="container">
     <div id='title'>{{title}}</div>
     <img src="@/assets/pictures/infoHead.png" id="img1">
-    <div id="name">{{name}}</div>
-    <div id="date">{{date}}</div>
-    <div id="text">{{text}}</div>
+    <div id="qesName">{{name}}</div>
+    <div id="qesDate">{{date}}</div>
+    <div id="qesText">{{text}}</div>
     <div class="hoverIt">
       <div id="like" @click="likeIt" :style="{'background':bgc1}">
         <img id="img2" :src="img2Src">
@@ -117,23 +117,23 @@
 
   #img1 {
     position: absolute;
-    left: 10px;
+    left: 0px;
     top: 60px;
     width: 28px;
     height: 28px;
   }
 
-  #name {
+  #qesName {
     position: absolute;
     top: 62px;
-    left: -10px;
+    left: 40px;
     color: rgba(97, 97, 97, 1);
     font-family: PingFang-Regular;
     font-size: 18px;
     line-height: 130.265629%;
   }
 
-  #date {
+  #qesDate {
     position: absolute;
     top: 60px;
     left: 125px;
@@ -143,7 +143,7 @@
     line-height: 193.265629%;
   }
 
-  #text {
+  #qesText {
     position: absolute;
     top: 120px;
     color: rgba(97, 97, 97, 1);
@@ -155,7 +155,7 @@
 
   #like {
     position: absolute;
-    top: 450px;
+    top: 480px;
     width: 130px;
     height: 40px;
     border-radius: 23.5px;
@@ -169,7 +169,7 @@
 
   #toAns {
     position: absolute;
-    top: 450px;
+    top: 480px;
     left: 160px;
     width: 130px;
     height: 40px;
@@ -209,7 +209,7 @@
 
   #ansContainer {
     position: absolute;
-    top: 520px;
+    top: 530px;
     width: 1030px;
     height: 260px;
   }

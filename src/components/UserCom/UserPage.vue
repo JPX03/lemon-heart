@@ -6,11 +6,11 @@
         <div id="topContainer">
             <img id="headPic" src="@/assets/pictures/infoHead.png">
             <div id="name">{{ this.cookie.getCookie('userName')}}</div>
-            <div class="hoverIt">
-                <div id="but1" @click="showEdit">编辑</div>
+            <div class="hoverIt" @mouseenter="changeColor1" @mouseleave="changeColor2">
+                <div id="but1" @click="showEdit" :style="{'background':backColor1,'color':fontColor1}">编辑</div>
             </div>
-            <div class="hoverIt">
-                <div id="but2" @click="signOut">退出</div>
+            <div class="hoverIt" @mouseenter="changeColor3" @mouseleave="changeColor4">
+                <div id="but2" @click="signOut" :style="{'background':backColor2,'color':fontColor2}">退出</div>
             </div>
         </div>
         <div id="myQuestion">
@@ -41,6 +41,10 @@
             return {
                 MyQuestions: [],
                 isShow: false,
+                backColor1: 'rgba(255,255,255,1)',
+                fontColor1: '',
+                backColor2: 'rgba(255,255,255,1)',
+                fontColor2: '',
             }
         },
         methods: {
@@ -64,11 +68,27 @@
             closeEdit(val) {
                 this.isShow = val;
             },
-            signOut(){
+            signOut() {
                 this.cookie.clearCookie('userName');
                 this.cookie.clearCookie('userId');
                 this.$router.replace('/Home');
                 location.reload();
+            },
+            changeColor1() {
+                this.backColor1 = 'rgba(0,0,0,1)';
+                this.fontColor1 = 'rgba(255,255,255,1)';
+            },
+            changeColor2() {
+                this.backColor1 = 'rgba(255,255,255,1)';
+                this.fontColor1 = 'rgba(71, 71, 71, 1)';
+            },
+            changeColor3() {
+                this.backColor2 = 'rgba(0,0,0,1)';
+                this.fontColor2 = 'rgba(255,255,255,1)';
+            },
+            changeColor4() {
+                this.backColor2 = 'rgba(255,255,255,1)';
+                this.fontColor2 = 'rgba(71, 71, 71, 1)';
             },
         },
         created() {
@@ -88,15 +108,14 @@
     #headPic {
         position: absolute;
         top: 165px;
-        left: 915px;
+        left: 935px;
     }
 
     #name {
         position: absolute;
-        width: 200px;
+        width: 100%;
         height: 40px;
         top: 280px;
-        left: 850px;
         text-align: center;
         color: rgba(0, 0, 0, 1);
         font-family: FZBaoSong-Z04S;
@@ -146,7 +165,7 @@
 
     #img1 {
         position: absolute;
-        left: 858px;
+        left: 878px;
         top: 85px;
         width: 42px;
         height: 42px;
@@ -154,7 +173,7 @@
 
     #theTitle {
         position: absolute;
-        left: 888px;
+        left: 908px;
         top: 97px;
         color: rgba(0, 0, 0, 1);
         font-family: FZBaoSong-Z04S;

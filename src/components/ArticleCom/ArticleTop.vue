@@ -7,24 +7,29 @@
             <span>精选文章</span>
         </div>
         <div class="border-black">
-            <div class="border-1">
-                <img src="@/assets/pictures/unsplash_Av_NirIguEc.png">
-            </div>
-            <div class="border-1-text">
-                <span>致讨好型人格：你不必通过讨好换取爱</span>
-            </div>
-            <div class="border-1-text2">
-                <span># 心理科普</span>
-            </div>
-            <div class="border-2">
-                <img src="@/assets\pictures\think1.png">
-            </div>
-            <div class="border-2-text">
-                <span>“我把自己活成了一座孤岛”：心中有爱，才会享受孤独</span>
-            </div>
-            <div class="border-2-text2">
-                <span># 自我情绪</span>
-            </div>
+            <router-link to="/Article/11">
+                <div class="border-1">
+                    <img src="@/assets/pictures/unsplash_Av_NirIguEc.png">
+                </div>
+                <div class="border-1-text">
+                    <span>致讨好型人格：你不必通过讨好换取爱</span>
+                </div>
+                <div class="border-1-text2">
+                    <span># 心理科普</span>
+                </div>
+            </router-link>
+            <router-link to="/Article/43">
+                <div class="border-2">
+                    <img src="@/assets\pictures\think1.png">
+                </div>
+                <div class="border-2-text">
+                    <span>“我把自己活成了一座孤岛”：心中有爱，才会享受孤独</span>
+                </div>
+                <div class="border-2-text2">
+                    <span># 自我情绪</span>
+                </div>
+            </router-link>
+            <router-link to="/Article/4">
             <div class="border-3">
                 <img src="@/assets\pictures\think2.png" alt="" />
             </div>
@@ -34,13 +39,14 @@
             <div class="border-3-text2">
                 <span># 自我情绪</span>
             </div>
+            </router-link>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name:'RelativeTop'
+        name: 'RelativeTop'
     }
 </script>
 
@@ -48,6 +54,10 @@
     .pictures-top {
         height: 850px;
         position: relative;
+    }
+
+    .pictures-top :hover {
+        cursor: pointer;
     }
 
     .square img {

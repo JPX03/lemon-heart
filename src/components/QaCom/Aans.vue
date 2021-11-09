@@ -2,18 +2,18 @@
     <div id="container">
         <div id="line"></div>
         <img src="@/assets/pictures/infoHead2.png" id="img1">
-        <div id="name">{{name}}</div>
-        <div id="date">{{date}}</div>
-        <div id="text">{{text}}</div>
+        <div id="ansName">{{ansName}}</div>
+        <div id="ansDate">{{ansDate}}</div>
+        <div id="ansText">{{ansText}}</div>
     </div>
 </template>
 
 <script>
     export default {
         props:{
-            name:{},
-            date:{},
-            text:{},
+            ansName:{},
+            ansDate:{},
+            ansText:{},
         },
     }
 </script>
@@ -39,19 +39,19 @@
         left: 0px;
     }
 
-    #name {
+    #ansName {
         position: absolute;
         top: 42px;
-        left: 15px;
+        left: 42px;
         color: rgba(97, 97, 97, 1);
         font-family: PingFang-Regular;
         font-size: 18px;
         line-height: 130.265629%;
     }
 
-    #date {
+    #ansDate {
         position: absolute;
-        top: 37px;
+        top: 40px;
         left: 135px;
         color: rgba(97, 97, 97, 1);
         font-family: PingFang-Regular;
@@ -59,7 +59,7 @@
         line-height: 193.265629%;
     }
 
-    #text {
+    #ansText {
         position:relative;
         top:100px;
         color: rgba(97, 97, 97, 1);

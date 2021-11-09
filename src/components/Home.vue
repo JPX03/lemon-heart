@@ -5,8 +5,8 @@
         </div>
         <div class="Catalogue">
             <div class="data">
-                <div class="month">11<span class="month1">月</span></div>
-                <div class="day">12<span class="day1">日</span></div>
+                <div class="month">{{month}}<span class="month1">月</span></div>
+                <div class="day">{{day}}<span class="day1">日</span></div>
                 <img src="@/assets/pictures/data.png">
             </div>
             <div class="text1">生活没有你想的那么糟</div>
@@ -17,23 +17,27 @@
                 </span>
                 <span class="line1"></span>
                 <div class="test1">
-                    <div class="test">平和心态是最好的治愈方式</div>
-                    <div class="test">反容貌焦虑：长相不那么出众就“不配”自信吗？</div>
-                    <div class="test">你所不知道的另类心理毒瘾：暴食症 </div>
-                    <div class="test">......</div>
+                    <router-link to='/Article'>
+                        <div class="test">平和心态是最好的治愈方式</div>
+                        <div class="test">反容貌焦虑：长相不那么出众就“不配”自信吗？</div>
+                        <div class="test">你所不知道的另类心理毒瘾：暴食症 </div>
+                        <div class="test">......</div>
+                    </router-link>
                 </div>
             </div>
             <div class="block2">
                 <span class="num">02</span>
                 <span class="link1">
-                    <router-link to='/Article'>常见问题</router-link>
+                    <router-link to='/Qa'>常见问题</router-link>
                 </span>
                 <span class="line1"></span>
                 <div class="test1">
-                    <div class="test">如何处理好同学关系</div>
-                    <div class="test">如何在挫折中保持积极心态</div>
-                    <div class="test">怎样快速脱离失恋的痛苦</div>
-                    <div class="test">......</div>
+                    <router-link to='/Qa'>
+                        <div class="test">如何处理好同学关系</div>
+                        <div class="test">如何在挫折中保持积极心态</div>
+                        <div class="test">怎样快速脱离失恋的痛苦</div>
+                        <div class="test">......</div>
+                    </router-link>
                 </div>
             </div>
             <div class="block3">
@@ -43,10 +47,12 @@
                 </span>
                 <span class="line1"></span>
                 <div class="test1">
-                    <div class="test">我该怎么接纳孤独，享受孤独，更好地与它相处？</div>
-                    <div class="test">18岁男生，大学想家每天难过，而且哭很多次怎么办？</div>
-                    <div class="test">很介意女友的过去，无法释怀，但又很爱她不想离开她？</div>
-                    <div class="test">......</div>
+                    <router-link to='/Qa'>
+                        <div class="test">我该怎么接纳孤独，享受孤独，更好地与它相处？</div>
+                        <div class="test">18岁男生，大学想家每天难过，而且哭很多次怎么办？</div>
+                        <div class="test">很介意女友的过去，无法释怀，但又很爱她不想离开她？</div>
+                        <div class="test">......</div>
+                    </router-link>
                 </div>
             </div>
             <div class="block4">
@@ -56,10 +62,12 @@
                 </span>
                 <span class="line1"></span>
                 <div class="test1">
-                    <div class="test">测一测你的压力</div>
-                    <div class="test">想知道你的内在人格吗</div>
-                    <div class="test">测一测你的自卑感</div>
-                    <div class="test">......</div>
+                    <router-link to='/Test'>
+                        <div class="test">测一测你的压力</div>
+                        <div class="test">想知道你的内在人格吗</div>
+                        <div class="test">测一测你的自卑感</div>
+                        <div class="test">......</div>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -78,6 +86,22 @@
 <script>
     export default {
         name: 'Home',
+        data() {
+            return {
+                month: 0,
+                day: 0,
+            }
+        },
+        methods: {
+            getDate() {
+                let date = new Date();
+                this.month = date.getMonth()+1; // 月
+                this.day = date.getDate(); // 日
+            }
+        },
+        created(){
+            this.getDate();
+        }
     }
 </script>
 <style lang="less" scoped>

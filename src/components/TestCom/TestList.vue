@@ -17,7 +17,7 @@
         },
         data(){
             return{
-                checkedValue:'1',
+                checkedValue:'0',
             }
         },
         methods:{

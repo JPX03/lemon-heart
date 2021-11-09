@@ -1,23 +1,25 @@
 <template>
   <div class="test1Container">
     <img src="@/assets/pictures/test1A.gif" id="img1">
+    <div id="test1BackImg">
+      <div id="bgImg">
+        <img src="@/assets/pictures/threecolors.png">
+      </div>
+    </div>
     <div id="top">
       <img src="@/assets/pictures/Time_Machine.png" id="img2">
       <div id="time">预计时间：3分钟</div>
       <div id="aler">请尽量选择符合和不符合，并且选择你最真实的情况，我们会保护你的隐私</div>
     </div>
-    <!-- <div id="bgImg">
-    <img src="@/assets/pictures/threecolors.png">
-    </div> -->
     <div id="listsContainer">
       <div v-for='item in listArr' :key="item.index">
         <TestList :listTitle='item.listTitle' :testQ='item.testQ' @getVal='getVal'></TestList>
       </div>
     </div>
     <div class="hoverIt">
-        <div id="sub" @click="sendResult1">
-          查看分析
-        </div>
+      <div id="sub" @click="sendResult1">
+        查看分析
+      </div>
     </div>
     <Foot id="test1Foot"></Foot>
   </div>
@@ -29,11 +31,11 @@
     data() {
       return {
         answer: '',
-        result1A:0,
-        result1B:0,
-        result1C:0,
-        result1D:0,
-        result1E:0,
+        result1A: 0,
+        result1B: 0,
+        result1C: 0,
+        result1D: 0,
+        result1E: 0,
         listArr: [{
             listTitle: '1.我常感到害怕',
             testQ: 'q1',
@@ -197,28 +199,33 @@
         ],
       }
     },
-    methods:{
-      getVal(val){
+    methods: {
+      getVal(val) {
         // console.log(val.checkedValue);
         // console.log(val.testQ);
-        if(val.testQ=='q1'||val.testQ=='q6'||val.testQ=='q11'||val.testQ=='q16'||val.testQ=='q21'||val.testQ=='q26'||val.testQ=='q31'){
+        if (val.testQ == 'q1' || val.testQ == 'q6' || val.testQ == 'q11' || val.testQ == 'q16' || val.testQ == 'q21' ||
+          val.testQ == 'q26' || val.testQ == 'q31') {
           this.result1A += parseInt(val.checkedValue);
-        }else if(val.testQ=='q2'||val.testQ=='q7'||val.testQ=='q12'||val.testQ=='q17'||val.testQ=='q22'||val.testQ=='q27'||val.testQ=='q37'){
+        } else if (val.testQ == 'q2' || val.testQ == 'q7' || val.testQ == 'q12' || val.testQ == 'q17' || val.testQ ==
+          'q22' || val.testQ == 'q27' || val.testQ == 'q37') {
           this.result1B += parseInt(val.checkedValue);
-        }else if(val.testQ=='q3'||val.testQ=='q23'||val.testQ=='q28'||val.testQ=='q33'||val.testQ=='q38'){
+        } else if (val.testQ == 'q3' || val.testQ == 'q23' || val.testQ == 'q28' || val.testQ == 'q33' || val.testQ ==
+          'q38') {
           this.result1C += parseInt(val.checkedValue);
-        }else if(val.testQ=='q4'||val.testQ=='q9'||val.testQ=='q14'||val.testQ=='q19'||val.testQ=='q24'||val.testQ=='q29'||val.testQ=='q34'||val.testQ=='q39'){
+        } else if (val.testQ == 'q4' || val.testQ == 'q9' || val.testQ == 'q14' || val.testQ == 'q19' || val.testQ ==
+          'q24' || val.testQ == 'q29' || val.testQ == 'q34' || val.testQ == 'q39') {
           this.result1D += parseInt(val.checkedValue);
-        }else if(val.testQ=='q10'||val.testQ=='q20'||val.testQ=='q25'||val.testQ=='q30'||val.testQ=='q35'||val.testQ=='q40'){
+        } else if (val.testQ == 'q10' || val.testQ == 'q20' || val.testQ == 'q25' || val.testQ == 'q30' || val.testQ ==
+          'q35' || val.testQ == 'q40') {
           this.result1E += parseInt(val.checkedValue);
-        }else if(val.testQ=='q36'){
-          this.result1A += 5-parseInt(val.checkedValue);
-        }else if(val.testQ=='q32'){
-          this.result1B += 5-parseInt(val.checkedValue);
-        }else if(val.testQ=='q8'||val.testQ=='q13'||val.testQ=='q18'){
-          this.result1C += 5-parseInt(val.checkedValue);
-        }else if(val.testQ=='q5'||val.testQ=='q15'){
-          this.result1E += 5-parseInt(val.checkedValue);
+        } else if (val.testQ == 'q36') {
+          this.result1A += 5 - parseInt(val.checkedValue);
+        } else if (val.testQ == 'q32') {
+          this.result1B += 5 - parseInt(val.checkedValue);
+        } else if (val.testQ == 'q8' || val.testQ == 'q13' || val.testQ == 'q18') {
+          this.result1C += 5 - parseInt(val.checkedValue);
+        } else if (val.testQ == 'q5' || val.testQ == 'q15') {
+          this.result1E += 5 - parseInt(val.checkedValue);
         }
         console.log(this.result1A);
         console.log(this.result1B);
@@ -226,16 +233,16 @@
         console.log(this.result1D);
         console.log(this.result1E);
       },
-      sendResult1(){
+      sendResult1() {
         this.$router.push({
-                        path:'/Test1Result',
-                        query: {
-                            result1A: this.result1A,
-                            result1B: this.result1B,
-                            result1C: this.result1C,
-                            result1D: this.result1D,
-                            result1E: this.result1E,
-                        }
+          path: '/Test1Result',
+          query: {
+            result1A: this.result1A,
+            result1B: this.result1B,
+            result1C: this.result1C,
+            result1D: this.result1D,
+            result1E: this.result1E,
+          }
         });
       }
     },
@@ -260,6 +267,12 @@
     border-bottom: 0.6px solid black;
   }
 
+  #test1BackImg {
+    position: absolute;
+    width: 1920px;
+    height: 9310px;
+  }
+
   #top {
     width: 640px;
     height: 90px;
@@ -274,15 +287,18 @@
     top: 0px;
   }
 
-  // #bgImg {
-  //   width: 1920px;
-  //   height: 700px;
-  // }
+  #bgImg {
+    position: sticky;
+    left: 0px;
+    top: 250px;
+    width: 1920px;
+    height: 700px;
+  }
 
-  // #bgImg img{
-  //   width: 100%;
-  //   height: 100%;
-  // }
+  #bgImg img {
+    width: 100%;
+    height: 100%;
+  }
 
   #time {
     position: absolute;

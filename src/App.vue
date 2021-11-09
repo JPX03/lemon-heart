@@ -6,7 +6,7 @@
         <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
           <div class="grid-content bg-purple">
             <div class="logo">
-                <img src="./assets/pictures/Group_15.png">
+              <img src="./assets/pictures/Group_15.png">
             </div>
           </div>
         </el-col>
@@ -42,7 +42,8 @@
         </el-col>
         <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
           <div class="grid-content bg-purple" @click="showReg" v-show="!isLog">
-            <el-button round size='mini' class="register" :style="{'background':regBgc,'color':regColor}">注册&</el-button>
+            <el-button round size='mini' class="register" :style="{'background':regBgc,'color':regColor}">
+              &nbsp;&nbsp;注册&nbsp;&nbsp;</el-button>
           </div>
           <div v-show="isLog">
             <router-link to="/UserPage">
@@ -167,8 +168,9 @@
     font-family: PingFang-Regular;
     font-size: 20px;
   }
-  a.title{
-    font-family:Alibaba PuHuiTi;
+
+  .title a{
+    font-family: Alibaba PuHuiTi;
     font-weight: 300;
     font-size: 24px;
     letter-spacing: 18%;
@@ -186,7 +188,7 @@
     color: rgba(71, 71, 71, 1);
     line-height: 80px;
     font-family: PingFang-Regular;
-    font-size:18px;
+    font-size: 18px;
     padding-left: 18px;
   }
 

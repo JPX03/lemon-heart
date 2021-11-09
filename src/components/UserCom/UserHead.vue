@@ -13,7 +13,7 @@
 
 <style lang="less" scoped>
   #infor {
-    width: 114px;
+    width: 134px;
     height: 40px;
     border-radius: 24px;
     border: 0.6px solid rgba(71, 71, 71, 1);

@@ -17,12 +17,12 @@
         name: 'AriticleNav',
         data() {
             return {
-                activeName: 'first'
+                activeName: 'first',
             };
         },
         methods: {
             handleClick(tab) {
-                this.$emit('changeKind',tab._props.label)
+                this.$emit('changeKind',tab._props.label);
             }
         }
     }
@@ -33,7 +33,7 @@
         width: 1150px;
         color: rgba(97, 97, 97, 1);
         font-family: PingFang-Regular;
-        font-size: 20px;
+        font-size: 25px;
         line-height: 130.765629%;
         overflow: hidden;
     }

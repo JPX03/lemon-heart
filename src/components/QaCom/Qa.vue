@@ -3,8 +3,8 @@
     <div class="container">
       <div class="top1">
         <img src="@/assets/pictures/qaBgimg.gif">
-        <div>
-          <router-link to='/PublishQ' id="ask">
+        <div @mouseenter="changeColor1" @mouseleave="changeColor2">
+          <router-link to='/PublishQ' id="ask" :style="{'background':backColor,'color':fontColor}">
             提问
           </router-link>
         </div>
@@ -66,9 +66,11 @@
         text: [],
         qas: [],
         isReady: false,
-        totalPage:{},
-        pageSize:6,
-        pageNo:1,
+        totalPage: {},
+        pageSize: 6,
+        pageNo: 1,
+        backColor: '',
+        fontColor:'',
       }
     },
 
@@ -108,6 +110,14 @@
       changePage(val) {
         this.pageNo = val;
         this.getQuestion2(val);
+      },
+      changeColor1() {
+        this.backColor = 'rgba(0,0,0,1)';
+        this.fontColor = 'rgba(255,255,255,1)';
+      },
+      changeColor2() {
+        this.backColor = 'rgba(255,255,255,1)';
+        this.fontColor = 'rgba(71, 71, 71, 1)';
       }
     },
 
