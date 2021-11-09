@@ -306,8 +306,9 @@
         left: 31px;
         height: 50px;
         width: 170px;
-        color: rgba(0, 0, 0, 1);
-        font-family: PingFang-ExtraLight-2;
+        color: rgb(85, 77, 77);
+        line-height: 150%;
+        font-family: PingFangSC-regular;
         font-size: 18px;
     }
 
@@ -346,7 +347,7 @@
         position: absolute;
         left: 550px;
         width: 1px;
-        height: 920px;
+        height: 1050px;
         background-color: dimgray;
     }
 
@@ -354,7 +355,7 @@
         position: absolute;
         left: 550px;
         width: 1px;
-        height: 900px;
+        height: 1030px;
         background-color: dimgray;
     }
 
@@ -362,7 +363,7 @@
         position: absolute;
         left: 550px;
         width: 1px;
-        height: 920px;
+        height: 1170px;
         background-color: dimgray;
     }
 
@@ -370,7 +371,7 @@
         position: absolute;
         left: 550px;
         width: 1px;
-        height: 923px;
+        height: 1140px;
         background-color: dimgray;
     }
 
@@ -378,7 +379,7 @@
         position: absolute;
         left: 550px;
         width: 1px;
-        height: 900px;
+        height: 1100px;
         background-color: dimgray;
     }
 

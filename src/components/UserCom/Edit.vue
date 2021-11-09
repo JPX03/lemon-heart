@@ -120,7 +120,7 @@
         left: 36px;
         top: 263px;
         color: rgba(235, 87, 87, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 16px;
     }
 
@@ -134,7 +134,7 @@
         box-sizing: border-box;
         background: rgba(51, 51, 51, 1);
         color: rgba(255, 255, 255, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 18px;
         text-align: center;
         line-height: 56px;

@@ -35,7 +35,7 @@
         height: 216px;
         position: relative;
         color: rgba(71, 71, 71, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 15px;
     }
 

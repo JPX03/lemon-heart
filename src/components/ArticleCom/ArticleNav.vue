@@ -32,7 +32,7 @@
     #contaienr1 {
         width: 1150px;
         color: rgba(97, 97, 97, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 20px;
         line-height: 130.765629%;
         overflow: hidden;

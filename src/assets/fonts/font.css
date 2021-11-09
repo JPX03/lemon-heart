@@ -13,16 +13,9 @@
 }
 
 @font-face {
-    font-family:'PingFang-Bold-2';
-    src: url('./PingFang-Bold-2.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family:'PingFang-ExtraLight-2';
-    src: url('./PingFang-ExtraLight-2.ttf');
-    font-weight: normal;
+    font-family:'PingFangSC-ExtraLight';
+    src: url('PingFang-ExtraLight.ttf');
+    font-weight: initial;
     font-style: normal;
 }
 

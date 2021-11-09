@@ -198,7 +198,7 @@
 
   #toAsk a {
     color: rgba(97, 97, 97, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 16px;
   }
 
@@ -223,7 +223,7 @@
 
   #moreBook a {
     color: rgba(97, 97, 97, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 16px;
   } */
 
@@ -275,7 +275,7 @@
     top: 140px;
     left: 900px;
     color: rgba(71, 71, 71, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 36px;
   }
 
@@ -310,7 +310,7 @@
 
   #moreTest a {
     color: rgba(97, 97, 97, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 18px;
   }
 

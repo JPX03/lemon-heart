@@ -33,7 +33,7 @@
   #date {
     position: absolute;
     color: rgba(97, 97, 97, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 24px;
     line-height: 130.765629%;
   }
@@ -52,7 +52,7 @@
     left: 159px;
     top: 44px;
     color: rgba(97, 97, 97, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 18px;
     line-height: 130.765629%;
   }
@@ -70,7 +70,7 @@
     left: 234px;
     top: 44px;
     color: rgba(97, 97, 97, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 18px;
     line-height: 130.765629%;
   }

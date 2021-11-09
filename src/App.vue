@@ -6,25 +6,23 @@
         <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
           <div class="grid-content bg-purple">
             <div class="logo">
-              <router-link to='/Home'>
                 <img src="./assets/pictures/Group_15.png">
-              </router-link>
             </div>
           </div>
         </el-col>
         <el-col :xs="4" :sm="9" :md="9" :lg="9" :xl="9">
-          <div class="grid-content bg-purple article title">
+          <div class="title grid-content bg-purple article">
             <router-link to="/Home">柠檬心理</router-link>
           </div>
         </el-col>
         <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
           <div class="grid-content bg-purple article">
-            <router-link to="/Article">文章</router-link>
+            <router-link to="/Article">精选文章</router-link>
           </div>
         </el-col>
         <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
           <div class="grid-content bg-purple qa">
-            <router-link to='/Qa'>问答</router-link>
+            <router-link to='/Qa'>心理问答</router-link>
           </div>
         </el-col>
         <el-col :xs="4" :sm="2" :md="2" :lg="2" :xl="2">
@@ -44,7 +42,7 @@
         </el-col>
         <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
           <div class="grid-content bg-purple" @click="showReg" v-show="!isLog">
-            <el-button round size='mini' class="register" :style="{'background':regBgc,'color':regColor}">注册</el-button>
+            <el-button round size='mini' class="register" :style="{'background':regBgc,'color':regColor}">注册&</el-button>
           </div>
           <div v-show="isLog">
             <router-link to="/UserPage">
@@ -162,47 +160,52 @@
     z-index: 999;
   }
 
+
   a {
     color: rgba(71, 71, 71, 1);
     line-height: 80px;
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 20px;
   }
-
-  .register {
-    font-family: PingFang SC;
-    font-size: 20px;
-    height: 40px;
-    line-height: 20px;
-    margin-top: 20px;
-  }
-
-  .login {
-    color: rgba(71, 71, 71, 1);
-    line-height: 80px;
-    font-family: PingFang SC;
-    font-size: 20px;
-    padding-left: 5px;
-  }
-
-  #log :hover {
-    cursor: pointer;
-  }
-
-  a:hover {
-    font-size: 24px;
-  }
-
-  .title {
-    font-family: Alibaba PuHuiTi;
+  a.title{
+    font-family:Alibaba PuHuiTi;
     font-weight: 300;
     font-size: 24px;
     letter-spacing: 18%;
   }
 
+  .register {
+    font-family: PingFang-Regular;
+    font-size: 18px;
+    height: 40px;
+    line-height: 20px;
+    margin-top: 18px;
+  }
+
+  .login {
+    color: rgba(71, 71, 71, 1);
+    line-height: 80px;
+    font-family: PingFang-Regular;
+    font-size:18px;
+    padding-left: 18px;
+  }
+
+
+  #log :hover {
+    cursor: pointer;
+
+  }
+
+  a:hover {
+    border-bottom: #000000 1px solid;
+
+  }
+
+
   img {
-    width: 35%;
-    margin-left: 150px;
+    width: 51px;
+    margin-left: 180px;
+    margin-top: 18px;
   }
 
   .regPage {

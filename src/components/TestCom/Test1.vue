@@ -288,7 +288,7 @@
     position: absolute;
     left: 220px;
     color: rgba(71, 71, 71, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 24px;
   }
 
@@ -296,7 +296,7 @@
     position: absolute;
     top: 50px;
     color: rgba(130, 130, 130, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 16px;
     left: 50px;
   }
@@ -330,7 +330,7 @@
     border-radius: 23.5px;
     background: rgba(51, 51, 51, 1);
     color: rgba(255, 255, 255, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 18px;
     top: 250px;
     left: 800px;

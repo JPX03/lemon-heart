@@ -89,7 +89,7 @@
         position: absolute;
         top: 5px;
         color: rgba(97, 97, 97, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 31px;
         left: 100px;
     }
@@ -97,9 +97,9 @@
     .theDesText {
         position: relative;
         left: 315px;
-        color: rgba(71, 71, 71, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 17px;
+        color: #767676;
+        font-family: PingFangSC-regular;
+        font-size: 18px;
         line-height: 200%;
         margin-bottom: 40px;
     }
@@ -109,7 +109,7 @@
         left: 315px;
         color: rgba(71, 71, 71, 1);
         font-family: FZBaoSong-Z04S;
-        font-size: 17px;
+        font-size: 22px;
         line-height: 200%;
         margin-bottom: 5px;
     }

@@ -39,7 +39,7 @@
         height: 26px;
         color: rgba(0, 0, 0, 1);
         font-family: FZBaoSong-Z04S;
-        font-size: 24px;
+        font-size: 28px;
     }
 
     #text {
@@ -48,10 +48,11 @@
         left: 286px;
         height: 52px;
         width: 700px;
-        color: rgba(0, 0, 0, 1);
-        font-family: PingFangSC-ExtraLight;
-        font-size: 20px;
-        line-height: 130.765629%;
+        color: rgb(182, 165, 165);
+        font-family: PingFang-Regular;
+        font-weight: 100;
+        font-size: 18px;
+        line-height: 150.765629%;
     }
 
     #kind {
@@ -59,8 +60,8 @@
         top: 178px;
         left: 286px;
         height: 25px;
-        color: rgba(130, 130, 130, 1);
-        font-family: PingFang SC;
+        color: rgb(153, 143, 143);
+        font-family: PingFang-Regular;
         font-size: 18px;
     }
 </style>

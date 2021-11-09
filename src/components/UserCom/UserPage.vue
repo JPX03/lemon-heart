@@ -117,7 +117,7 @@
         border: 0.6px solid rgba(111, 111, 111, 1);
         box-sizing: border-box;
         color: rgba(110, 110, 110, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 14px;
         text-align: center;
         padding-top: 5px;
@@ -133,7 +133,7 @@
         border: 0.6px solid rgba(111, 111, 111, 1);
         box-sizing: border-box;
         color: rgba(110, 110, 110, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 14px;
         text-align: center;
         padding-top: 5px;

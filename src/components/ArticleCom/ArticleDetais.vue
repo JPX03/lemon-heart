@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="container1">
-            <div id='category'>精彩文章>{{Article.passageLei}}</div>
+            <div id='category'>精彩文章 >{{Article.passageLei}}</div>
             <div id="title">{{Article.passageTitle}}</div>
             <div id="like1">{{Article.passageLike}}
                 <img src="@/assets/pictures/like.png" id="img0">
@@ -156,8 +156,8 @@
 
     #category {
         color: rgba(97, 97, 97, 1);
-        font-family: PingFang SC;
-        font-size: 24px;
+        font-family: PingFang-Regular;
+        font-size: 20px;
     }
 
     #title {
@@ -165,12 +165,13 @@
         color: rgba(0, 0, 0, 1);
         font-family: FZBaoSong-Z04S;
         font-size: 48px;
+        line-height: 150%;
     }
 
     #like1 {
         margin-top: 16px;
         color: rgba(71, 71, 71, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 18px;
         line-height: 130.765629%;
     }
@@ -194,8 +195,9 @@
     #content {
         position: relative;
         color: rgba(71, 71, 71, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 20px;
+        line-height: 180%;
         margin-top: 30px;
         margin-bottom: 35px;
     }
@@ -217,13 +219,13 @@
         width: 130px;
         height: 40px;
         border-radius: 23.5px;
-        border: 0.6px solid rgba(0, 0, 0, 1);
+        border: 1px solid #282828;
         box-sizing: border-box;
     }
 
     #img2 {
         position: absolute;
-        left: 38px;
+        left: 36px;
         top: 8px;
         width: 24px;
         height: 24px;
@@ -231,9 +233,9 @@
 
     #likeNum {
         position: absolute;
-        left: 77px;
+        left: 70px;
         top: 6px;
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 18px;
         line-height: 150%;
     }

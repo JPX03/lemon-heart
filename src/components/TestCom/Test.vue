@@ -1,7 +1,7 @@
 <template>
   <div id="testContainer">
     <div id="top">
-      <img src="@/assets/pictures/test.gif" id="topImg">
+      <img class="upimage" src="@/assets/pictures/test.gif">
     </div>
     <div id="banner">
       <div id="test1">
@@ -64,6 +64,10 @@
 </script>
 
 <style lang="less" scoped>
+  .upimage {
+    height: 100%;
+    width: 100%;
+  }
   #testContainer{
     width: 1920px;
     overflow: hidden;
@@ -111,7 +115,7 @@
     position: absolute;
     left: 682px;
     top: 105px;
-    font-size: 18px;
+    font-size: 22px;
     color: rgba(0, 0, 0, 1);
     font-family: FZBaoSong-Z04S;
   }
@@ -123,9 +127,9 @@
     width: 730px;
     height: 76px;
     text-align: center;
-    color: rgba(0, 0, 0, 1);
-    font-family: PingFang-ExtraLight-2;
-    font-size: 24px;
+    color: #000000;
+    font-family: FZBaoSong-Z04S;
+    font-size: 22px;
     line-height: 156.765628%;
   }
 
@@ -214,7 +218,7 @@
     width: 510px;
     height: 34px;
     color: rgba(0, 0, 0, 1);
-    font-family: PingFang-ExtraLight-2;
+    font-family: FZBaoSong-Z04S;
     font-size: 24px;
   }
 
@@ -225,7 +229,7 @@
     width: 440px;
     height: 34px;
     color: rgba(0, 0, 0, 1);
-    font-family: PingFang-ExtraLight-2;
+    font-family: FZBaoSong-Z04S;
     font-size: 24px;
   }
 

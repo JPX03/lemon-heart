@@ -65,13 +65,13 @@
         height: 47.5px;
         /* background: rgba(71, 71, 71, 1); */
         color: rgba(71, 71, 71, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 36px;
     }
 
     .border-black {
         width: 1400px;
-        height: 500px;
+        height: 520px;
         border: 0.6px solid rgba(0, 0, 0, 1);
         box-sizing: border-box;
         position: relative;
@@ -91,14 +91,14 @@
         height: 246px;
         position: absolute;
         left: 405px;
-        top: 251px;
+        top: 272px;
         z-index: 99;
     }
 
     .border-3 img {
         position: absolute;
         width: 530px;
-        height: 252px;
+        height: 270px;
         left: 860px;
         right: 0;
         top: 0px;

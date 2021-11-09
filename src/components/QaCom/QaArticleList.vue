@@ -47,24 +47,24 @@
         top: 51px;
         color: rgba(0, 0, 0, 1);
         font-family: FZBaoSong-Z04S;
-        font-size: 24px;
+        font-size: 28px;
         line-height: 130.265629%;
     }
 
     #qabady {
         position: absolute;
-        top: 113px;
-        color: rgba(130, 130, 130, 1);
-        font-family: PingFang SC;
+        top: 100px;
+        color: rgb(182, 165, 165);
+        font-family: PingFang-Regular;
         font-size: 18px;
-        line-height: 130.265629%;
+        line-height: 150.265629%;
     }
 
     #commentNum {
         position: absolute;
         top: 179px;
         color: rgba(97, 97, 97, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 18px;
         line-height: 130.765629%;
     }
@@ -82,7 +82,7 @@
         top: 179px;
         left: 75px;
         color: rgba(97, 97, 97, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 18px;
         line-height: 130.765629%;
     }
@@ -100,7 +100,7 @@
         top: 179px;
         right: 0px;
         color: rgba(189, 189, 189, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 14px;
         line-height: 130.265629%;
     }

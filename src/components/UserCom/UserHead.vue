@@ -34,7 +34,7 @@
   #userName {
     position: absolute;
     color: rgba(71, 71, 71, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 18px;
     top: -20px;
     left: 50px;

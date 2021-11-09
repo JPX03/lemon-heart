@@ -345,7 +345,7 @@
     box-sizing: border-box;
     background: rgba(255, 255, 255, 1);
     color: rgba(71, 71, 71, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 18px;
     line-height: 188.000011%;
     padding-left: 37px;

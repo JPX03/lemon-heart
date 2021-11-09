@@ -64,8 +64,8 @@
         top: 82px;
         left: 39px;
         width: 450px;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
+        color: rgb(130, 124, 124);
+        font-family: PingFang-Regular;
         font-size: 18px;
     }
 

@@ -50,10 +50,19 @@
             </div>
             <class class="box4">
                 <div>
-                    <router-link to="/Book">心理图书</router-link>
+                    <router-link to="/More">更多</router-link>
                 </div>
                 <div>
-                    <router-link to="/Book">推荐图书</router-link>
+                    <router-link to="/More">减压动画</router-link>
+                </div>
+                <div>
+                    <router-link to="/More">推荐图书</router-link>
+                </div>
+                <div>
+                    <router-link to="/More">精选视频</router-link>
+                </div>
+                <div>
+                    <router-link to="/More">推荐FM</router-link>
                 </div>
             </class>
         </div>
@@ -113,7 +122,7 @@
     .box1 a {
         display: inline-block;
         color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
+        font-family: "Alibaba PuHuiTi";
         font-size: 18px;
         line-height: 130.765629%;
         margin-bottom: 36px;
@@ -128,7 +137,7 @@
     .box2 a {
         display: inline-block;
         color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
+        font-family: "Alibaba PuHuiTi";
         font-size: 18px;
         line-height: 130.765629%;
         margin-bottom: 36px;
@@ -143,7 +152,7 @@
     .box3 a {
         display: inline-block;
         color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
+        font-family:"Alibaba PuHuiTi";
         font-size: 18px;
         line-height: 130.765629%;
         margin-bottom: 36px;
@@ -158,7 +167,7 @@
     .box4 a {
         display: inline-block;
         color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
+        font-family: "Alibaba PuHuiTi";
         font-size: 18px;
         line-height: 130.765629%;
         margin-bottom: 36px;

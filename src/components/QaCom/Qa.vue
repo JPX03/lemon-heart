@@ -143,11 +143,11 @@
     width: 108px;
     height: 40px;
     border-radius: 100px;
-    border: 0.6px solid rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
     box-sizing: border-box;
     background: rgba(255, 255, 255, 1);
     color: rgba(71, 71, 71, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 18px;
     line-height: 130.265629%;
     text-align: center;
@@ -174,7 +174,7 @@
     width: 180px;
     height: 47px;
     color: rgba(71, 71, 71, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 36px;
     line-height: 130.265629%;
   }
@@ -276,7 +276,7 @@
     width: 180px;
     height: 47px;
     color: rgba(71, 71, 71, 1);
-    font-family: PingFang SC;
+    font-family: PingFang-Regular;
     font-size: 36px;
     line-height: 130.265629%;
   }

@@ -44,7 +44,7 @@
         top: 42px;
         left: 15px;
         color: rgba(97, 97, 97, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 18px;
         line-height: 130.265629%;
     }
@@ -54,7 +54,7 @@
         top: 37px;
         left: 135px;
         color: rgba(97, 97, 97, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 14px;
         line-height: 193.265629%;
     }
@@ -63,7 +63,7 @@
         position:relative;
         top:100px;
         color: rgba(97, 97, 97, 1);
-        font-family: PingFang SC;
+        font-family: PingFang-Regular;
         font-size: 24px;
         line-height: 200%;
         width: 1020px;
