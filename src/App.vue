@@ -54,7 +54,9 @@
       </el-row>
     </div>
     <!-- -->
-    <router-view></router-view>
+    <transition name="slide-fade">
+      <router-view></router-view>
+    </transition>
     <component :is='comName' class="regPage" v-show="isVisible" :isVisible="isVisible" @dialogVisibleEvent="showDialog"
       @dialogNameEvent='showName' @logSuccess='logSuccess'>
     </component>
@@ -86,16 +88,29 @@
 
     methods: {
       changeColor() {
-        if (this.path == '/Home' || this.path == '/UserPage' || this.path == '/Test' || this.path == '/Test1') {
-          this.containerBgc = 'rgba(177, 243, 243, 1)';
-          this.regBgc = 'rgba(255, 255, 255, 1)';
-          this.regColor = 'rgba(71, 71, 71, 1)';
-        } else {
-          this.containerBgc = 'rgba(253, 255, 255, 1)';
-          this.regBgc = 'rgba(51, 51, 51, 1)';
-          this.regColor = 'rgba(255, 255, 255, 1)';
-        }
+        setTimeout(() => {
+          if (this.path == '/Home' || this.path == '/UserPage' || this.path == '/Test' || this.path == '/Test1') {
+            this.containerBgc = 'rgba(177, 243, 243, 1)';
+            this.regBgc = 'rgba(255, 255, 255, 1)';
+            this.regColor = 'rgba(71, 71, 71, 1)';
+          } else {
+            this.containerBgc = 'rgba(253, 255, 255, 1)';
+            this.regBgc = 'rgba(51, 51, 51, 1)';
+            this.regColor = 'rgba(255, 255, 255, 1)';
+          }
+        }, 780)
       },
+      // changeColor() {
+      //   if (this.path == '/Home' || this.path == '/UserPage' || this.path == '/Test' || this.path == '/Test1') {
+      //     this.containerBgc = 'rgba(177, 243, 243, 1)';
+      //     this.regBgc = 'rgba(255, 255, 255, 1)';
+      //     this.regColor = 'rgba(71, 71, 71, 1)';
+      //   } else {
+      //     this.containerBgc = 'rgba(253, 255, 255, 1)';
+      //     this.regBgc = 'rgba(51, 51, 51, 1)';
+      //     this.regColor = 'rgba(255, 255, 255, 1)';
+      //   }
+      // },
       showReg() {
         this.isVisible = true;
         this.comName = 'Register';
@@ -135,7 +150,6 @@
       }
     },
 
-
     components: {
       'Article': Article,
       'More': More,
@@ -150,6 +164,23 @@
 </script>
 
 <style lang='less' scoped>
+  .slide-fade-enter-active {
+    transition: all .2s ease;
+  }
+
+  .slide-fade-leave-active {
+    transition: all .6s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+
+  .slide-fade-enter,
+  .slide-fade-leave-to
+
+  /* .slide-fade-leave-active for below version 2.1.8 */
+    {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
   .navContainer {
     width: 1920px;
     height: 80px;
@@ -169,7 +200,7 @@
     font-size: 20px;
   }
 
-  .title a{
+  .title a {
     font-family: Alibaba PuHuiTi;
     font-weight: 300;
     font-size: 24px;
