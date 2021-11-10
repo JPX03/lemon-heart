@@ -10,7 +10,7 @@
       <div id="a">注册</div>
       <div class="table">
         <input id="inp1" type="text" placeholder="邮箱" v-model="email">
-        <input id="inp2" type="text" placeholder="密码" v-model="pwd">
+        <input id="inp2" type="password" placeholder="密码" v-model="pwd">
         <div id="message1" v-show="isShowmes1">邮箱格式输入错误,请重新输入</div>
         <div id="create">
           <button id="sub1" @click="sub1">创建账户</button>

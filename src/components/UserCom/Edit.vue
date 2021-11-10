@@ -44,7 +44,7 @@
                         this.cookie.clearCookie('UserId');
                         this.cookie.setCookie(loginInfo, 7);
                         this.close();
-                        // location.reload();
+                        location.reload();
                     } else {
                         this.isWrong==true;
                     }

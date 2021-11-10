@@ -10,7 +10,7 @@
     <div id="a">登录</div>
     <div class="table">
       <input id="inp1" type="text" placeholder="用户名" v-model="userName">
-      <input id="inp2" type="text" placeholder="密码" v-model="pwd">
+      <input id="inp2" type="password" placeholder="密码" v-model="pwd">
       <div id="message1" v-show="isShowLog">用户名或密码输入错误</div>
       <div id="create">
         <button id="sub1" @click="sub1">登录</button>
