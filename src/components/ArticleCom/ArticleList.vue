@@ -1,6 +1,6 @@
 <template>
     <div id="container">
-        <img :src="imgSrc">
+        <img v-lazy="imgSrc">
         <div id="title">{{title}}</div>
         <div id="text">{{text}}</div>
         <div id="kind">{{kind}}</div>

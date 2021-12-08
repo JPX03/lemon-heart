@@ -78,7 +78,7 @@
                         this.canLike = false;
                     }))
                 } else {
-                    alert('你已经点过赞了噢~')
+                    alert('你已经点过赞了噢~');
                 }
             },
             getArticle() {
@@ -105,6 +105,7 @@
                     } else if (this.Article.passageLei == '#婚恋情感') {
                         this.imgSrc = img6;
                     }
+
                     this.likeNum = this.Article.passageLike;
                     this.Article.passageLei = '\xa0\xa0' + this.Article.passageLei.slice(1);
                     this.Article.passageCategory = this.Article.passageCategory.slice(1);

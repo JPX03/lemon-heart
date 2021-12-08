@@ -9,6 +9,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/fonts/font.css'
 import Foot from '@/components/Foot.vue'
 import cookie from '@/utils/cookie.js'
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+  loading: require('@/assets/pictures/loading.gif')
+})
+
 Vue.prototype.cookie = cookie;
 
 Vue.component("Foot", Foot);
