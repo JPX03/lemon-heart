@@ -9,7 +9,7 @@
             <img :src='imgSrc' id="img1">
             <div id="content" v-for="item in Article.passageContent" :key="item.id">{{item}}</div>
             <div class="hoverIt">
-                <div id="like2" @click="likeIt" :style="{'background':bgc1}">
+                <div id="like2" @click="likeIt2" :style="{'background':bgc1}">
                     <img :src="img2Src" id="img2">
                     <div id="likeNum" :style="{'color':color1}">{{likeNum}}</div>
                 </div>
@@ -54,12 +54,21 @@
                 img2Src: like1,
                 bgc1: 'rgba(255, 255, 255, 1)',
                 color1: 'rgba(71, 71, 71, 1)',
+                timeout: null,
             }
         },
         components: {
             RelativeThing,
         },
         methods: {
+            likeIt2() {
+                if (this.timeout) {
+                    clearTimeout(this.timeout)
+                }
+                this.timeout = setTimeout(() => {
+                    this.likeIt();
+                }, 250);
+            },
             likeIt() {
                 if (!this.cookie.getCookie('userName')) {
                     alert('请先登录');
@@ -78,7 +87,19 @@
                         this.canLike = false;
                     }))
                 } else {
-                    alert('你已经点过赞了噢~');
+                    request({
+                        methods: 'post',
+                        url: '/passage/cancleLike',
+                        params: {
+                            id: this.ArticleId,
+                        }
+                    }).then((response => {
+                        this.likeNum = response.data.data;
+                        this.img2Src = like1;
+                        this.bgc1 = 'rgba(255, 255, 255, 1)';
+                        this.color1 = 'rgba(71, 71, 71, 1)';
+                        this.canLike = true;
+                    }))
                 }
             },
             getArticle() {

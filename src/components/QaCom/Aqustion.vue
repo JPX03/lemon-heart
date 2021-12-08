@@ -6,7 +6,7 @@
     <div id="qesDate">{{date}}</div>
     <div id="qesText">{{text}}</div>
     <div class="hoverIt">
-      <div id="like" @click="likeIt" :style="{'background':bgc1}">
+      <div id="like" @click="likeIt2" :style="{'background':bgc1}">
         <img id="img2" :src="img2Src">
         <div id="likeNum" :style="{'color':color1}">{{likeNum}}</div>
       </div>
@@ -46,8 +46,18 @@
       likeNum: {},
       questionId: {},
       name: {},
+      timeout: null,
     },
     methods: {
+      //防抖处理
+      likeIt2() {
+        if (this.timeout) {
+          clearTimeout(this.timeout)
+        }
+        this.timeout = setTimeout(() => {
+          this.likeIt();
+        }, 250);
+      },
       likeIt() {
         if (!this.cookie.getCookie('userName')) {
           alert('请先登录')
@@ -66,7 +76,19 @@
             this.canLike = false;
           }))
         } else {
-          alert('你已经点过赞了噢~')
+          request({
+            methods: 'post',
+            url: '/question/cancleLike',
+            params: {
+              id: this.questionId,
+            }
+          }).then((response => {
+            this.likeNum = response.data.data;
+            this.img2Src = like1;
+            this.bgc1 = 'rgba(255, 255, 255, 1)';
+            this.color1 = 'rgba(71, 71, 71, 1)';
+            this.canLike = true;
+          }))
         }
       },
       ansing() {
