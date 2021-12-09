@@ -67,7 +67,7 @@
                 }
                 this.timeout = setTimeout(() => {
                     this.likeIt();
-                }, 250);
+                }, 200);
             },
             likeIt() {
                 if (!this.cookie.getCookie('userName')) {

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!--背景音乐-->
+    <audio id='music' src='@/assets/vedios/music.mp3'></audio>
+    <img id='playMusic' :src="musicSrc" @click="playMusic">
     <!--导航栏-->
     <div class="navContainer" :style="{'background':containerBgc}">
       <el-row :gutter="10">
@@ -73,6 +76,8 @@
   import Home from '@/components/Home.vue'
   import UserHead from '@/components/UserCom/UserHead.vue'
   import '@/assets/js/heart.js'
+  import turnOnMusic from '@/assets/pictures/trunOnMusic.png'
+  import turnOffMusic from '@/assets/pictures/trunOffMusic.png'
   export default {
     data() {
       return {
@@ -83,10 +88,24 @@
         isVisible: false,
         comName: '',
         isLog: false,
+        musicSrc: turnOnMusic,
+        isPlaying: false,
       }
     },
 
     methods: {
+      playMusic() {
+        console.log("1")
+        if (this.isPlaying === false) {
+          document.getElementById('music').play();
+          this.musicSrc = turnOffMusic;
+          this.isPlaying = true;
+        } else {
+          document.getElementById('music').pause();
+          this.musicSrc = turnOnMusic;
+          this.isPlaying = false;
+        }
+      },
       changeColor() {
         setTimeout(() => {
           if (this.path == '/Home' || this.path == '/UserPage' || this.path == '/Test' || this.path == '/Test1') {
@@ -100,17 +119,6 @@
           }
         }, 780)
       },
-      // changeColor() {
-      //   if (this.path == '/Home' || this.path == '/UserPage' || this.path == '/Test' || this.path == '/Test1') {
-      //     this.containerBgc = 'rgba(177, 243, 243, 1)';
-      //     this.regBgc = 'rgba(255, 255, 255, 1)';
-      //     this.regColor = 'rgba(71, 71, 71, 1)';
-      //   } else {
-      //     this.containerBgc = 'rgba(253, 255, 255, 1)';
-      //     this.regBgc = 'rgba(51, 51, 51, 1)';
-      //     this.regColor = 'rgba(255, 255, 255, 1)';
-      //   }
-      // },
       showReg() {
         this.isVisible = true;
         this.comName = 'Register';
@@ -149,7 +157,6 @@
         document.documentElement.scrollTop = 0
       }
     },
-
     components: {
       'Article': Article,
       'More': More,
@@ -164,6 +171,15 @@
 </script>
 
 <style lang='less' scoped>
+  #playMusic {
+    position: fixed;
+    right: 1vw;
+    bottom: 2vh;;
+    z-index: 99999;
+    width: 50px;
+    height: 40px;
+  }
+
   .slide-fade-enter-active {
     transition: all .2s ease;
   }
@@ -242,7 +258,7 @@
   }
 
   .regPage {
-    position: absolute;
+    position: fixed;
     top: 205px;
     left: 710px;
     width: 500px;
