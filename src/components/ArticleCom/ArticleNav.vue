@@ -28,60 +28,44 @@
     }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
     #contaienr1 {
-        width: 1150px;
-    }
-</style>
+        width: 1160px;
 
-<style>
-    #tab-first {
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-right: 1px;
-    }
-    #tab-second {
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-right: 1px;
-    }
-    #tab-third {
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-right: 1px;
-    }
-    #tab-fourth {
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-right: 1px;
-    }
-    #tab-fifth {
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-right: 1px;
-    }
-    #tab-sixth {
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-right: 1px;
-    }
-    #tab-seventh {
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-right: 1px;
+        .tab() {
+            color: rgba(97, 97, 97, 1);
+            font-family: PingFang-Regular;
+            font-size: 18px;
+            line-height: 130.765629%;
+            margin-right: 1px;
+        }
+
+        #tab-first {
+            .tab();
+        }
+
+        #tab-second {
+            .tab();
+        }
+
+        #tab-third {
+            .tab();
+        }
+
+        #tab-fourth {
+            .tab();
+        }
+
+        #tab-fifth {
+            .tab();
+        }
+
+        #tab-sixth {
+            .tab();
+        }
+
+        #tab-seventh {
+            .tab();
+        }
     }
 </style>

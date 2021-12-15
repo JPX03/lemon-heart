@@ -27,7 +27,7 @@
             }
         },
         props: {
-            imgSrc:'',
+            imgSrc: '',
             text1: '',
             text2: '',
             text3: '',

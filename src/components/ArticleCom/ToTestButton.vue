@@ -47,12 +47,12 @@
         box-sizing: border-box;
         text-align: center;
         padding-top: 7px;
-    }
 
-    #container a {
-        width: 100%;
-        height: 100%;
-        font-family: PingFang-Regular;
-        font-size: 18px;
+        a {
+            width: 100%;
+            height: 100%;
+            font-family: PingFang-Regular;
+            font-size: 18px;
+        }
     }
 </style>
