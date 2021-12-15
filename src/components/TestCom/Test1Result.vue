@@ -174,11 +174,11 @@
             this.result1C = this.$route.query.result1C;
             this.result1D = this.$route.query.result1D;
             this.result1E = this.$route.query.result1E;
-            console.log(this.result1A);
-            console.log(this.result1B);
-            console.log(this.result1C);
-            console.log(this.result1D);
-            console.log(this.result1E);
+            // console.log(this.result1A);
+            // console.log(this.result1B);
+            // console.log(this.result1C);
+            // console.log(this.result1D);
+            // console.log(this.result1E);
             if (this.result1A <= 12) {
                 this.resA = '低';
             } else {

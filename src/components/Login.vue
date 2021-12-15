@@ -69,7 +69,7 @@
             userPwd: this.pwd,
           }
         }).then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.data.status == true) {
             this.isShowLog = false;
             // 以json格式传给setCookie方法存入信息,方法里面会循环遍历该json以单个数据存储的方式，多次存入cookie中

@@ -59,7 +59,7 @@
                     data: res
                 }) => {
                     this.MyQuestions = res.data;
-                    console.log(this.MyQuestions);
+                    // console.log(this.MyQuestions);
                 })
             },
             showEdit() {

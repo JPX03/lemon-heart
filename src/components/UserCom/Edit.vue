@@ -34,7 +34,7 @@
                         newName: this.newUserName,
                     }
                 }).then((response) => {
-                    console.log(response);
+                    // console.log(response);
                     if (response.data.status) {
                         let loginInfo = {
                             userName: this.newUserName,

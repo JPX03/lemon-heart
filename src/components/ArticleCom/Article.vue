@@ -66,11 +66,6 @@
         urlA2: '',
         urlA3: '',
         urlA4: '',
-        // block5: '推荐图书',
-        // block6: '《被讨厌的勇气》太在意别人的看法？个体心理学创始者阿德勒带你走出自卑与困境',
-        // block7: '《心流》做事老分心？积极心理学奠基人之一米哈里让你全身心投入事情中',
-        // urlB2:'',
-        // urlB4:'',
         url1: '/Test1',
         text1: '人',
         text2: '格测试',
@@ -290,31 +285,6 @@
     font-size: 16px;
   }
 
-  /* #relative2 {
-    position: sticky;
-    top: 800px;
-    left: 1400px;
-    width: 200px;
-  }
-
-  #moreBook {
-    position: sticky;
-    top: 800px;
-    left: 1670px;
-    width: 50px;
-    overflow: hidden;
-  }
-
-  #moreBook :hover {
-    cursor: pointer;
-  }
-
-  #moreBook a {
-    color: rgba(97, 97, 97, 1);
-    font-family: PingFang-Regular;
-    font-size: 16px;
-  } */
-
   #ArticleNav {
     position: relative;
     top: 0px;
@@ -323,8 +293,6 @@
     width: 900px;
     overflow: hidden;
   }
-
-
 
   #ArticleListContainer {
     position: relative;

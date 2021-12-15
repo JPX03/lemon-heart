@@ -87,7 +87,7 @@
         }) => {
           this.$set(this, 'text', res.data.records);
           this.totalPage = res.data.total;
-          console.log(this.totalPage);
+          // console.log(this.totalPage);
         })
       },
       getQuestion2(val) {

@@ -100,8 +100,8 @@
           } else {
             this.isShowmes1 = true;
           }
-          console.log(this.ver)
-          console.log(response)
+          // console.log(this.ver)
+          // console.log(response)
         })
       },
       sub2() {

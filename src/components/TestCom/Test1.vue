@@ -227,11 +227,11 @@
         } else if (val.testQ == 'q5' || val.testQ == 'q15') {
           this.result1E += 5 - parseInt(val.checkedValue);
         }
-        console.log(this.result1A);
-        console.log(this.result1B);
-        console.log(this.result1C);
-        console.log(this.result1D);
-        console.log(this.result1E);
+        // console.log(this.result1A);
+        // console.log(this.result1B);
+        // console.log(this.result1C);
+        // console.log(this.result1D);
+        // console.log(this.result1E);
       },
       sendResult1() {
         this.$router.push({

@@ -95,7 +95,6 @@
 
     methods: {
       playMusic() {
-        console.log("1")
         if (this.isPlaying === false) {
           document.getElementById('music').play();
           this.musicSrc = turnOffMusic;
