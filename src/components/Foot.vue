@@ -76,6 +76,8 @@
 </script>
 
 <style lang="less" scoped>
+    @blank: rgba(0, 0, 0, 1);
+
     .Foots-up-img {
         z-index: 1;
     }
@@ -85,91 +87,80 @@
         height: 480px;
         background-color: rgba(177, 243, 243, 1);
         position: relative;
-    }
 
-    .lemon-logo img {
-        width: 51px;
-        position: absolute;
-        top: 185.6px;
-        left: 175.9px;
-    }
+        .lemon-logo img {
+            width: 51px;
+            position: absolute;
+            top: 185.6px;
+            left: 175.9px;
+        }
 
-    .bottom-text {
-        position: absolute;
-        color: rgba(0, 0, 0, 1);
-        font-family: Alibaba PuHuiTi;
-        font-weight: 300;
-        font-size: 24px;
-        letter-spacing: 18%;
-        left: 232px;
-        top: 197px;
-    }
+        .bottom-text {
+            position: absolute;
+            color: @blank;
+            font-family: Alibaba PuHuiTi;
+            font-weight: 300;
+            font-size: 24px;
+            letter-spacing: 18%;
+            left: 232px;
+            top: 197px;
 
-    .bottom-text a {
-        color: rgba(0, 0, 0, 1);
-        font-family: Alibaba PuHuiTi;
-        font-weight: 300;
-        font-size: 24px;
-        letter-spacing: 18%;
-    }
+            a {
+                color: @blank;
+                font-family: Alibaba PuHuiTi;
+                font-weight: 300;
+                font-size: 24px;
+                letter-spacing: 18%;
+            }
+        }
 
-    .box1 {
-        position: absolute;
-        left: 573px;
-        top: 140px;
-    }
+        .a() {
+            display: inline-block;
+            color: @blank;
+            font-family: "Alibaba PuHuiTi";
+            font-size: 18px;
+            line-height: 130.765629%;
+            margin-bottom: 36px;
+        }
 
-    .box1 a {
-        display: inline-block;
-        color: rgba(0, 0, 0, 1);
-        font-family: "Alibaba PuHuiTi";
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-bottom: 36px;
-    }
+        .box1 {
+            position: absolute;
+            left: 573px;
+            top: 140px;
 
-    .box2 {
-        position: absolute;
-        top: 140px;
-        left: 857px;
-    }
+            a {
+                .a;
+            }
+        }
 
-    .box2 a {
-        display: inline-block;
-        color: rgba(0, 0, 0, 1);
-        font-family: "Alibaba PuHuiTi";
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-bottom: 36px;
-    }
+        .box2 {
+            position: absolute;
+            top: 140px;
+            left: 857px;
 
-    .box3 {
-        position: absolute;
-        top: 140px;
-        left: 1141px;
-    }
+            a {
+                .a;
+            }
+        }
 
-    .box3 a {
-        display: inline-block;
-        color: rgba(0, 0, 0, 1);
-        font-family:"Alibaba PuHuiTi";
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-bottom: 36px;
-    }
+        .box3 {
+            position: absolute;
+            top: 140px;
+            left: 1141px;
 
-    .box4 {
-        position: absolute;
-        top: 140px;
-        left: 1425px;
-    }
+            a {
+                .a;
+            }
+        }
 
-    .box4 a {
-        display: inline-block;
-        color: rgba(0, 0, 0, 1);
-        font-family: "Alibaba PuHuiTi";
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-bottom: 36px;
+        .box4 {
+            position: absolute;
+            top: 140px;
+            left: 1425px;
+
+            a {
+                .a;
+            }
+        }
     }
 </style>

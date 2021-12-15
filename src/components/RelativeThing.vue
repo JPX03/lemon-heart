@@ -24,88 +24,79 @@
         name: 'RelativeThing',
         props: {
             block1: {},
-            url2:'',
+            url2: '',
             block2: {},
-            url3:'',
+            url3: '',
             block3: {},
-            url4:'',
+            url4: '',
             block4: {},
-            url5:'',
+            url5: '',
             block5: {},
         }
     }
 </script>
 
 <style lang="less" scoped>
-    .hoverIt :hover {
-        cursor: pointer;
-    }
+    @top: 40px;
 
-    #container {
-        position: relative;
-        width: 400px;
-        height: 500px;
-    }
+    .hoverIt {
 
-    #line {
-        position: absolute;
-        top:7px;
-        width: 0.6px;
-        height: 300px;
-        background-color: rgba(0, 0, 0, 1);
-    }
+        &hover {
+            cursor: pointer;
+        }
 
-    #title {
-        position:relative;
-        left: 22px;
-        top: 5px;
-        width: 96px;
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 24px;
-    }
+        #container {
+            position: relative;
+            width: 400px;
+            height: 500px;
 
-    #text1 {
-        position:relative;
-        left: 22px;
-        top: 40px;
-        width: 317px;
-        color: #616161;
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 150.799997%;
-    }
+            #line {
+                position: absolute;
+                top: 7px;
+                width: 0.6px;
+                height: 300px;
+                background-color: rgba(0, 0, 0, 1);
+            }
 
-    #text2 {
-        position:relative;
-        left: 22px;
-        top: 60px;
-        width: 317px;
-        color: #616161;
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 150.799997%;
-    }
+            #title {
+                position: relative;
+                left: 22px;
+                top: 5px;
+                width: 96px;
+                color: rgba(97, 97, 97, 1);
+                font-family: PingFang-Regular;
+                font-size: 24px;
+            }
 
-    #text3 {
-        position:relative;
-        left: 22px;
-        top: 80px;
-        width: 317px;
-        color: #616161;
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 150.799997%;
-    }
+            .text() {
+                position: relative;
+                left: 22px;
+                width: 317px;
+                color: #616161;
+                font-family: PingFang-Regular;
+                font-size: 18px;
+                line-height: 150.799997%;
+            }
 
-    #text4 {
-        position:relative;
-        left: 22px;
-        top: 100px;
-        width: 317px;
-        color: #616161;
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 150.799997%;
+            #text1 {
+                .text();
+                top: @top;
+            }
+
+            #text2 {
+                .text();
+                top: @top+20;
+            }
+
+            #text3 {
+                .text();
+                top: @top+40;
+            }
+
+            #text4 {
+                .text();
+                top: @top+60;
+            }
+        }
     }
 </style>

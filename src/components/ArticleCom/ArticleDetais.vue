@@ -174,96 +174,98 @@
         margin-left: 260px;
         position: relative;
         width: 913px;
-    }
 
-    #category {
-        color: rgba(97, 97, 97, 1);
-        font-family: PingFang-Regular;
-        font-size: 20px;
-    }
+        #category {
+            color: rgba(97, 97, 97, 1);
+            font-family: PingFang-Regular;
+            font-size: 20px;
+        }
 
-    #title {
-        margin-top: 32px;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 48px;
-        line-height: 150%;
-    }
+        #title {
+            margin-top: 32px;
+            color: rgba(0, 0, 0, 1);
+            font-family: FZBaoSong-Z04S;
+            font-size: 48px;
+            line-height: 150%;
+        }
 
-    #like1 {
-        margin-top: 16px;
-        color: rgba(71, 71, 71, 1);
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 130.765629%;
-    }
+        #like1 {
+            margin-top: 16px;
+            color: rgba(71, 71, 71, 1);
+            font-family: PingFang-Regular;
+            font-size: 18px;
+            line-height: 130.765629%;
 
-    #img0 {
-        position: relative;
-        width: 16px;
-        height: 16px;
-        top: 1px;
-    }
+            #img0 {
+                position: relative;
+                width: 16px;
+                height: 16px;
+                top: 1px;
+            }
+        }
 
-    #img1 {
-        position: relative;
-        left: 0px;
-        width: 877px;
-        height: 352px;
-        top: 25px;
-        margin-bottom: 60px;
-    }
+        #img1 {
+            position: relative;
+            left: 0px;
+            width: 877px;
+            height: 352px;
+            top: 25px;
+            margin-bottom: 60px;
+        }
 
-    #content {
-        position: relative;
-        color: rgba(71, 71, 71, 1);
-        font-family: PingFang-Regular;
-        font-size: 20px;
-        line-height: 180%;
-        margin-top: 30px;
-        margin-bottom: 35px;
-    }
+        #content {
+            position: relative;
+            color: rgba(71, 71, 71, 1);
+            font-family: PingFang-Regular;
+            font-size: 20px;
+            line-height: 180%;
+            margin-top: 30px;
+            margin-bottom: 35px;
+        }
 
-    #relative {
-        position: fixed;
-        top: 160px;
-        left: 1400px;
-    }
+        #relative {
+            position: fixed;
+            top: 160px;
+            left: 1400px;
+        }
 
-    .hoverIt :hover {
-        cursor: pointer;
-    }
+        .hoverIt {
+            &:hover {
+                cursor: pointer;
+            }
 
-    #like2 {
-        position: relative;
-        left: 364px;
-        top: 137px;
-        width: 130px;
-        height: 40px;
-        border-radius: 23.5px;
-        border: 1px solid #282828;
-        box-sizing: border-box;
-    }
+            #like2 {
+                position: relative;
+                left: 364px;
+                top: 137px;
+                width: 130px;
+                height: 40px;
+                border-radius: 23.5px;
+                border: 1px solid #282828;
+                box-sizing: border-box;
+            }
 
-    #img2 {
-        position: absolute;
-        left: 36px;
-        top: 8px;
-        width: 24px;
-        height: 24px;
-    }
+            #img2 {
+                position: absolute;
+                left: 36px;
+                top: 8px;
+                width: 24px;
+                height: 24px;
+            }
 
-    #likeNum {
-        position: absolute;
-        left: 70px;
-        top: 6px;
-        font-family: PingFang-Regular;
-        font-size: 18px;
-        line-height: 150%;
-    }
+            #likeNum {
+                position: absolute;
+                left: 70px;
+                top: 6px;
+                font-family: PingFang-Regular;
+                font-size: 18px;
+                line-height: 150%;
+            }
+        }
 
-    #blank {
-        height: 260px;
+        #blank {
+            height: 260px;
+        }
     }
 
     #Foot {

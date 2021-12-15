@@ -170,10 +170,13 @@
 </script>
 
 <style lang='less' scoped>
+
+  @black:rgba(0, 0, 0, 1);
+
   #playMusic {
     position: fixed;
     right: 1vw;
-    bottom: 2vh;;
+    bottom: 2vh;
     z-index: 99999;
     width: 50px;
     height: 40px;
@@ -199,61 +202,57 @@
   .navContainer {
     width: 1920px;
     height: 80px;
-    border-bottom: 0.6px solid rgba(0, 0, 0, 1);
+    border-bottom: 0.6px solid @black;
     overflow: hidden;
     position: sticky;
     top: 0px;
     left: 0px;
     z-index: 999;
-  }
 
+    a {
+      color: rgba(71, 71, 71, 1);
+      line-height: 80px;
+      font-family: PingFang-Regular;
+      font-size: 20px;
 
-  a {
-    color: rgba(71, 71, 71, 1);
-    line-height: 80px;
-    font-family: PingFang-Regular;
-    font-size: 20px;
-  }
+      &:hover {
+      border-bottom: @black 1px solid;
+      }
 
-  .title a {
-    font-family: Alibaba PuHuiTi;
-    font-weight: 300;
-    font-size: 24px;
-    letter-spacing: 18%;
-  }
+    }
 
-  .register {
-    font-family: PingFang-Regular;
-    font-size: 18px;
-    height: 40px;
-    line-height: 20px;
-    margin-top: 18px;
-  }
+    .title a {
+      font-family: Alibaba PuHuiTi;
+      font-weight: 300;
+      font-size: 24px;
+      letter-spacing: 18%;
+    }
 
-  .login {
-    color: rgba(71, 71, 71, 1);
-    line-height: 80px;
-    font-family: PingFang-Regular;
-    font-size: 18px;
-    padding-left: 18px;
-  }
+    .register {
+      font-family: PingFang-Regular;
+      font-size: 18px;
+      height: 40px;
+      line-height: 20px;
+      margin-top: 18px;
+    }
 
+    .login {
+      color: rgba(71, 71, 71, 1);
+      line-height: 80px;
+      font-family: PingFang-Regular;
+      font-size: 18px;
+      padding-left: 18px;
+    }
 
-  #log :hover {
-    cursor: pointer;
+    #log :hover {
+      cursor: pointer;
+    }
 
-  }
-
-  a:hover {
-    border-bottom: #000000 1px solid;
-
-  }
-
-
-  img {
-    width: 51px;
-    margin-left: 180px;
-    margin-top: 18px;
+    img {
+      width: 51px;
+      margin-left: 180px;
+      margin-top: 18px;
+    }
   }
 
   .regPage {

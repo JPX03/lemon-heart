@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    //文章列表
+    <!--文章列表-->
     <ArticleNav id="ArticleNav" @changeKind='changeKind'></ArticleNav>
     <div id="ArticleListContainer">
       <router-link :to="'/Article/'+ item.id" v-for="item in Articles" :key="item.id" @click.native="store(item.id)">
@@ -242,139 +242,142 @@
 </script>
 
 <style lang="less" scoped>
+  @PingFang-font: PingFang-Regular;
+  @blank: rgba(0, 0, 0, 1);
+
   #containers {
     height: 3500px;
-  }
 
-  #linkContainer {
-    position: absolute;
-    height: 1870px;
-    width: 1920px;
-  }
+    #linkContainer {
+      position: absolute;
+      height: 1870px;
+      width: 1920px;
 
-  #link {
-    position: sticky;
-    top: 10px;
-  }
+      #link {
+        position: sticky;
+        top: 10px;
 
-  #relative1 {
-    position: relative;
-    top: 80px;
-    left: 1350px;
-    width: 200px;
-    z-index: 99;
-  }
+        #relative1 {
+          position: relative;
+          top: 80px;
+          left: 1350px;
+          width: 200px;
+          z-index: 99;
+        }
 
+        #toAsk {
+          position: relative;
+          top: 110px;
+          left: 1550px;
+          width: 65px;
+          overflow: hidden;
+          z-index: 99;
 
-  #toAsk {
-    position: relative;
-    top: 110px;
-    left: 1550px;
-    width: 65px;
-    overflow: hidden;
-    z-index: 99;
-  }
+          a {
+            color: rgba(97, 97, 97, 1);
+            font-family: @PingFang-font;
+            font-size: 16px;
+          }
+        }
 
-  #toAsk :hover {
-    cursor: pointer;
-  }
+        #toAsk :hover {
+          cursor: pointer;
+        }
+      }
+    }
 
-  #toAsk a {
-    color: rgba(97, 97, 97, 1);
-    font-family: PingFang-Regular;
-    font-size: 16px;
-  }
+    #ArticleNav {
+      position: relative;
+      top: 0px;
+      left: 260px;
+      margin-bottom: 20px;
+      width: 900px;
+      overflow: hidden;
+    }
 
-  #ArticleNav {
-    position: relative;
-    top: 0px;
-    left: 260px;
-    margin-bottom: 20px;
-    width: 900px;
-    overflow: hidden;
-  }
+    #ArticleListContainer {
+      position: relative;
+      height: 1700px;
+      width: 1000px;
+      left: 260px;
+      top: 30px;
+      overflow: hidden;
+    }
 
-  #ArticleListContainer {
-    position: relative;
-    height: 1700px;
-    width: 1000px;
-    left: 260px;
-    top: 30px;
-    overflow: hidden;
-  }
+    #pages {
+      position: relative;
+      height: 100px;
+      width: 900px;
+      left: 245px;
+      top: 0px;
+    }
 
-  #pages {
-    position: relative;
-    height: 100px;
-    width: 900px;
-    left: 245px;
-    top: 0px;
-  }
+    #testContainer {
+      position: relative;
+      height: 475px;
+      width: 1920px;
+      border-top: 0.6px solid @blank;
+      top: 0px;
 
-  #testContainer {
-    position: relative;
-    height: 475px;
-    width: 1920px;
-    border-top: 0.6px solid rgba(0, 0, 0, 1);
-    top: 0px;
-  }
+      #img1 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 119px;
+        left: 870px;
+      }
 
-  #img1 {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 119px;
-    left: 870px;
-  }
+      #title {
+        position: absolute;
+        top: 140px;
+        left: 900px;
+        color: rgba(71, 71, 71, 1);
+        font-family: @PingFang-font;
+        font-size: 36px;
+      }
 
-  #title {
-    position: absolute;
-    top: 140px;
-    left: 900px;
-    color: rgba(71, 71, 71, 1);
-    font-family: PingFang-Regular;
-    font-size: 36px;
-  }
+      .test() {
+        position: absolute;
+        top: 260px;
+      }
 
-  #test1 {
-    position: absolute;
-    top: 260px;
-    left: 373px;
-  }
+      #test1 {
+        .test();
+        left: 373px;
+      }
 
-  #test2 {
-    position: absolute;
-    top: 260px;
-    left: 854px;
-  }
+      #test2 {
+        .test();
+        left: 854px;
+      }
 
-  #test3 {
-    position: absolute;
-    top: 260px;
-    left: 1335px;
-  }
+      #test3 {
+        .test();
+        left: 1335px;
+      }
 
-  #moreTest {
-    position: absolute;
-    top: 506px;
-    left: 906px;
-    text-decoration: underline;
-  }
+      #moreTest {
+        position: absolute;
+        top: 506px;
+        left: 906px;
+        text-decoration: underline;
 
-  #moreTest :hover {
-    cursor: pointer;
-  }
+        a {
+          color: rgba(97, 97, 97, 1);
+          font-family: @PingFang-font;
+          font-size: 18px;
+        }
 
-  #moreTest a {
-    color: rgba(97, 97, 97, 1);
-    font-family: PingFang-Regular;
-    font-size: 18px;
-  }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
 
-  #foot {
-    position: relative;
-    top: 0px;
-    border-top: 0.6px solid rgba(0, 0, 0, 1);
-    ;
+    #foot {
+      position: relative;
+      top: 0px;
+      border-top: 0.6px solid @blank;
+    }
   }
 </style>

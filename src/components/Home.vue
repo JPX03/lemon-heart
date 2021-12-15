@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="container">
         <div class="lunbo">
             <img src='@/assets/pictures/info.gif' />
         </div>
@@ -95,189 +95,196 @@
         methods: {
             getDate() {
                 let date = new Date();
-                this.month = date.getMonth()+1; // 月
+                this.month = date.getMonth() + 1; // 月
                 this.day = date.getDate(); // 日
             }
         },
-        created(){
+        created() {
             this.getDate();
         }
     }
 </script>
 <style lang="less" scoped>
-    .lunbo {
-        width: 1920px;
-        height: 661px;
-        border-bottom: 0.6px solid rgba(0, 0, 0, 1);
-        background-color: white;
-    }
+    @blank: rgba(0, 0, 0, 1);
 
-    .lunbo img {
-        width: 100%;
-        height: 100%;
-    }
+    #container {
+        .lunbo {
+            width: 1920px;
+            height: 661px;
+            border-bottom: 0.6px solid @blank;
+            background-color: white;
 
-    .Catalogue {
-        width: 1920px;
-        height: 2003px;
-        position: relative;
-        border: 1px solid rgba(203, 203, 203, 1);
-    }
-
-    .data {
-        position: absolute;
-        top: 34px;
-        left: 881px;
-        right: 906px;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 48px;
-    }
-
-    .month {
-        position: absolute;
-        top: 26px;
-        left: 31px;
-        right: 31px;
-    }
-
-    .month1 {
-        font-size: 24px;
-    }
-
-    .day {
-        position: absolute;
-        top: 85px;
-        left: 56px;
-        right: 6px;
-    }
-
-    .day1 {
-        font-size: 24px;
-    }
-
-    .data img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .text1 {
-        position: absolute;
-        width: 650px;
-        top: 195px;
-        left: 827px;
-        right: 826px;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 18px;
-        letter-spacing: 8.6px;
-    }
-
-    .Epilogue {
-        width: 1920px;
-        height: 851px;
-    }
-
-    .Epilogue img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .words {
-        color: rgba(71, 71, 71, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 48px;
-        line-height: 130.765629%;
-        position: relative;
-        top: 350px;
-        left: 600px;
-        width: 720px;
-        height: 63px;
-        text-align: center;
-    }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
 
 
-    .words a {
-        color: rgba(71, 71, 71, 1);
-        font-family: PingFang-Regular;
-        font-size: 24px;
-        line-height: 130.765629%;
-        text-decoration: underline;
-    }
+        .Catalogue {
+            width: 1920px;
+            height: 2003px;
+            position: relative;
+            border: 1px solid rgba(203, 203, 203, 1);
 
-    .el-icon-arrow-right {
-        font-size: 24px;
-        line-height: 130.765629%;
-        text-align: center;
-    }
+            .data {
+                position: absolute;
+                top: 34px;
+                left: 881px;
+                right: 906px;
+                color: @blank;
+                font-family: FZBaoSong-Z04S;
+                font-size: 48px;
 
-    .block1 {
-        position: absolute;
-        top: 425px;
-        left: 320px;
-        width: 880px;
-        height: 200px;
-    }
+                .month {
+                    position: absolute;
+                    top: 26px;
+                    left: 31px;
+                    right: 31px;
 
-    .block2 {
-        position: absolute;
-        top: 868px;
-        left: 960px;
-        width: 880px;
-        height: 200px;
-    }
+                    .month1 {
+                        font-size: 24px;
+                    }
+                }
 
-    .block3 {
-        position: absolute;
-        top: 1231px;
-        left: 320px;
-        width: 880px;
-        height: 200px;
-    }
+                .day {
+                    position: absolute;
+                    top: 85px;
+                    left: 56px;
+                    right: 6px;
 
-    .block4 {
-        position: absolute;
-        top: 1572px;
-        left: 960px;
-        width: 880px;
-        height: 200px;
-    }
+                    .day1 {
+                        font-size: 24px;
+                    }
+                }
+            }
 
-    .num {
-        color: rgba(203, 203, 203, 1);
-        font-family: PingFangSC-Heavy;
-        font-size: 48px;
-    }
+            img {
+                width: 100%;
+                height: 100%;
+            }
 
-    .link1 a {
-        position: absolute;
-        left: 80px;
-        top: 9px;
-        color: rgba(71, 71, 71, 1);
-        font-family: PingFang-Regular;
-        font-size: 36px;
-        border-bottom: #000000 1px solid;
-    }
+            .text1 {
+                position: absolute;
+                width: 650px;
+                top: 195px;
+                left: 827px;
+                right: 826px;
+                color: @blank;
+                font-family: FZBaoSong-Z04S;
+                font-size: 18px;
+                letter-spacing: 8.6px;
+            }
 
-    .line1 {
-        position: absolute;
-        background-color: black;
-        height: 200px;
-        width: 0.6px;
-        left: 240px;
-    }
+            .block1 {
+                position: absolute;
+                top: 425px;
+                left: 320px;
+                width: 880px;
+                height: 200px;
+            }
 
-    .test1 {
-        position: absolute;
-        left: 270px;
-        top: 0px;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 24px;
-        line-height: 130.765629%;
-    }
+            .block2 {
+                position: absolute;
+                top: 868px;
+                left: 960px;
+                width: 880px;
+                height: 200px;
+            }
 
-    .test {
-        margin-bottom: 22px;
+            .block3 {
+                position: absolute;
+                top: 1231px;
+                left: 320px;
+                width: 880px;
+                height: 200px;
+            }
+
+            .block4 {
+                position: absolute;
+                top: 1572px;
+                left: 960px;
+                width: 880px;
+                height: 200px;
+            }
+
+            .num {
+                color: rgba(203, 203, 203, 1);
+                font-family: PingFangSC-Heavy;
+                font-size: 48px;
+            }
+
+            .link1 a {
+                position: absolute;
+                left: 80px;
+                top: 9px;
+                color: rgba(71, 71, 71, 1);
+                font-family: PingFang-Regular;
+                font-size: 36px;
+                border-bottom: #000000 1px solid;
+            }
+
+            .line1 {
+                position: absolute;
+                background-color: black;
+                height: 200px;
+                width: 0.6px;
+                left: 240px;
+            }
+
+            .test1 {
+                position: absolute;
+                left: 270px;
+                top: 0px;
+                color: @blank;
+                font-family: FZBaoSong-Z04S;
+                font-size: 24px;
+                line-height: 130.765629%;
+            }
+
+            .test {
+                margin-bottom: 22px;
+            }
+        }
+
+
+
+        .Epilogue {
+            width: 1920px;
+            height: 851px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .words {
+                color: rgba(71, 71, 71, 1);
+                font-family: FZBaoSong-Z04S;
+                font-size: 48px;
+                line-height: 130.765629%;
+                position: relative;
+                top: 350px;
+                left: 600px;
+                width: 720px;
+                height: 63px;
+                text-align: center;
+
+                a {
+                    color: rgba(71, 71, 71, 1);
+                    font-family: PingFang-Regular;
+                    font-size: 24px;
+                    line-height: 130.765629%;
+                    text-decoration: underline;
+                }
+            }
+
+
+            .el-icon-arrow-right {
+                font-size: 24px;
+                line-height: 130.765629%;
+                text-align: center;
+            }
+        }
     }
 </style>
