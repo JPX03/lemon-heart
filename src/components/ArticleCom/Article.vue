@@ -12,16 +12,11 @@
           :url3='urlA3' :url4='urlA4'></RelativeThing>
       </div>
     </div>
-    <!-- <RelativeThing id="relative2" :block1='block5' :block2='block6' :block4='block7'
-      :url2='urlB2' :url4='urlB4'></RelativeThing> -->
-    <!-- <div id="moreBook">
-      <router-link to='/Book'>
-        <div>更多></div>
-      </router-link>
-    </div> -->
+
+    //文章列表
     <ArticleNav id="ArticleNav" @changeKind='changeKind'></ArticleNav>
     <div id="ArticleListContainer">
-      <router-link :to="'/Article/'+ item.id" v-for="item in Articles" :key="item.id">
+      <router-link :to="'/Article/'+ item.id" v-for="item in Articles" :key="item.id" @click.native="store(item.id)">
         <ArticleList :imgSrc='item.passageImg' :title='item.passageTitle' :text="item.passageSmallTitle"
           :kind='item.passageCategory'></ArticleList>
       </router-link>
@@ -53,6 +48,7 @@
   import Paging from '@/components/Paging.vue';
   import request from '@/utils/request.js';
   import ToTestBlock from '@/components/ArticleCom/ToTestBlock.vue';
+  import Fingerprint2 from 'fingerprintjs2';
   export default {
     name: "Article",
     data() {
@@ -98,6 +94,78 @@
       ToTestBlock,
     },
     methods: {
+
+      //   //传递用户点击的操作
+      // store(id) {
+
+      //   //如果登录且cookie有信息， 用cookie信息传递
+
+      //   if (this.cookie.getCookie('userId')) {
+
+      //     request({
+      //       methods: 'post',
+      //       url: '',
+      //       params: {
+      //         userId: this.cookie.getCookie('userId'),
+      //         articleId: id,
+      //       }
+      //     })
+      //   }
+
+
+      //   //如果没有cookie，且localStorage里没值，生成一个值
+      //   else if (!this.cookie.getCookie('userId') && !localStorage.getItem('userId')) {
+      //     let localId = Math.floor(Math.random() * 10000);
+      //     localStorage.setItem('userId', localId);
+      //     console.log(localStorage.getItem('userId'));
+      //     request({
+      //       methods: 'post',
+      //       url: '',
+      //       params: {
+      //         userId: localStorage.getItem('userId'),
+      //         articleId: id,
+      //       }
+      //     })
+      //   }
+
+
+      //   //如果没有cookie,且localStorage里有值
+      //   else if (!this.cookie.getCookie('userId') && localStorage.getItem('userId')) {
+      //     request({
+      //       methods: 'post',
+      //       url: '',
+      //       params: {
+      //         userId: localStorage.getItem('userId'),
+      //         articleId: id,
+      //       }
+      //     })
+      //   }
+
+
+      //   //用浏览器指纹唯一标识用户
+      //   else {
+      //     Fingerprint2.get(function (components) {
+      //       const values = components.map(function (component, index) {
+      //         if (index === 0) { //把微信浏览器里UA的wifi或4G等网络替换成空,不然切换网络会ID不一样
+      //           return component.value.replace(/\bNetType\/\w+\b/, '')
+      //         }
+      //         return component.value
+      //       })
+      //       //生成最终id murmur   
+      //       const murmur = Fingerprint2.x64hash128(values.join(''), 31);
+      //       //发送请求
+      //       request({
+      //         methods: 'post',
+      //         url: '',
+      //         params: {
+      //           userId: murmur,
+      //           articleId: id,
+      //         }
+      //       })
+      //     })
+      //   }
+      // },
+
       getAllArticle(pageNo) {
         request({
           method: 'post',
@@ -110,10 +178,11 @@
         }) => {
           this.totalPage = res.data.total;
           this.$set(this, 'Articles', res.data.records);
-          console.log(this.Articles)
+          // console.log(this.Articles)
           this.kind = 'all';
         })
       },
+
       getKindArticle(kinds) {
         request({
           methods: 'post',
@@ -126,11 +195,12 @@
         }) => {
           this.totalPage = res.data.length; //获取本类型所有文章数
           this.$set(this, 'Articles', res.data); //将所有文章存入Articles数组
-          console.log(this.Articles);
+          // console.log(this.Articles);
           this.Articles = this.Articles.slice((this.pageNo - 1) * this.pageSize, this.pageNo * this
             .pageSize); //根据当前页面(pageNo)，截取要展示的数组
         })
       },
+
       getThreeArticle() {
         request({
           methods: 'post',
@@ -138,7 +208,7 @@
         }).then(({
           data: res
         }) => {
-          console.log(res);
+          // console.log(res);
           this.urlA2 = '/Qa/' + `${res.data[0].id}`;
           this.urlA3 = '/Qa/' + `${res.data[1].id}`;
           this.urlA4 = '/Qa/' + `${res.data[2].id}`;
@@ -148,6 +218,7 @@
 
         })
       },
+
       changeKind(val) {
         this.pageNo = 1; //每次切换文章类型时，把初始页面数设置1
         if (val == '全部') {
@@ -157,6 +228,7 @@
           this.getKindArticle(this.kind);
         }
       },
+
       changePage(val) {
         this.pageNo = val; //保存传递的页面索引值
         if (this.kind == 'all') {
@@ -166,6 +238,7 @@
         }
       },
     },
+
     created() {
       this.getAllArticle(this.pageNo);
       this.getThreeArticle();
@@ -178,8 +251,8 @@
     height: 3500px;
   }
 
-  #linkContainer{
-    position:absolute;
+  #linkContainer {
+    position: absolute;
     height: 1870px;
     width: 1920px;
   }
