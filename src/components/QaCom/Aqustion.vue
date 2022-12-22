@@ -162,7 +162,7 @@
   #qesDate {
     position: absolute;
     top: 60px;
-    left: 125px;
+    left: 200px;
     color: rgba(97, 97, 97, 1);
     font-family: PingFang-Regular;
     font-size: 14px;
